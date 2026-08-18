@@ -242,7 +242,7 @@ h1,h2,h3{overflow-wrap:break-word;}
 .mline{display:block;font-family:var(--display);font-weight:900;font-size:clamp(1.85rem,4.7vw,3.7rem);line-height:1.12;letter-spacing:-.02em;margin:.3em 0;color:var(--ivory)}
 .mline.dim{color:var(--ink-soft);font-weight:600;font-size:clamp(1.25rem,2.9vw,1.95rem);margin-top:1.3em}
 .mline.d1,.gcell.d1{transition-delay:.1s}.mline.d2{transition-delay:.2s}
-.spark{background:linear-gradient(90deg,var(--gold),#fff4d6 30%,var(--gold2) 55%,var(--gold));background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:sparktext 3.2s linear infinite}
+.spark{background:linear-gradient(90deg,var(--gold),#fff4d6 30%,var(--gold-2) 55%,var(--gold));background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:sparktext 3.2s linear infinite}
 @keyframes sparktext{to{background-position:-220% center}}
 @media(prefers-reduced-motion:reduce){.spark{animation:none}}
 .rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease);}
@@ -265,14 +265,14 @@ h1,h2,h3{overflow-wrap:break-word;}
 .mviz-glow{position:absolute;top:-40%;right:-30%;width:80%;height:120%;background:radial-gradient(closest-side,rgba(231,178,76,.22),transparent 70%);filter:blur(8px);pointer-events:none;animation:mvizGlow 7s ease-in-out infinite}
 @keyframes mvizGlow{0%,100%{opacity:.55;transform:translateY(0)}50%{opacity:.95;transform:translateY(-6px)}}
 .mviz-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;position:relative}
-.mviz-eyebrow{font-family:var(--body);font-weight:700;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2)}
+.mviz-eyebrow{font-family:var(--body);font-weight:700;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-2)}
 .mviz-crown{width:26px;height:26px;color:var(--gold);filter:drop-shadow(0 0 6px rgba(231,178,76,.5))}
 .mviz-rows{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px;position:relative}
 .mrow-top{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:7px}
 .mrow-label{font-family:var(--body);font-weight:600;font-size:.92rem;color:var(--ivory)}
-.mval{font-family:var(--display);font-weight:600;font-size:1.12rem;color:var(--gold2);font-variant-numeric:tabular-nums lining-nums;font-feature-settings:"tnum" 1,"lnum" 1}
+.mval{font-family:var(--display);font-weight:600;font-size:1.12rem;color:var(--gold-2);font-variant-numeric:tabular-nums lining-nums;font-feature-settings:"tnum" 1,"lnum" 1}
 .mbar{height:7px;border-radius:99px;background:rgba(246,240,230,.1);overflow:hidden}
-.mfill{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--gold-deep),var(--gold2));box-shadow:0 0 12px rgba(231,178,76,.5);transition:width 1.3s cubic-bezier(.22,1,.36,1)}
+.mfill{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--gold-deep),var(--gold-2));box-shadow:0 0 12px rgba(231,178,76,.5);transition:width 1.3s cubic-bezier(.22,1,.36,1)}
 .mtot{margin-top:22px;padding-top:18px;border-top:1px solid rgba(246,213,143,.16);position:relative}
 .mtot>div{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
 .mtot-label{font-family:var(--body);font-weight:600;font-size:.86rem;color:rgba(246,240,230,.75)}
@@ -345,6 +345,22 @@ h1,h2,h3{overflow-wrap:break-word;}
 @media (min-width:641px) and (max-width:768px){
   .eyebrow{font-size:.78rem;letter-spacing:.16em;}
   .btn{min-height:44px;}
+}
+
+/* === mission fixes: card separation + gold values + bigger readable text === */
+#mission .cards{margin-top:clamp(52px,6vw,92px);}
+.mviz{box-shadow:0 24px 54px -34px rgba(20,16,25,.5),inset 0 1px 0 rgba(246,213,143,.14);}
+@media (min-width:641px){
+  body{font-size:clamp(17px,1.1vw,19px);}
+  .lead{font-size:clamp(1.18rem,1.55vw,1.44rem);line-height:1.6;}
+  .eyebrow{font-size:.8rem;}
+  .card p{font-size:1.07rem;line-height:1.62;}
+  .card h3{font-size:1.6rem;}
+  .mviz-eyebrow{font-size:.78rem;letter-spacing:.22em;}
+  .mrow-label{font-size:1.04rem;}
+  .mval{font-size:1.3rem;}
+  .mtot-label{font-size:1rem;}
+  .mtot-sub{font-size:.92rem;line-height:1.55;}
 }
 </style>
 
