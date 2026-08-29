@@ -481,6 +481,12 @@ html{scrollbar-width:thin;scrollbar-color:var(--gold-deep,#C6923A) transparent;}
 .dn-toast.is-show{animation:dnToast 2.4s var(--dn-ease) forwards;}
 @keyframes dnToast{0%{opacity:0;transform:translateX(-50%) translateY(20px)}12%,80%{opacity:1;transform:translateX(-50%) translateY(0)}100%{opacity:0;transform:translateX(-50%) translateY(20px)}}
 @media (prefers-reduced-motion:reduce){.tier,.tier:hover{transform:none}.tier .amt::after{transition:none;transform:scaleX(1)}.dn-overlay,.dn-overlay.is-open{animation:none;opacity:1}.dn-card{animation:none;transform:none;opacity:1}.dn-crown-wrap svg{animation:none;transform:none;opacity:1}.dn-portrait::before{animation:none}.dn-confetti{display:none}.dn-toast.is-show{animation:none;opacity:1;transform:translateX(-50%)}}
+
+/* --- bigger section headings + body; smaller cursor glow --- */
+.shead .display,.mgrid-copy .display{font-size:clamp(2rem,4.4vw,3.25rem);line-height:1.05;}
+@media(min-width:641px){.lead{font-size:clamp(1.24rem,1.7vw,1.6rem);line-height:1.6;}}
+.gx-cursor__glow{width:170px;height:170px;margin:-85px 0 0 -85px;filter:blur(14px);}
+.gx-cursor__ring{width:26px;height:26px;margin:-13px 0 0 -13px;}
 </style>
 
 <nav class="nav" id="nav">
