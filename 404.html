@@ -22,7 +22,22 @@ text-decoration:none;font-weight:700;padding:.85rem 1.6rem;border-radius:100px;b
 transition:transform .3s ease}
 a.btn:hover{transform:translateY(-2px)}
 @media(prefers-reduced-motion:reduce){.crown,.tear{animation:none}}
-</style></head><body>
+</style><script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=UixT885s8XtE01hg&p=other"></script>
+<style id="tc-ambient-css">
+:root.tc-amb-ready body{position:relative;}
+.tc-amb{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
+.tc-amb::before,.tc-amb::after{content:'';position:absolute;border-radius:50%;filter:blur(80px);opacity:.7;}
+.tc-amb::before{width:60vmax;height:60vmax;left:-20vmax;top:-20vmax;background:radial-gradient(circle,rgba(231,178,76,.28),transparent 60%);animation:tcAmbA 22s ease-in-out infinite alternate;}
+.tc-amb::after{width:70vmax;height:70vmax;right:-25vmax;bottom:-25vmax;background:radial-gradient(circle,rgba(232,115,92,.22),transparent 60%);animation:tcAmbB 28s ease-in-out infinite alternate;}
+@keyframes tcAmbA{from{transform:translate(-3%,-3%) scale(1);}to{transform:translate(5%,4%) scale(1.15);}}
+@keyframes tcAmbB{from{transform:translate(3%,3%) scale(1);}to{transform:translate(-4%,-4%) scale(1.1);}}
+.tc-motes{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+.tc-mote{position:absolute;width:3px;height:3px;border-radius:50%;background:#F1C876;box-shadow:0 0 6px rgba(241,200,118,.9);opacity:0;animation:tcRise linear infinite;}
+@keyframes tcRise{0%{transform:translateY(20px);opacity:0;}10%{opacity:.85;}90%{opacity:.7;}100%{transform:translateY(-110vh);opacity:0;}}
+main,section,header,footer,.wrap,.hero{position:relative;z-index:1;}
+@media (prefers-reduced-motion:reduce){.tc-amb::before,.tc-amb::after,.tc-mote{animation:none!important;}.tc-mote{display:none;}}
+</style>
+<script>(function(){document.documentElement.classList.add('tc-amb-ready');function make(){var a=document.createElement('div');a.className='tc-amb';document.body.insertBefore(a,document.body.firstChild);var m=document.createElement('div');m.className='tc-motes';for(var i=0;i<26;i++){var d=document.createElement('div');d.className='tc-mote';d.style.left=(Math.random()*100).toFixed(1)+'%';d.style.top=(100+Math.random()*20).toFixed(1)+'%';d.style.animationDuration=(14+Math.random()*22).toFixed(1)+'s';d.style.animationDelay=(-Math.random()*20).toFixed(1)+'s';d.style.opacity=(0.35+Math.random()*0.55).toFixed(2);d.style.width=d.style.height=(1+Math.random()*3).toFixed(1)+'px';m.appendChild(d);}document.body.insertBefore(m,document.body.firstChild);}if(document.readyState!='loading')make();else document.addEventListener('DOMContentLoaded',make);})();</script></head><body>
 <div class="wrap">
 <svg class="crown" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true">
 <path fill-rule="evenodd" d="M256 82C244 118 226 145 202 170C182 190 168 211 166 235C146 223 127 206 110 185L82 150L105 291C153 274 203 265 256 265C309 265 359 274 407 291L430 150L402 185C385 206 366 223 346 235C344 211 330 190 310 170C286 145 268 118 256 82ZM256 160C271 138 291 136 305 147C323 161 320 186 304 204L256 254L208 204C192 186 189 161 207 147C221 136 241 138 256 160Z"/>
@@ -35,4 +50,4 @@ a.btn:hover{transform:translateY(-2px)}
 <p>Teagan's still here &mdash; and so is the mission. Let's get you back.</p>
 <a class="btn" href="/">Back to Teagan's Crown &rarr;</a>
 </div>
-</body></html>
+<script>(function(){function ready(fn){if(document.readyState!='loading')fn();else document.addEventListener('DOMContentLoaded',fn);}ready(function(){function mail(subj,body){return 'mailto:hello@teaganscrown.org?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);}var CAMPAIGN='https://givebutter.com/teaganscrown';function bind(el){if(el.__gbBound)return;el.__gbBound=true;el.style.cursor='pointer';el.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();var t=(el.textContent||'').toLowerCase();var amt=el.getAttribute('data-amount')||el.closest('[data-amount]')&&el.closest('[data-amount]').getAttribute('data-amount');if(/daf|donor.?advised/.test(t)){window.open(CAMPAIGN,'_blank','noopener');return;}if(/stock|securit/.test(t)){window.location.href=mail("Stock gift to Teagan\u2019s Crown","Hi Nate, I would like to make a gift of appreciated stock. Please send transfer instructions.");return;}if(/crypto|bitcoin|eth/.test(t)){window.location.href=mail("Crypto gift to Teagan\u2019s Crown","Hi Nate, I would like to make a crypto gift. Please send our wallet details.");return;}if(/ira|qcd/.test(t)){window.location.href=mail("IRA QCD gift to Teagan\u2019s Crown","Hi Nate, I would like to make a Qualified Charitable Distribution from my IRA. Please send our nonprofit details (name, EIN, address).");return;}if(/partner|major|call|book/.test(t)){window.location.href=mail("Major gift conversation - Teagan\u2019s Crown","Hi Nate, I would like to talk about a leadership gift. Please share a time.");return;}var url=CAMPAIGN;if(/monthly|crown circle/.test(t))url+=(url.indexOf('?')>-1?'&':'?')+'frequency=monthly';if(amt&&/^\d+$/.test(amt))url+=(url.indexOf('?')>-1?'&':'?')+'amount='+amt;window.location.href=url;});}var q=document.querySelectorAll('[data-give],.tier[data-amount]');[].slice.call(q).forEach(bind);var mo=new MutationObserver(function(m){m.forEach(function(x){[].slice.call(x.addedNodes||[]).forEach(function(n){if(n.nodeType!==1)return;if(n.matches&&(n.matches('[data-give]')||n.matches('.tier[data-amount]')))bind(n);n.querySelectorAll&&n.querySelectorAll('[data-give],.tier[data-amount]').forEach(bind);});});});mo.observe(document.body,{childList:true,subtree:true});});})();</script></body></html>
