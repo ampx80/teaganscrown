@@ -487,6 +487,15 @@ html{scrollbar-width:thin;scrollbar-color:var(--gold-deep,#C6923A) transparent;}
 @media(min-width:641px){.lead{font-size:clamp(1.24rem,1.7vw,1.6rem);line-height:1.6;}}
 .gx-cursor__glow{width:170px;height:170px;margin:-85px 0 0 -85px;filter:blur(14px);}
 .gx-cursor__ring{width:26px;height:26px;margin:-13px 0 0 -13px;}
+
+/* ===== premium gold-dust float for cream sections ===== */
+.gf-layer{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
+.gf-p{position:absolute;border-radius:50%;background:radial-gradient(circle at 38% 34%,#F5D88C,#E7B24C 52%,rgba(198,146,58,0) 74%);opacity:0;will-change:transform,opacity;animation:gfFloat var(--d,16s) ease-in-out var(--dl,0s) infinite,gfTw var(--tw,6s) ease-in-out var(--dl,0s) infinite alternate;}
+.gf-p.gf-spark{box-shadow:0 0 8px 1px rgba(231,178,76,.5);}
+.gf-p.gf-bokeh{filter:blur(7px);background:radial-gradient(circle,#F1C876,rgba(231,178,76,.5) 48%,rgba(231,178,76,0) 74%);}
+@keyframes gfFloat{0%{transform:translate3d(0,0,0)}25%{transform:translate3d(var(--x,10px),-26px,0)}50%{transform:translate3d(calc(var(--x,10px)*-.7),-46px,0)}75%{transform:translate3d(var(--x,10px),-24px,0)}100%{transform:translate3d(0,0,0)}}
+@keyframes gfTw{0%{opacity:var(--o1,.2)}100%{opacity:var(--o2,.7)}}
+@media (prefers-reduced-motion:reduce){.gf-p{animation:none!important;opacity:.38}}
 </style>
 
 <nav class="nav" id="nav">
@@ -537,7 +546,7 @@ html{scrollbar-width:thin;scrollbar-color:var(--gold-deep,#C6923A) transparent;}
 </header>
 
 <!-- MISSION -->
-<section class="pad on-ivory" id="mission"><div class="amb amb-ivory"></div>
+<section class="pad on-ivory" id="mission"><div class="amb amb-ivory"></div><div class="gf-layer" data-gf aria-hidden="true"></div>
   <div class="wrap">
     <div class="mgrid rv">
       <div class="mgrid-copy">
@@ -657,7 +666,7 @@ html{scrollbar-width:thin;scrollbar-color:var(--gold-deep,#C6923A) transparent;}
   </div>
 </section>
 <!-- GIVE -->
-<section class="pad on-ivory" id="give"><div class="amb amb-ivory"></div>
+<section class="pad on-ivory" id="give"><div class="amb amb-ivory"></div><div class="gf-layer" data-gf aria-hidden="true"></div>
   <div class="wrap">
     <div class="shead rv">
       <span class="eyebrow">Give from the heart</span>
@@ -893,6 +902,9 @@ function escapeHtml(s){return String(s).replace(/[&<>"']/g,function(c){return {'
 $$('[data-tc-share]').forEach(function(b){b.addEventListener('click',function(){share({text:b.getAttribute('data-tc-text')||undefined});});});
 var q=new URLSearchParams(location.search);if(q.get('thanks')==='1'){var amt=q.get('amount')||q.get('amt');showDonationSuccess({amount:amt?Number(amt):undefined,honoree:q.get('honor')||''});}})();
 window.TC={showDonationSuccess:showDonationSuccess,hideDonationSuccess:hideDonationSuccess,share:share,selectTier:selectTier};})();
+</script>
+<script>
+(function(){var layers=document.querySelectorAll('.gf-layer[data-gf]');if(!layers.length)return;var mob=matchMedia('(max-width:767px)').matches;var R=Math.random;layers.forEach(function(layer){var tiers=[{cls:' gf-bokeh',n:mob?3:5,min:14,max:26,o1:.07,o2:.22,d:[17,27]},{cls:'',n:mob?6:11,min:5,max:9,o1:.20,o2:.52,d:[12,21]},{cls:' gf-spark',n:mob?7:13,min:2,max:4,o1:.34,o2:.82,d:[8,15]}];var frag=document.createDocumentFragment();tiers.forEach(function(t){for(var i=0;i<t.n;i++){var p=document.createElement('i');p.className='gf-p'+t.cls;var size=(t.min+R()*(t.max-t.min)).toFixed(1);p.style.width=size+'px';p.style.height=size+'px';p.style.left=(R()*100).toFixed(2)+'%';p.style.top=(R()*100).toFixed(2)+'%';p.style.setProperty('--x',((R()*2-1)*18).toFixed(0)+'px');p.style.setProperty('--d',(t.d[0]+R()*(t.d[1]-t.d[0])).toFixed(1)+'s');p.style.setProperty('--tw',(4+R()*5).toFixed(1)+'s');p.style.setProperty('--dl',(-R()*20).toFixed(1)+'s');p.style.setProperty('--o1',t.o1.toFixed(2));p.style.setProperty('--o2',t.o2.toFixed(2));frag.appendChild(p);}});layer.appendChild(frag);});if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){e.target.querySelectorAll('.gf-p').forEach(function(el){el.style.animationPlayState=e.isIntersecting?'running':'paused';});});});layers.forEach(function(l){io.observe(l);});}})();
 </script>
 </body>
 </html>
