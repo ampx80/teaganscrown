@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Page not found | Teagan's Crown</title>
+<meta name="robots" content="noindex">
+<style>
+:root{--ink:#141019;--plum:#2A2033;--ivory:#F6F0E6;--gold:#E7B24C;--gold-2:#F1C876;--gold-deep:#C6923A}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:radial-gradient(120% 100% at 50% 0%,#241B2E,var(--ink));color:var(--ivory);
+font-family:"Hanken Grotesk",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+display:grid;place-items:center;text-align:center;padding:2rem;-webkit-font-smoothing:antialiased;overflow:hidden}
+.wrap{max-width:520px;position:relative;z-index:1}
+.crown{width:96px;height:96px;color:var(--gold);filter:drop-shadow(0 0 22px rgba(231,178,76,.45));margin-bottom:1.4rem;animation:float 5s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.tear{fill:#8Fc7e6;animation:drop 3.2s ease-in-out infinite}
+@keyframes drop{0%,60%{transform:translateY(0);opacity:0}70%{opacity:1}100%{transform:translateY(60px);opacity:0}}
+h1{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:clamp(2rem,7vw,3rem);line-height:1.05;margin:0 0 .5rem;letter-spacing:-.01em}
+.ey{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:1rem}
+p{color:rgba(246,240,230,.75);font-size:1.08rem;line-height:1.6;margin:0 0 2rem}
+a.btn{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(100deg,var(--gold-2),var(--gold));color:#25190A;
+text-decoration:none;font-weight:700;padding:.85rem 1.6rem;border-radius:100px;box-shadow:0 12px 34px -10px rgba(231,178,76,.6);
+transition:transform .3s ease}
+a.btn:hover{transform:translateY(-2px)}
+@media(prefers-reduced-motion:reduce){.crown,.tear{animation:none}}
+</style></head><body>
+<div class="wrap">
+<svg class="crown" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true">
+<path fill-rule="evenodd" d="M256 82C244 118 226 145 202 170C182 190 168 211 166 235C146 223 127 206 110 185L82 150L105 291C153 274 203 265 256 265C309 265 359 274 407 291L430 150L402 185C385 206 366 223 346 235C344 211 330 190 310 170C286 145 268 118 256 82ZM256 160C271 138 291 136 305 147C323 161 320 186 304 204L256 254L208 204C192 186 189 161 207 147C221 136 241 138 256 160Z"/>
+<path d="M111 292C156 278 205 271 256 271C307 271 356 278 401 292L396 318C352 306 305 300 256 300C207 300 160 306 116 318Z"/>
+<path d="M115 345C160 333 207 327 256 327C305 327 352 333 397 345L390 396C346 386 301 381 256 381C211 381 166 386 122 396Z"/>
+<circle class="tear" cx="330" cy="250" r="12"/>
+</svg>
+<div class="ey">Error 404</div>
+<h1>This page wandered off.</h1>
+<p>Teagan's still here &mdash; and so is the mission. Let's get you back.</p>
+<a class="btn" href="/">Back to Teagan's Crown &rarr;</a>
+</div>
+</body></html>
