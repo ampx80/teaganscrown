@@ -479,7 +479,41 @@
   .drop:hover,.drop.drag{box-shadow:0 0 0 3px rgba(231,178,76,.18), 0 0 26px -6px rgba(231,178,76,.4);}
 
 </style>
-</head>
+<style id="tc-donate-btn-fix">
+/* Nav donate button - make it POP */
+header .btn-gold, header a.don, .nav .btn-gold, nav .btn-gold, header .btn.btn-gold, .site-nav .btn-gold {
+  background: linear-gradient(135deg, #FFDA85 0%, #F5C158 45%, #E7B24C 100%) !important;
+  color: #1A0F05 !important;
+  font-weight: 800 !important;
+  letter-spacing: .01em !important;
+  box-shadow: 0 4px 18px rgba(231,178,76,.55), 0 0 0 1px rgba(255,218,133,.7) inset, 0 -2px 8px rgba(255,218,133,.3) inset !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.35);
+  transition: transform .22s ease, box-shadow .22s ease, filter .22s ease !important;
+}
+header .btn-gold:hover, header a.don:hover, .nav .btn-gold:hover, nav .btn-gold:hover, header .btn.btn-gold:hover, .site-nav .btn-gold:hover {
+  transform: translateY(-2px) !important;
+  filter: brightness(1.06) !important;
+  box-shadow: 0 8px 24px rgba(231,178,76,.7), 0 0 0 1px #FFDA85 inset, 0 -2px 8px rgba(255,218,133,.35) inset !important;
+}
+/* Subtle gold pulse ring so the eye catches it */
+header .btn-gold, header a.don, .nav .btn-gold, nav .btn-gold {
+  position: relative;
+}
+header .btn-gold::before, header a.don::before, .nav .btn-gold::before, nav .btn-gold::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 999px;
+  background: radial-gradient(closest-side, rgba(255,218,133,.35), rgba(255,218,133,0) 70%);
+  z-index: -1;
+  animation: tcDonateGlow 2.6s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes tcDonateGlow { 0%,100%{opacity:.5;transform:scale(1);} 50%{opacity:1;transform:scale(1.08);} }
+@media (prefers-reduced-motion: reduce) {
+  header .btn-gold::before, header a.don::before, .nav .btn-gold::before, nav .btn-gold::before { animation: none; opacity: .55; }
+}
+</style></head>
 <body>
   <div class="ap-sparkle" aria-hidden="true"></div>
   <main class="wrap">

@@ -63,7 +63,41 @@ footer.site{border-top:1px solid var(--line);padding:30px 0;color:var(--faint);f
 main,section,header,footer,.wrap,.hero{position:relative;z-index:1;}
 @media (prefers-reduced-motion:reduce){.tc-amb::before,.tc-amb::after,.tc-mote{animation:none!important;}.tc-mote{display:none;}}
 </style>
-<script>(function(){document.documentElement.classList.add('tc-amb-ready');function make(){var a=document.createElement('div');a.className='tc-amb';document.body.insertBefore(a,document.body.firstChild);var m=document.createElement('div');m.className='tc-motes';for(var i=0;i<26;i++){var d=document.createElement('div');d.className='tc-mote';d.style.left=(Math.random()*100).toFixed(1)+'%';d.style.top=(100+Math.random()*20).toFixed(1)+'%';d.style.animationDuration=(14+Math.random()*22).toFixed(1)+'s';d.style.animationDelay=(-Math.random()*20).toFixed(1)+'s';d.style.opacity=(0.35+Math.random()*0.55).toFixed(2);d.style.width=d.style.height=(1+Math.random()*3).toFixed(1)+'px';m.appendChild(d);}document.body.insertBefore(m,document.body.firstChild);}if(document.readyState!='loading')make();else document.addEventListener('DOMContentLoaded',make);})();</script></head><body><header class="site"><div class="wrap hin"><a class="brand" href="/"><svg class="lmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#E7B24C" fill-rule="evenodd" d="M256 82C244 118 226 145 202 170C182 190 168 211 166 235C146 223 127 206 110 185L82 150L105 291C153 274 203 265 256 265C309 265 359 274 407 291L430 150L402 185C385 206 366 223 346 235C344 211 330 190 310 170C286 145 268 118 256 82ZM256 160C271 138 291 136 305 147C323 161 320 186 304 204L256 254L208 204C192 186 189 161 207 147C221 136 241 138 256 160Z"/><path fill="#141019" d="M111 292C156 278 205 271 256 271C307 271 356 278 401 292L396 318C352 306 305 300 256 300C207 300 160 306 116 318Z"/><path fill="#141019" d="M115 345C160 333 207 327 256 327C305 327 352 333 397 345L390 396C346 386 301 381 256 381C211 381 166 386 122 396Z"/><path fill="#E7B24C" d="M74 116C74 101 86 89 101 89C116 89 128 101 128 116C128 131 116 143 101 143C86 143 74 131 74 116Z"/><path fill="#E7B24C" d="M229 57C229 42 241 30 256 30C271 30 283 42 283 57C283 72 271 84 256 84C241 84 229 72 229 57Z"/><path fill="#E7B24C" d="M384 116C384 101 396 89 411 89C426 89 438 101 438 116C438 131 426 143 411 143C396 143 384 131 384 116Z"/></svg> Teagan's Crown</a><nav class="nav"><a class="n" href="/#story">Teagan</a><a class="n" href="/give.html">Ways to give</a><a class="n" href="/partner.html">Partner</a><a class="btn btn-gold" href="/give.html">Donate</a></nav></div></header><section class="hero"><div class="wrap"><span class="eyebrow rv">Transparency</span><h1 class="disp rv">You deserve to know <span class="it" style="color:var(--gold)">exactly</span> where your gift goes.</h1><p class="lead rv">Trust is earned with the truth, especially before the receipts exist. Here is precisely where Teagan's Crown stands today - nothing dressed up.</p></div></section>
+<script>(function(){document.documentElement.classList.add('tc-amb-ready');function make(){var a=document.createElement('div');a.className='tc-amb';document.body.insertBefore(a,document.body.firstChild);var m=document.createElement('div');m.className='tc-motes';for(var i=0;i<26;i++){var d=document.createElement('div');d.className='tc-mote';d.style.left=(Math.random()*100).toFixed(1)+'%';d.style.top=(100+Math.random()*20).toFixed(1)+'%';d.style.animationDuration=(14+Math.random()*22).toFixed(1)+'s';d.style.animationDelay=(-Math.random()*20).toFixed(1)+'s';d.style.opacity=(0.35+Math.random()*0.55).toFixed(2);d.style.width=d.style.height=(1+Math.random()*3).toFixed(1)+'px';m.appendChild(d);}document.body.insertBefore(m,document.body.firstChild);}if(document.readyState!='loading')make();else document.addEventListener('DOMContentLoaded',make);})();</script><style id="tc-donate-btn-fix">
+/* Nav donate button - make it POP */
+header .btn-gold, header a.don, .nav .btn-gold, nav .btn-gold, header .btn.btn-gold, .site-nav .btn-gold {
+  background: linear-gradient(135deg, #FFDA85 0%, #F5C158 45%, #E7B24C 100%) !important;
+  color: #1A0F05 !important;
+  font-weight: 800 !important;
+  letter-spacing: .01em !important;
+  box-shadow: 0 4px 18px rgba(231,178,76,.55), 0 0 0 1px rgba(255,218,133,.7) inset, 0 -2px 8px rgba(255,218,133,.3) inset !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.35);
+  transition: transform .22s ease, box-shadow .22s ease, filter .22s ease !important;
+}
+header .btn-gold:hover, header a.don:hover, .nav .btn-gold:hover, nav .btn-gold:hover, header .btn.btn-gold:hover, .site-nav .btn-gold:hover {
+  transform: translateY(-2px) !important;
+  filter: brightness(1.06) !important;
+  box-shadow: 0 8px 24px rgba(231,178,76,.7), 0 0 0 1px #FFDA85 inset, 0 -2px 8px rgba(255,218,133,.35) inset !important;
+}
+/* Subtle gold pulse ring so the eye catches it */
+header .btn-gold, header a.don, .nav .btn-gold, nav .btn-gold {
+  position: relative;
+}
+header .btn-gold::before, header a.don::before, .nav .btn-gold::before, nav .btn-gold::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 999px;
+  background: radial-gradient(closest-side, rgba(255,218,133,.35), rgba(255,218,133,0) 70%);
+  z-index: -1;
+  animation: tcDonateGlow 2.6s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes tcDonateGlow { 0%,100%{opacity:.5;transform:scale(1);} 50%{opacity:1;transform:scale(1.08);} }
+@media (prefers-reduced-motion: reduce) {
+  header .btn-gold::before, header a.don::before, .nav .btn-gold::before, nav .btn-gold::before { animation: none; opacity: .55; }
+}
+</style></head><body><header class="site"><div class="wrap hin"><a class="brand" href="/"><svg class="lmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#E7B24C" fill-rule="evenodd" d="M256 82C244 118 226 145 202 170C182 190 168 211 166 235C146 223 127 206 110 185L82 150L105 291C153 274 203 265 256 265C309 265 359 274 407 291L430 150L402 185C385 206 366 223 346 235C344 211 330 190 310 170C286 145 268 118 256 82ZM256 160C271 138 291 136 305 147C323 161 320 186 304 204L256 254L208 204C192 186 189 161 207 147C221 136 241 138 256 160Z"/><path fill="#141019" d="M111 292C156 278 205 271 256 271C307 271 356 278 401 292L396 318C352 306 305 300 256 300C207 300 160 306 116 318Z"/><path fill="#141019" d="M115 345C160 333 207 327 256 327C305 327 352 333 397 345L390 396C346 386 301 381 256 381C211 381 166 386 122 396Z"/><path fill="#E7B24C" d="M74 116C74 101 86 89 101 89C116 89 128 101 128 116C128 131 116 143 101 143C86 143 74 131 74 116Z"/><path fill="#E7B24C" d="M229 57C229 42 241 30 256 30C271 30 283 42 283 57C283 72 271 84 256 84C241 84 229 72 229 57Z"/><path fill="#E7B24C" d="M384 116C384 101 396 89 411 89C426 89 438 101 438 116C438 131 426 143 411 143C396 143 384 131 384 116Z"/></svg> Teagan's Crown</a><nav class="nav"><a class="n" href="/#story">Teagan</a><a class="n" href="/give.html">Ways to give</a><a class="n" href="/partner.html">Partner</a><a class="btn btn-gold" href="/give.html">Donate</a></nav></div></header><section class="hero"><div class="wrap"><span class="eyebrow rv">Transparency</span><h1 class="disp rv">You deserve to know <span class="it" style="color:var(--gold)">exactly</span> where your gift goes.</h1><p class="lead rv">Trust is earned with the truth, especially before the receipts exist. Here is precisely where Teagan's Crown stands today - nothing dressed up.</p></div></section>
 <section><div class="wrap narrow"><h2 class="sec rv">Where we are right now</h2><div class="rows">
 <div class="row rv"><div class="k">Legal status</div><div class="v"><b>In formation.</b> We are establishing our nonprofit structure (fiscal sponsorship and/or 501(c)(3)). Until that is finalized, <b>we do not represent any gift as tax-deductible.</b> We would rather tell you the truth than lose it.</div></div>
 <div class="row rv"><div class="k">Your gift</div><div class="v">Goes toward adaptive equipment, therapy, and direct support for children with special needs and their families. As we grow, we will publish our financials and program outcomes openly.</div></div>
