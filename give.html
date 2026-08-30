@@ -2115,6 +2115,22 @@ nav#nav, nav.nav, header nav {
   line-height: 1.55 !important;
   max-width: 60ch;
 }
+</style><style id="tc-hero-simplify-v2">
+/* Hero: compact so picker starts in viewport */
+.give-hero {
+  padding: clamp(3.5rem, 6vw, 6rem) clamp(1.5rem, 5vw, 4rem) clamp(1.5rem, 3vw, 2.5rem) !important;
+  min-height: 0 !important;
+}
+.give-headline {
+  font-size: clamp(2rem, 4.4vw, 3.6rem) !important;
+  margin: 0 0 clamp(0.75rem, 1.5vw, 1.25rem) !important;
+  line-height: 1.05 !important;
+}
+.give-sub { display: none !important; }
+.give-eyebrow { margin: 0 0 clamp(0.5rem, 1vw, 0.75rem) !important; }
+.give-hero-cta { display: none !important; }
+/* Picker breathes to top */
+#donate-now { padding-top: 12px !important; margin-top: -12px; }
 </style></head>
 <body class="give">
 <nav class="nav" id="nav">
@@ -2134,10 +2150,7 @@ nav#nav, nav.nav, header nav {
 </nav>
 
 <main class="give-main" id="top">
-<!-- =========================================================
-     GIVE.HTML HERO - replaces the current "Every path leads to a child" block.
-     Winner headline in place. Backups documented in comments below.
-     ========================================================= -->
+
 <section class="give-hero" aria-labelledby="give-hero-headline">
   <p class="give-eyebrow">Teagan's Crown</p>
 
@@ -2158,169 +2171,6 @@ nav#nav, nav.nav, header nav {
     </a>
   </div>
 </section>
-
-<!--
-  BACKUP 1 (poetic, softer, universally readable):
-  <h1 id="give-hero-headline" class="give-headline">
-    The smallest crowns<br>
-    <em>are the heaviest to carry.</em>
-  </h1>
-
-  BACKUP 2 (punchy, specific age, tenacity):
-  <h1 id="give-hero-headline" class="give-headline">
-    Every crown here was earned<br>
-    <em>before kindergarten.</em>
-  </h1>
--->
-
-
-<!-- PLACE: directly after the hero <section>, BEFORE the donation-picker section -->
-<aside id="apply-for-help" class="tc-flipside" aria-labelledby="tc-flipside-title">
-  <a class="tc-flipside__link" href="/apply.html" aria-describedby="tc-flipside-sub">
-    <span class="tc-flipside__mark" aria-hidden="true">
-      <svg viewBox="0 0 44 44" width="44" height="44" role="img" focusable="false">
-        <defs>
-          <radialGradient id="tcFsGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#E8735C" stop-opacity="0.55"/>
-            <stop offset="100%" stop-color="#E8735C" stop-opacity="0"/>
-          </radialGradient>
-        </defs>
-        <circle cx="22" cy="22" r="21" fill="url(#tcFsGlow)"/>
-        <!-- small crown resting in an open palm -->
-        <path d="M13 27 C13 24, 15 22, 18 22 L26 22 C29 22, 31 24, 31 27 L31 30 C31 31.5, 29.8 32.7, 28.3 32.7 L15.7 32.7 C14.2 32.7, 13 31.5, 13 30 Z"
-              fill="none" stroke="#E8735C" stroke-width="1.4" stroke-linejoin="round"/>
-        <path d="M15.5 19.5 L18.5 15 L22 19 L25.5 15 L28.5 19.5 L27.5 21.5 L16.5 21.5 Z"
-              fill="none" stroke="#E7B24C" stroke-width="1.4" stroke-linejoin="round"/>
-        <circle cx="18.5" cy="14.2" r="0.9" fill="#E7B24C"/>
-        <circle cx="22" cy="13.5" r="0.9" fill="#E7B24C"/>
-        <circle cx="25.5" cy="14.2" r="0.9" fill="#E7B24C"/>
-      </svg>
-    </span>
-
-    <span class="tc-flipside__body">
-      <span class="tc-flipside__eyebrow">For families</span>
-      <span id="tc-flipside-title" class="tc-flipside__title">
-        Raising a child with special needs and stretched thin?
-      </span>
-      <span id="tc-flipside-sub" class="tc-flipside__sub">
-        This page is the giving side. If your family needs help, walk through the other door.
-      </span>
-    </span>
-
-    <span class="tc-flipside__cta" role="presentation">
-      <span class="tc-flipside__cta-label">Apply for support</span>
-      <svg class="tc-flipside__arrow" viewBox="0 0 24 12" width="26" height="13" aria-hidden="true" focusable="false">
-        <path d="M1 6 H21 M16 1 L22 6 L16 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </span>
-  </a>
-</aside>
-
-<!-- Why families struggle - front-and-center system-failure section -->
-<section class="why-struggle" id="why-families-struggle" aria-labelledby="why-struggle-title">
-  <div class="why-struggle__inner">
-
-    <p class="why-struggle__eyebrow">Why this exists</p>
-
-    <h2 class="why-struggle__title" id="why-struggle-title">
-      Insurance is <em>not</em> a safety net for a medically complex child.
-    </h2>
-
-    <p class="why-struggle__lede">
-      It is a maze with a countdown, and the family is the one running it. Below is what actually happens between a doctor's order and a child getting the care, therapy, or equipment they need. This is why families like ours built Teagan's Crown.
-    </p>
-
-    <div class="why-struggle__list">
-
-      <details class="struggle">
-        <summary class="struggle__summary">
-          <span class="struggle__hd">The first answer is <em>very often</em> no.</span>
-          <span class="struggle__icon" aria-hidden="true"></span>
-        </summary>
-        <div class="struggle__body">
-          <p>Insurers on the federal marketplace deny roughly 1 in 5 in-network claims on average, and fewer than 1 percent are ever appealed (KFF analyses of HealthCare.gov transparency data). When families do formally appeal, a large share of denials get overturned. The first "no" is often wrong. Most denials stand because a parent who is already running an IEP, a therapy schedule, and a medication plan cannot add a second unpaid job.</p>
-        </div>
-      </details>
-
-      <details class="struggle">
-        <summary class="struggle__summary">
-          <span class="struggle__hd">Prior authorization is the delay. Denial is the strategy.</span>
-          <span class="struggle__icon" aria-hidden="true"></span>
-        </summary>
-        <div class="struggle__body">
-          <p>A federal watchdog (HHS Office of Inspector General, 2022) found that Medicare Advantage plans denied prior-authorization requests for care that met the plan's own coverage rules. The denial was the problem, not the care. The same playbook shows up in commercial and Medicaid managed-care plans. In the American Medical Association's annual Prior Authorization Physician Survey, roughly one in four physicians report that prior-authorization delays have led to a serious adverse event for a patient in their care, including hospitalization.</p>
-        </div>
-      </details>
-
-      <details class="struggle">
-        <summary class="struggle__summary">
-          <span class="struggle__hd">"Covered" does not mean "affordable."</span>
-          <span class="struggle__icon" aria-hidden="true"></span>
-        </summary>
-        <div class="struggle__body">
-          <p>The average family health insurance premium in employer coverage now runs past $25,000 a year, with workers paying more than $6,000 of that before the deductible even starts (KFF Employer Health Benefits Survey, 2024). Family deductibles in high-deductible plans routinely run several thousand dollars, and reset every January 1. For a family already paying for therapies, formula, diapers past infancy, and equipment, the fight starts over the first week of the year.</p>
-        </div>
-      </details>
-
-      <details class="struggle">
-        <summary class="struggle__summary">
-          <span class="struggle__hd">The Medicaid waiting list is measured in years, not months.</span>
-          <span class="struggle__icon" aria-hidden="true"></span>
-        </summary>
-        <div class="struggle__body">
-          <p>Home and Community-Based Services (HCBS) waivers are the main Medicaid pathway to in-home nursing, therapy, respite, and equipment for a disabled child. Hundreds of thousands of people sit on state HCBS waitlists nationally, with average waits commonly reported in years and some states well past seven (KFF Medicaid HCBS tracking). A child can outgrow a developmental window, or childhood itself, waiting for a slot to open.</p>
-        </div>
-      </details>
-
-      <details class="struggle">
-        <summary class="struggle__summary">
-          <span class="struggle__hd">Therapy has a cap. A child's growth does not.</span>
-          <span class="struggle__icon" aria-hidden="true"></span>
-        </summary>
-        <div class="struggle__body">
-          <p>Most private plans cap outpatient PT, OT, and speech therapy at a limited number of visits per year, and often deny pediatric therapy as "developmental, not restorative" because the child is learning a skill for the first time rather than recovering one. Private-pay pediatric therapy commonly runs $100 to $250 per session (ASHA, AOTA, and APTA workforce and access reporting). A child in intensive early therapy can burn through a year's cap in a single quarter, and the developmental window does not pause while families appeal.</p>
-        </div>
-      </details>
-
-      <details class="struggle">
-        <summary class="struggle__summary">
-          <span class="struggle__hd">The equipment a child needs is often called "not medically necessary."</span>
-          <span class="struggle__icon" aria-hidden="true"></span>
-        </summary>
-        <div class="struggle__body">
-          <p>Adaptive strollers, safety beds, gait trainers, standers, communication devices, custom bracing: routinely prescribed by a pediatric specialist, routinely denied by a reviewer who has never met the child, routinely approved months later on appeal (documented across NCART, Family Voices, and NORD reporting). Insurance replacement cycles are built around adult equipment, so families are often told the chair, brace, or device their child has physically outgrown is "not yet due." The child grows anyway.</p>
-        </div>
-      </details>
-
-      <details class="struggle">
-        <summary class="struggle__summary">
-          <span class="struggle__hd">One parent <em>often</em> leaves work. That is not a lifestyle choice.</span>
-          <span class="struggle__icon" aria-hidden="true"></span>
-        </summary>
-        <div class="struggle__body">
-          <p>National Survey of Children's Health data consistently finds that a large share of families raising a child with special healthcare needs report the child's condition has caused financial problems for the family, and a similar share had a parent cut work hours or leave a job to provide care (HRSA / CDC, NSCH). That lost income lands on top of every out-of-pocket cost insurance already pushed onto the family, and can knock the child off Medicaid eligibility the moment the remaining parent gets a raise.</p>
-        </div>
-      </details>
-
-    </div>
-
-    <p class="why-struggle__bridge">
-      This is the gap Teagan's Crown was built to close. Not paperwork. Not a promise to fight the insurer for you. A direct check written into the exact place insurance stopped, so a child does not have to wait for a system to say yes.
-    </p>
-
-    <p class="why-struggle__cta-row">
-      <a class="why-struggle__cta" href="#donate-now">Choose an amount to give</a>
-      <a class="why-struggle__cta why-struggle__cta--ghost" href="#apply-for-help">Or apply for help</a>
-    </p>
-
-    <p class="why-struggle__sources">
-      <span class="why-struggle__sources-label">Sources:</span>
-      Kaiser Family Foundation (KFF); HHS Office of Inspector General; American Medical Association; Health Resources and Services Administration and CDC, National Survey of Children's Health; American Speech-Language-Hearing Association; American Occupational Therapy Association; American Physical Therapy Association; National Coalition for Assistive and Rehab Technology; Family Voices; National Organization for Rare Disorders.
-    </p>
-
-  </div>
-</section>
-
 
 <section id="donate-now" style="padding:24px 0 40px;scroll-margin-top:80px;position:relative;z-index:2"><div id="donate-picker" style="height:1px;scroll-margin-top:96px" aria-hidden="true"></div><div id="give-picker" style="height:1px;scroll-margin-top:96px" aria-hidden="true"></div><div class="wrap" style="max-width:960px">
     <div style="text-align:center;margin-bottom:36px">
@@ -2372,6 +2222,7 @@ nav#nav, nav.nav, header nav {
     <p style="text-align:center;color:var(--soft);margin-top:34px;font-size:.98rem">Prefer to go straight there? Give at <a href="https://givebutter.com/teaganscrown" style="color:var(--gold);font-weight:700;text-decoration:none">givebutter.com/teaganscrown</a></p>
   </div>
 </section>
+
 <style>
 .dn-amt:hover{background:rgba(231,178,76,.1)!important;border-color:var(--gold)!important;transform:translateY(-2px)}
 .dn-amt.is-selected{background:linear-gradient(160deg,rgba(231,178,76,.28),rgba(231,178,76,.08))!important;border-color:var(--gold)!important;box-shadow:0 0 0 2px rgba(231,178,76,.4)}
@@ -2384,6 +2235,7 @@ nav#nav, nav.nav, header nav {
 
 
 <!-- Paste immediately AFTER the donation picker block and BEFORE the page footer. -->
+
 <section class="tc-chamber-section" aria-labelledby="tc-chamber-title">
   <div class="tc-chamber-inner">
 
@@ -2507,6 +2359,152 @@ nav#nav, nav.nav, header nav {
 
   </div>
 </section>
+
+<aside id="apply-for-help" class="tc-flipside" aria-labelledby="tc-flipside-title">
+  <a class="tc-flipside__link" href="/apply.html" aria-describedby="tc-flipside-sub">
+    <span class="tc-flipside__mark" aria-hidden="true">
+      <svg viewBox="0 0 44 44" width="44" height="44" role="img" focusable="false">
+        <defs>
+          <radialGradient id="tcFsGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#E8735C" stop-opacity="0.55"/>
+            <stop offset="100%" stop-color="#E8735C" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="22" cy="22" r="21" fill="url(#tcFsGlow)"/>
+        <!-- small crown resting in an open palm -->
+        <path d="M13 27 C13 24, 15 22, 18 22 L26 22 C29 22, 31 24, 31 27 L31 30 C31 31.5, 29.8 32.7, 28.3 32.7 L15.7 32.7 C14.2 32.7, 13 31.5, 13 30 Z"
+              fill="none" stroke="#E8735C" stroke-width="1.4" stroke-linejoin="round"/>
+        <path d="M15.5 19.5 L18.5 15 L22 19 L25.5 15 L28.5 19.5 L27.5 21.5 L16.5 21.5 Z"
+              fill="none" stroke="#E7B24C" stroke-width="1.4" stroke-linejoin="round"/>
+        <circle cx="18.5" cy="14.2" r="0.9" fill="#E7B24C"/>
+        <circle cx="22" cy="13.5" r="0.9" fill="#E7B24C"/>
+        <circle cx="25.5" cy="14.2" r="0.9" fill="#E7B24C"/>
+      </svg>
+    </span>
+
+    <span class="tc-flipside__body">
+      <span class="tc-flipside__eyebrow">For families</span>
+      <span id="tc-flipside-title" class="tc-flipside__title">
+        Raising a child with special needs and stretched thin?
+      </span>
+      <span id="tc-flipside-sub" class="tc-flipside__sub">
+        This page is the giving side. If your family needs help, walk through the other door.
+      </span>
+    </span>
+
+    <span class="tc-flipside__cta" role="presentation">
+      <span class="tc-flipside__cta-label">Apply for support</span>
+      <svg class="tc-flipside__arrow" viewBox="0 0 24 12" width="26" height="13" aria-hidden="true" focusable="false">
+        <path d="M1 6 H21 M16 1 L22 6 L16 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+  </a>
+</aside>
+
+<section class="why-struggle" id="why-families-struggle" aria-labelledby="why-struggle-title">
+  <div class="why-struggle__inner">
+
+    <p class="why-struggle__eyebrow">Why this exists</p>
+
+    <h2 class="why-struggle__title" id="why-struggle-title">
+      Insurance is <em>not</em> a safety net for a medically complex child.
+    </h2>
+
+    <p class="why-struggle__lede">
+      It is a maze with a countdown, and the family is the one running it. Below is what actually happens between a doctor's order and a child getting the care, therapy, or equipment they need. This is why families like ours built Teagan's Crown.
+    </p>
+
+    <div class="why-struggle__list">
+
+      <details class="struggle">
+        <summary class="struggle__summary">
+          <span class="struggle__hd">The first answer is <em>very often</em> no.</span>
+          <span class="struggle__icon" aria-hidden="true"></span>
+        </summary>
+        <div class="struggle__body">
+          <p>Insurers on the federal marketplace deny roughly 1 in 5 in-network claims on average, and fewer than 1 percent are ever appealed (KFF analyses of HealthCare.gov transparency data). When families do formally appeal, a large share of denials get overturned. The first "no" is often wrong. Most denials stand because a parent who is already running an IEP, a therapy schedule, and a medication plan cannot add a second unpaid job.</p>
+        </div>
+      </details>
+
+      <details class="struggle">
+        <summary class="struggle__summary">
+          <span class="struggle__hd">Prior authorization is the delay. Denial is the strategy.</span>
+          <span class="struggle__icon" aria-hidden="true"></span>
+        </summary>
+        <div class="struggle__body">
+          <p>A federal watchdog (HHS Office of Inspector General, 2022) found that Medicare Advantage plans denied prior-authorization requests for care that met the plan's own coverage rules. The denial was the problem, not the care. The same playbook shows up in commercial and Medicaid managed-care plans. In the American Medical Association's annual Prior Authorization Physician Survey, roughly one in four physicians report that prior-authorization delays have led to a serious adverse event for a patient in their care, including hospitalization.</p>
+        </div>
+      </details>
+
+      <details class="struggle">
+        <summary class="struggle__summary">
+          <span class="struggle__hd">"Covered" does not mean "affordable."</span>
+          <span class="struggle__icon" aria-hidden="true"></span>
+        </summary>
+        <div class="struggle__body">
+          <p>The average family health insurance premium in employer coverage now runs past $25,000 a year, with workers paying more than $6,000 of that before the deductible even starts (KFF Employer Health Benefits Survey, 2024). Family deductibles in high-deductible plans routinely run several thousand dollars, and reset every January 1. For a family already paying for therapies, formula, diapers past infancy, and equipment, the fight starts over the first week of the year.</p>
+        </div>
+      </details>
+
+      <details class="struggle">
+        <summary class="struggle__summary">
+          <span class="struggle__hd">The Medicaid waiting list is measured in years, not months.</span>
+          <span class="struggle__icon" aria-hidden="true"></span>
+        </summary>
+        <div class="struggle__body">
+          <p>Home and Community-Based Services (HCBS) waivers are the main Medicaid pathway to in-home nursing, therapy, respite, and equipment for a disabled child. Hundreds of thousands of people sit on state HCBS waitlists nationally, with average waits commonly reported in years and some states well past seven (KFF Medicaid HCBS tracking). A child can outgrow a developmental window, or childhood itself, waiting for a slot to open.</p>
+        </div>
+      </details>
+
+      <details class="struggle">
+        <summary class="struggle__summary">
+          <span class="struggle__hd">Therapy has a cap. A child's growth does not.</span>
+          <span class="struggle__icon" aria-hidden="true"></span>
+        </summary>
+        <div class="struggle__body">
+          <p>Most private plans cap outpatient PT, OT, and speech therapy at a limited number of visits per year, and often deny pediatric therapy as "developmental, not restorative" because the child is learning a skill for the first time rather than recovering one. Private-pay pediatric therapy commonly runs $100 to $250 per session (ASHA, AOTA, and APTA workforce and access reporting). A child in intensive early therapy can burn through a year's cap in a single quarter, and the developmental window does not pause while families appeal.</p>
+        </div>
+      </details>
+
+      <details class="struggle">
+        <summary class="struggle__summary">
+          <span class="struggle__hd">The equipment a child needs is often called "not medically necessary."</span>
+          <span class="struggle__icon" aria-hidden="true"></span>
+        </summary>
+        <div class="struggle__body">
+          <p>Adaptive strollers, safety beds, gait trainers, standers, communication devices, custom bracing: routinely prescribed by a pediatric specialist, routinely denied by a reviewer who has never met the child, routinely approved months later on appeal (documented across NCART, Family Voices, and NORD reporting). Insurance replacement cycles are built around adult equipment, so families are often told the chair, brace, or device their child has physically outgrown is "not yet due." The child grows anyway.</p>
+        </div>
+      </details>
+
+      <details class="struggle">
+        <summary class="struggle__summary">
+          <span class="struggle__hd">One parent <em>often</em> leaves work. That is not a lifestyle choice.</span>
+          <span class="struggle__icon" aria-hidden="true"></span>
+        </summary>
+        <div class="struggle__body">
+          <p>National Survey of Children's Health data consistently finds that a large share of families raising a child with special healthcare needs report the child's condition has caused financial problems for the family, and a similar share had a parent cut work hours or leave a job to provide care (HRSA / CDC, NSCH). That lost income lands on top of every out-of-pocket cost insurance already pushed onto the family, and can knock the child off Medicaid eligibility the moment the remaining parent gets a raise.</p>
+        </div>
+      </details>
+
+    </div>
+
+    <p class="why-struggle__bridge">
+      This is the gap Teagan's Crown was built to close. Not paperwork. Not a promise to fight the insurer for you. A direct check written into the exact place insurance stopped, so a child does not have to wait for a system to say yes.
+    </p>
+
+    <p class="why-struggle__cta-row">
+      <a class="why-struggle__cta" href="#donate-now">Choose an amount to give</a>
+      <a class="why-struggle__cta why-struggle__cta--ghost" href="#apply-for-help">Or apply for help</a>
+    </p>
+
+    <p class="why-struggle__sources">
+      <span class="why-struggle__sources-label">Sources:</span>
+      Kaiser Family Foundation (KFF); HHS Office of Inspector General; American Medical Association; Health Resources and Services Administration and CDC, National Survey of Children's Health; American Speech-Language-Hearing Association; American Occupational Therapy Association; American Physical Therapy Association; National Coalition for Assistive and Rehab Technology; Family Voices; National Organization for Rare Disorders.
+    </p>
+
+  </div>
+</section>
+
 </main>
 
 <footer class="foot"><div class="amb amb-dark"></div>
