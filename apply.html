@@ -513,6 +513,18 @@ header .btn-gold::before, header a.don::before, .nav .btn-gold::before, nav .btn
 @media (prefers-reduced-motion: reduce) {
   header .btn-gold::before, header a.don::before, .nav .btn-gold::before, nav .btn-gold::before { animation: none; opacity: .55; }
 }
+</style><style id="tc-dropcap-fix">
+/* Never apply drop-cap to hero card mini-quote (it steals the "1" from "12 years") */
+.hero-card .q::first-letter, .hero-card q::first-letter {
+  float: none !important;
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  font-style: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  padding: 0 !important;
+  color: inherit !important;
+}
 </style></head>
 <body>
   <div class="ap-sparkle" aria-hidden="true"></div>
