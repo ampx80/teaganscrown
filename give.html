@@ -2094,6 +2094,27 @@ body.give ::selection {
 <style id="tc-scroll-fix">#donate-now{scroll-margin-top:96px}#apply-for-help{scroll-margin-top:96px}#why-families-struggle{scroll-margin-top:96px}</style><style id="tc-anchor-fix-v2">
 #donate-now, #donate-picker, #give-picker, #apply-for-help, #why-families-struggle { scroll-margin-top: 96px; }
 html { scroll-behavior: smooth; }
+</style><style id="tc-nav-and-padding-fix">
+/* Nav must be opaque so text under it does not bleed through */
+nav#nav, nav.nav, header nav {
+  background: rgba(20, 16, 25, 0.92) !important;
+  backdrop-filter: blur(10px) saturate(1.2);
+  -webkit-backdrop-filter: blur(10px) saturate(1.2);
+  border-bottom: 1px solid rgba(231, 178, 76, 0.14);
+}
+/* Trim empty vertical space in why-families-struggle section */
+#why-families-struggle.why-struggle {
+  padding-top: 48px !important;
+  padding-bottom: 48px !important;
+}
+/* Sources footer paragraph is oddly padded on the left - normalize */
+.why-struggle__sources {
+  padding: 16px 0 0 !important;
+  color: rgba(246, 240, 230, 0.55) !important;
+  font-size: 0.85rem !important;
+  line-height: 1.55 !important;
+  max-width: 60ch;
+}
 </style></head>
 <body class="give">
 <nav class="nav" id="nav">
