@@ -2071,6 +2071,32 @@ body.give ::selection {
   .give-hero-cta .tc-sparks { display: none; }
 }
 </style>
+
+<style id="tc-give-hero-trim">
+/* Hero should be around one viewport, not 3+. Trim vertical padding. */
+.give-hero {
+  padding: clamp(2rem, 5vw, 4.5rem) clamp(1.5rem, 5vw, 4rem) clamp(2rem, 4vw, 3rem) !important;
+}
+.give-headline {
+  margin: 0 0 clamp(1rem, 2vw, 1.5rem) !important;
+  line-height: 1.02 !important;
+}
+.give-sub {
+  margin: 0 auto clamp(1.5rem, 3vw, 2.25rem) !important;
+}
+.give-eyebrow {
+  margin: 0 0 clamp(0.75rem, 1.5vw, 1.25rem) !important;
+}
+/* Picker: shrink top padding since anchor lands here */
+#donate-now { padding-top: 24px !important; scroll-margin-top: 80px !important; }
+/* Extra anchor aliases inside the section - make them invisible with zero height */
+#donate-picker, #give-picker {
+  scroll-margin-top: 80px;
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+</style>
 </head>
 <body class="give">
 <nav class="nav" id="nav">
@@ -2278,9 +2304,7 @@ body.give ::selection {
 </section>
 
 
-<span id="donate-picker" style="display:block;position:relative;top:-40px;visibility:hidden"></span>
-<span id="give-picker" style="display:block;position:relative;top:-40px;visibility:hidden"></span>
-<section id="donate-now" style="padding:64px 0 40px;position:relative;z-index:2">
+<section id="donate-now" style="padding:24px 0 40px;scroll-margin-top:80px;position:relative;z-index:2"><span id="donate-picker" style="scroll-margin-top:80px;display:block;height:0;overflow:hidden"></span><span id="give-picker" style="scroll-margin-top:80px;display:block;height:0;overflow:hidden"></span>
   <div class="wrap" style="max-width:960px">
     <div style="text-align:center;margin-bottom:36px">
       <div class="eyebrow rv" style="justify-content:center;display:inline-flex">Give now</div>
