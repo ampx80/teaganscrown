@@ -1986,6 +1986,91 @@ body.give ::selection {
   .tc-chamber-motes{ display:none; }
 }
 </style>
+
+<style id="tc-give-sparkle">
+/* Sparkle for the primary Give now button in the give hero */
+.give-hero-cta .btn-primary {
+  position: relative;
+  overflow: visible;
+  isolation: isolate;
+}
+/* Traveling gold shimmer across the button */
+.give-hero-cta .btn-primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    transparent 35%,
+    rgba(255,255,255,0.55) 50%,
+    transparent 65%,
+    transparent 100%
+  );
+  background-size: 250% 100%;
+  background-position: -100% 0;
+  animation: tcGiveShimmer 3.6s ease-in-out infinite;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 1;
+}
+@keyframes tcGiveShimmer {
+  0%   { background-position: 150% 0; }
+  40%  { background-position: -60% 0; }
+  100% { background-position: -60% 0; }
+}
+/* Soft outer glow that breathes */
+.give-hero-cta .btn-primary::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 999px;
+  background: radial-gradient(closest-side, rgba(255,214,120,0.55), rgba(231,178,76,0) 70%);
+  filter: blur(6px);
+  z-index: -1;
+  animation: tcGiveGlow 2.4s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes tcGiveGlow {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50%      { opacity: 1;    transform: scale(1.08); }
+}
+/* Little sparkle stars orbiting the button (SVG-free, pure CSS dots) */
+.give-hero-cta { position: relative; }
+.give-hero-cta .tc-sparks {
+  position: absolute;
+  inset: -14px;
+  pointer-events: none;
+  z-index: 3;
+}
+.give-hero-cta .tc-sparks i {
+  position: absolute;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: #FFE9A8;
+  box-shadow: 0 0 6px 1px rgba(255,214,120,0.9);
+  opacity: 0;
+  animation: tcSparkPulse 3.2s ease-in-out infinite;
+}
+.give-hero-cta .tc-sparks i:nth-child(1){ top:10%;  left:8%;  animation-delay:0s;   }
+.give-hero-cta .tc-sparks i:nth-child(2){ top:70%;  left:14%; animation-delay:0.6s; }
+.give-hero-cta .tc-sparks i:nth-child(3){ top:20%;  left:88%; animation-delay:1.2s; }
+.give-hero-cta .tc-sparks i:nth-child(4){ top:80%;  left:82%; animation-delay:1.8s; }
+.give-hero-cta .tc-sparks i:nth-child(5){ top:5%;   left:52%; animation-delay:2.4s; }
+@keyframes tcSparkPulse {
+  0%,80%,100% { opacity: 0; transform: scale(0.5); }
+  10%         { opacity: 1; transform: scale(1);   }
+  30%         { opacity: 0; transform: scale(1.4); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .give-hero-cta .btn-primary::before,
+  .give-hero-cta .btn-primary::after,
+  .give-hero-cta .tc-sparks i { animation: none !important; }
+  .give-hero-cta .btn-primary::before { display: none; }
+  .give-hero-cta .tc-sparks { display: none; }
+}
+</style>
 </head>
 <body class="give">
 <nav class="nav" id="nav">
@@ -2021,10 +2106,10 @@ body.give ::selection {
     Your gift buys the walkers, the words, the wheels, and the quiet daily wins that let a child with special needs grow into the kid they were always meant to be.
   </p>
 
-  <div class="give-hero-cta">
+  <div class="give-hero-cta"><span class="tc-sparks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
     <a href="#donate-picker" class="btn-primary">Give now</a>
     <a href="/apply.html" class="btn-ghost">
-      <span>Family needs help</span>
+      <span>Apply for family support</span>
       <span class="btn-ghost-arrow" aria-hidden="true">&#x203A;</span>
     </a>
   </div>
