@@ -2154,6 +2154,28 @@ nav#nav, nav.nav, header nav {
   opacity: 1 !important;
   transform: none !important;
 }
+</style><style id="tc-gold2-and-selection-fix">
+/* 1) Define the missing lighter gold so all gold gradients actually paint */
+:root, body, body.give { --gold2: #F4CE7B; }
+
+/* 2) Belt+suspenders: force the two affected controls to a solid readable gold
+   even if a gradient is disabled, so text is never dark-on-dark again */
+.dn-freq-btn.is-on {
+  background: linear-gradient(100deg, #F4CE7B, #E7B24C) !important;
+  color: #251908 !important;
+}
+.btn-gold.dn-go, a.dn-go, button.dn-go {
+  background: linear-gradient(100deg, #F4CE7B, #E7B24C) !important;
+  color: #251908 !important;
+}
+
+/* 3) Only the ACTUALLY selected amount looks selected.
+   Neutralize the $1,000 permanent "suggested" highlight unless it is selected. */
+.dn-amt.is-hero:not(.is-selected) {
+  border: 1px solid rgba(246, 240, 230, 0.14) !important;
+  background: rgba(246, 240, 230, 0.03) !important;
+  box-shadow: none !important;
+}
 </style></head>
 <body class="give">
 <nav class="nav" id="nav">
