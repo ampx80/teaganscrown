@@ -96,9 +96,12 @@ main,section,header,footer,.wrap,.hero{position:relative;z-index:1;}
           <input type="number" min="1" step="1" placeholder="Other amount" class="dn-other" style="width:100%;padding:16px 16px 16px 40px;border:1px solid var(--line-d);border-radius:14px;background:rgba(246,240,230,.03);color:var(--ivory);font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:1.15rem;outline:none"/>
         </label>
         <a href="https://givebutter.com/teaganscrown" class="btn btn-gold dn-go" style="display:flex;width:100%;justify-content:center;align-items:center;gap:.5em;font-size:1.15rem;padding:1.1em 1.6em;border-radius:100px;background:linear-gradient(100deg,var(--gold2),var(--gold));color:#25190A;font-weight:800;text-decoration:none;box-shadow:0 14px 40px -14px rgba(231,178,76,.6);transition:transform .25s ease">
-          <span class="dn-go-text">Continue &middot; $100 one-time</span>
+          <span class="dn-go-text">Continue on Givebutter &middot; $100 one-time</span>
         </a>
-        <p style="text-align:center;color:var(--faint);font-size:.85rem;margin-top:14px">Secure checkout on Givebutter. Card, ACH, Apple Pay, Google Pay.</p>
+        <div style="margin-top:14px;padding:14px 16px;background:rgba(246,240,230,.05);border:1px solid var(--line-d);border-radius:12px;text-align:center">
+<div style="font-size:.92rem;color:var(--ivory);margin-bottom:4px"><span style="color:var(--gold)">&#128274;</span> We use <b>Givebutter</b> for secure checkout &middot; givebutter.com/teaganscrown</div>
+<div style="font-size:.82rem;color:var(--faint);line-height:1.45">Card, ACH, Apple Pay, Google Pay, PayPal or Venmo.<br><b style="color:var(--ivory)">Paying with Venmo?</b> Venmo will send you back to Givebutter in your browser to finish. That is the right place.</div>
+</div>
       </div>
       <aside class="dn-impact" style="background:linear-gradient(160deg,rgba(246,240,230,.06),rgba(246,240,230,.015));border:1px solid var(--line-d);border-radius:20px;padding:28px">
         <div style="font-family:'Fraunces',Georgia,serif;font-style:italic;color:var(--gold);font-size:1.1rem;margin-bottom:.6em">What your gift does</div>
@@ -114,7 +117,7 @@ main,section,header,footer,.wrap,.hero{position:relative;z-index:1;}
         <p style="color:var(--faint);font-size:.8rem;margin-top:16px;line-height:1.45">Illustrative examples of the kind of support gifts fund. Tax-deductibility is pending 501(c)(3).</p>
       </aside>
     </div>
-    <p style="text-align:center;color:var(--soft);margin-top:34px;font-size:.98rem">Or give at <a href="https://givebutter.com/teaganscrown" style="color:var(--gold);font-weight:700;text-decoration:none">givebutter.com/teaganscrown</a></p>
+    <p style="text-align:center;color:var(--soft);margin-top:34px;font-size:.98rem">Prefer to go straight there? Give at <a href="https://givebutter.com/teaganscrown" style="color:var(--gold);font-weight:700;text-decoration:none">givebutter.com/teaganscrown</a></p>
   </div>
 </section>
 <style>
@@ -157,7 +160,7 @@ main,section,header,footer,.wrap,.hero{position:relative;z-index:1;}
   var impAmt=document.querySelector('.dn-impact-amt');
   var impCopy=document.querySelector('.dn-impact-copy');
   function fmt(n){return '$'+Number(n).toLocaleString();}
-  function label(){var f=state.freq==='monthly'?'monthly':'one-time';return 'Continue \u00b7 '+fmt(state.amt)+' '+f;}
+  function label(){var f=state.freq==='monthly'?'monthly':'one-time';return 'Continue on Givebutter \u00b7 '+fmt(state.amt)+' '+f;}
   function updateLink(){
     var u=CAMP+'?amount='+state.amt;
     if(state.freq==='monthly') u+='&frequency=monthly';
