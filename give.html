@@ -109,7 +109,2102 @@ header .btn-gold::before, header a.don::before, .nav .btn-gold::before, nav .btn
   padding: 0 !important;
   color: inherit !important;
 }
-</style></head><body><header class="site"><div class="wrap hin"><a class="brand" href="/"><svg class="lmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#E7B24C" fill-rule="evenodd" d="M256 82C244 118 226 145 202 170C182 190 168 211 166 235C146 223 127 206 110 185L82 150L105 291C153 274 203 265 256 265C309 265 359 274 407 291L430 150L402 185C385 206 366 223 346 235C344 211 330 190 310 170C286 145 268 118 256 82ZM256 160C271 138 291 136 305 147C323 161 320 186 304 204L256 254L208 204C192 186 189 161 207 147C221 136 241 138 256 160Z"/><path fill="#141019" d="M111 292C156 278 205 271 256 271C307 271 356 278 401 292L396 318C352 306 305 300 256 300C207 300 160 306 116 318Z"/><path fill="#141019" d="M115 345C160 333 207 327 256 327C305 327 352 333 397 345L390 396C346 386 301 381 256 381C211 381 166 386 122 396Z"/><path fill="#E7B24C" d="M74 116C74 101 86 89 101 89C116 89 128 101 128 116C128 131 116 143 101 143C86 143 74 131 74 116Z"/><path fill="#E7B24C" d="M229 57C229 42 241 30 256 30C271 30 283 42 283 57C283 72 271 84 256 84C241 84 229 72 229 57Z"/><path fill="#E7B24C" d="M384 116C384 101 396 89 411 89C426 89 438 101 438 116C438 131 426 143 411 143C396 143 384 131 384 116Z"/></svg> Teagan's Crown</a><nav class="nav"><a class="n" href="/#story">Teagan</a><a class="n" href="/give.html">Ways to give</a><a class="n" href="/partner.html">Partner</a><a class="btn btn-gold" href="/give.html">Donate</a></nav></div></header><section class="hero"><div class="wrap"><span class="eyebrow rv">Ways to give</span><h1 class="disp rv">Every path leads to a <span class="it" style="color:var(--gold)">child.</span></h1><p class="lead rv">Give once, give monthly, or give through the vehicle your advisor recommends. However you give, it turns into equipment, therapy, and hope for a family that never gets a day off.</p></div></section>
+</style>
+<style id="tc-give-typography">
+/* =========================================================
+   Teagan's Crown - /give.html TYPE SCALE OVERRIDE
+   Paste inside <style> at end of <head>, AFTER the global
+   stylesheet link. Scoped to body.give so nothing leaks.
+   ========================================================= */
+
+body.give {
+  /* Fluid type tokens - min / preferred / max */
+  --tc-fs-hero:       clamp(2.75rem, 6.4vw + 0.5rem, 6.75rem);   /* 44 -> 108 */
+  --tc-fs-eyebrow:    clamp(0.78rem, 0.35vw + 0.7rem,  0.95rem); /* 12.5 -> 15 */
+  --tc-fs-lede:       clamp(1.25rem, 0.9vw + 1rem,     1.75rem); /* 20 -> 28 */
+  --tc-fs-section:    clamp(2rem,    3.2vw + 1rem,     3.5rem);  /* 32 -> 56 */
+  --tc-fs-subsection: clamp(1.4rem,  1vw + 1rem,       2rem);    /* 22 -> 32 */
+  --tc-fs-body:       clamp(1.0625rem, 0.25vw + 1rem,  1.1875rem); /* 17 -> 19 */
+  --tc-fs-body-lg:    clamp(1.1875rem, 0.4vw + 1rem,   1.375rem);  /* 19 -> 22 */
+  --tc-fs-amount:     clamp(1.5rem,  1.2vw + 1rem,     2.125rem); /* 24 -> 34 */
+  --tc-fs-amount-sub: clamp(0.85rem, 0.25vw + 0.75rem, 1rem);
+  --tc-fs-btn:        clamp(1rem,    0.3vw + 0.9rem,   1.125rem);
+  --tc-fs-cta:        clamp(1.125rem, 0.4vw + 1rem,    1.3125rem);
+  --tc-fs-micro:      clamp(0.8125rem, 0.15vw + 0.75rem, 0.9375rem);
+
+  /* Rhythm */
+  --tc-lh-tight:  1.02;
+  --tc-lh-snug:   1.15;
+  --tc-lh-body:   1.55;
+  --tc-lh-reading:1.6;
+
+  --tc-track-eyebrow: 0.22em;
+  --tc-track-display: -0.015em;
+  --tc-track-body:    0.005em;
+
+  /* Colors already in the global palette; re-declared for clarity */
+  --tc-ink:      #F5EFE4;
+  --tc-ink-soft: rgba(245, 239, 228, 0.78);
+  --tc-ink-mute: rgba(245, 239, 228, 0.58);
+  --tc-gold:     #E7B24C;
+  --tc-rose:     #E8735C;
+
+  font-size: var(--tc-fs-body);
+  line-height: var(--tc-lh-body);
+  letter-spacing: var(--tc-track-body);
+}
+
+/* ---------- HERO ---------- */
+body.give .give-hero__eyebrow,
+body.give [data-give="eyebrow"] {
+  font-family: 'Hanken Grotesk', system-ui, sans-serif;
+  font-size: var(--tc-fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: var(--tc-track-eyebrow);
+  text-transform: uppercase;
+  color: var(--tc-gold);
+  margin: 0 0 clamp(1rem, 1.4vw, 1.75rem);
+}
+
+body.give .give-hero h1,
+body.give [data-give="hero"] {
+  font-family: 'Fraunces', 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: var(--tc-fs-hero);
+  line-height: var(--tc-lh-tight);
+  letter-spacing: var(--tc-track-display);
+  color: var(--tc-ink);
+  margin: 0 0 clamp(1.25rem, 2vw, 2rem);
+  text-wrap: balance;
+  max-width: 22ch;
+}
+
+/* Optional gold accent on a single word: wrap it in <em class="gild"> */
+body.give .give-hero h1 .gild,
+body.give [data-give="hero"] .gild {
+  color: var(--tc-gold);
+  font-style: italic;
+}
+
+body.give .give-hero__lede,
+body.give [data-give="lede"] {
+  font-family: 'Hanken Grotesk', system-ui, sans-serif;
+  font-size: var(--tc-fs-lede);
+  font-weight: 300;
+  line-height: var(--tc-lh-reading);
+  color: var(--tc-ink-soft);
+  max-width: 44ch;
+  margin: 0 0 clamp(2rem, 3vw, 3rem);
+  text-wrap: pretty;
+}
+
+/* ---------- APPLY-FOR-HELP RAIL (new entry point) ---------- */
+body.give .apply-rail,
+body.give [data-give="apply-rail"] {
+  font-family: 'Hanken Grotesk', system-ui, sans-serif;
+  font-size: var(--tc-fs-body-lg);
+  line-height: 1.4;
+  color: var(--tc-ink-soft);
+  padding: clamp(1.25rem, 1.6vw, 1.75rem) clamp(1.25rem, 2vw, 2rem);
+  border: 1px solid rgba(232, 115, 92, 0.35);
+  border-radius: 14px;
+  background: linear-gradient(180deg,
+    rgba(232, 115, 92, 0.06),
+    rgba(232, 115, 92, 0.02));
+}
+
+body.give .apply-rail__label,
+body.give [data-give="apply-label"] {
+  display: block;
+  font-size: var(--tc-fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: var(--tc-track-eyebrow);
+  text-transform: uppercase;
+  color: var(--tc-rose);
+  margin-bottom: 0.5rem;
+}
+
+body.give .apply-rail a {
+  color: var(--tc-ink);
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid var(--tc-rose);
+  padding-bottom: 2px;
+  transition: color .18s ease, border-color .18s ease;
+}
+body.give .apply-rail a:hover,
+body.give .apply-rail a:focus-visible {
+  color: var(--tc-rose);
+  border-color: var(--tc-ink);
+}
+
+/* ---------- SECTION HEADS ---------- */
+body.give h2,
+body.give .give-section__title {
+  font-family: 'Fraunces', 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: var(--tc-fs-section);
+  line-height: 1.05;
+  letter-spacing: var(--tc-track-display);
+  color: var(--tc-ink);
+  margin: 0 0 clamp(1rem, 1.5vw, 1.5rem);
+  text-wrap: balance;
+}
+
+body.give h3,
+body.give .give-section__subtitle {
+  font-family: 'Fraunces', 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--tc-fs-subsection);
+  line-height: 1.2;
+  color: var(--tc-ink);
+  margin: 0 0 0.75rem;
+}
+
+body.give .give-section__eyebrow {
+  font-family: 'Hanken Grotesk', system-ui, sans-serif;
+  font-size: var(--tc-fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: var(--tc-track-eyebrow);
+  text-transform: uppercase;
+  color: var(--tc-gold);
+  margin: 0 0 0.75rem;
+}
+
+body.give p,
+body.give li,
+body.give .give-copy {
+  font-family: 'Hanken Grotesk', system-ui, sans-serif;
+  font-size: var(--tc-fs-body-lg);
+  line-height: var(--tc-lh-reading);
+  color: var(--tc-ink-soft);
+  max-width: 62ch;
+}
+
+/* ---------- DONATION PICKER ---------- */
+body.give .picker,
+body.give [data-give="picker"] {
+  font-family: 'Hanken Grotesk', system-ui, sans-serif;
+}
+
+body.give .picker__toggle,
+body.give [data-give="toggle"] {
+  font-size: var(--tc-fs-btn);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+body.give .picker__toggle button {
+  font: inherit;
+  padding: 0.75rem 1.5rem;
+  min-height: 48px;
+}
+
+body.give .amount-btn,
+body.give [data-give="amount"] {
+  font-family: 'Fraunces', 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--tc-fs-amount);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--tc-ink);
+  min-height: 84px;
+  padding: 1rem;
+}
+body.give .amount-btn[aria-pressed="true"],
+body.give .amount-btn.is-active {
+  color: var(--tc-gold);
+}
+
+body.give .amount-btn__sub,
+body.give [data-give="amount-sub"] {
+  display: block;
+  font-family: 'Hanken Grotesk', system-ui, sans-serif;
+  font-style: normal;
+  font-size: var(--tc-fs-amount-sub);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--tc-ink-mute);
+  margin-top: 0.35rem;
+}
+
+body.give .amount-btn--other {
+  font-style: italic;
+  font-size: calc(var(--tc-fs-amount) * 0.72);
+}
+
+body.give .picker__continue,
+body.give [data-give="continue"] {
+  font-family: 'Hanken Grotesk', system-ui, sans-serif;
+  font-size: var(--tc-fs-cta);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  min-height: 60px;
+  padding: 1rem 1.75rem;
+}
+
+body.give .picker__fineprint,
+body.give [data-give="fineprint"] {
+  font-size: var(--tc-fs-micro);
+  line-height: 1.5;
+  color: var(--tc-ink-mute);
+  margin-top: 1rem;
+}
+
+/* ---------- WHAT-YOUR-GIFT-DOES SIDE CARD ---------- */
+body.give .gift-card,
+body.give [data-give="gift-card"] {
+  font-family: 'Hanken Grotesk', system-ui, sans-serif;
+}
+
+body.give .gift-card__title {
+  font-family: 'Fraunces', 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--tc-fs-subsection);
+  color: var(--tc-gold);
+  margin: 0 0 1rem;
+  line-height: 1.15;
+}
+
+body.give .gift-card__amount {
+  font-family: 'Fraunces', 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.75rem, 1.6vw + 1rem, 2.5rem);
+  color: var(--tc-ink);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+body.give .gift-card__impact {
+  font-size: var(--tc-fs-body-lg);
+  line-height: 1.5;
+  color: var(--tc-ink);
+  font-weight: 400;
+}
+
+/* ---------- SHOWPIECE: WHERE YOUR GIFT GOES ---------- */
+body.give .showpiece__eyebrow {
+  font-size: var(--tc-fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: var(--tc-track-eyebrow);
+  text-transform: uppercase;
+  color: var(--tc-gold);
+}
+
+body.give .showpiece__title {
+  font-family: 'Fraunces', 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: var(--tc-fs-section);
+  line-height: 1.05;
+  letter-spacing: var(--tc-track-display);
+  color: var(--tc-ink);
+  text-wrap: balance;
+  max-width: 18ch;
+  margin: 0.5rem 0 1.25rem;
+}
+
+body.give .showpiece__lede {
+  font-size: var(--tc-fs-lede);
+  line-height: 1.5;
+  color: var(--tc-ink-soft);
+  font-weight: 300;
+  max-width: 48ch;
+  margin: 0 0 clamp(2rem, 3vw, 3rem);
+}
+
+body.give .allocation__label {
+  font-family: 'Hanken Grotesk', system-ui, sans-serif;
+  font-size: var(--tc-fs-body-lg);
+  font-weight: 600;
+  letter-spacing: 0.005em;
+  color: var(--tc-ink);
+}
+
+body.give .allocation__pct {
+  font-family: 'Fraunces', 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(2rem, 2.4vw + 1rem, 3rem);
+  line-height: 1;
+  color: var(--tc-gold);
+  letter-spacing: -0.02em;
+}
+
+body.give .allocation__detail {
+  font-size: var(--tc-fs-body);
+  line-height: 1.55;
+  color: var(--tc-ink-soft);
+}
+
+body.give .allocation__example {
+  font-family: 'Fraunces', 'Times New Roman', serif;
+  font-style: italic;
+  font-size: var(--tc-fs-subsection);
+  line-height: 1.2;
+  color: var(--tc-ink);
+  text-wrap: balance;
+}
+
+/* ---------- FOCUS & SELECTION ---------- */
+body.give :focus-visible {
+  outline: 2px solid var(--tc-gold);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+body.give ::selection {
+  background: rgba(231, 178, 76, 0.35);
+  color: var(--tc-ink);
+}
+
+/* ---------- MOBILE GUARDRAILS ---------- */
+@media (max-width: 480px) {
+  body.give .give-hero h1,
+  body.give [data-give="hero"] {
+    max-width: 15ch;
+  }
+  body.give .amount-btn { min-height: 76px; }
+  body.give .picker__continue { min-height: 56px; }
+}
+
+/* ---------- REDUCED MOTION (type-side: kill transitions) ---------- */
+@media (prefers-reduced-motion: reduce) {
+  body.give .apply-rail a { transition: none; }
+}
+</style>
+<style id="tc-give-hero-css">
+/* =========================================================
+   GIVE.HTML HERO - drop-in styles.
+   Assumes brand tokens: plum #141019, gold #E7B24C, rose #E8735C,
+   Fraunces (display) + Hanken Grotesk (body) already loaded.
+   ========================================================= */
+
+.give-hero {
+  position: relative;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(4.5rem, 11vw, 9rem) clamp(1.5rem, 5vw, 4rem) clamp(3rem, 6vw, 5rem);
+  text-align: center;
+}
+
+.give-eyebrow {
+  font-family: "Hanken Grotesk", system-ui, -apple-system, sans-serif;
+  font-size: clamp(0.8rem, 0.95vw, 0.95rem);
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #E7B24C;
+  opacity: 0.78;
+  margin: 0 0 clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.give-headline {
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-weight: 300;
+  font-size: clamp(2.85rem, 7.6vw, 6.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.022em;
+  color: #F5EBD8;
+  margin: 0 0 clamp(1.75rem, 3vw, 2.5rem);
+  text-wrap: balance;
+}
+
+.give-headline em {
+  font-style: italic;
+  font-weight: 300;
+  color: #E7B24C; /* fallback */
+  background: linear-gradient(180deg, #F4CE86 0%, #E7B24C 50%, #C89238 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+          text-fill-color: transparent;
+  padding-bottom: 0.05em; /* prevents descender clipping on italic */
+}
+
+.give-sub {
+  font-family: "Hanken Grotesk", system-ui, -apple-system, sans-serif;
+  font-size: clamp(1.15rem, 1.55vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(245, 235, 216, 0.78);
+  max-width: 46ch;
+  margin: 0 auto clamp(2.25rem, 4vw, 3rem);
+  text-wrap: balance;
+}
+
+.give-hero-cta {
+  display: inline-flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.give-hero-cta .btn-primary,
+.give-hero-cta .btn-ghost {
+  font-family: "Hanken Grotesk", system-ui, -apple-system, sans-serif;
+  font-size: clamp(1rem, 1.15vw, 1.15rem);
+  font-weight: 500;
+  letter-spacing: 0.015em;
+  padding: 1.05rem 2.1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.22s ease, background 0.22s ease,
+              box-shadow 0.22s ease, border-color 0.22s ease, color 0.22s ease;
+  will-change: transform;
+}
+
+.give-hero-cta .btn-primary {
+  background: linear-gradient(180deg, #F4CE86 0%, #E7B24C 100%);
+  color: #1A1220;
+  box-shadow: 0 10px 28px -10px rgba(231, 178, 76, 0.55),
+              inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.give-hero-cta .btn-primary:hover,
+.give-hero-cta .btn-primary:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px -10px rgba(231, 178, 76, 0.75),
+              inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  outline: none;
+}
+
+.give-hero-cta .btn-ghost {
+  background: transparent;
+  color: #F5EBD8;
+  border: 1px solid rgba(245, 235, 216, 0.22);
+}
+
+.give-hero-cta .btn-ghost:hover,
+.give-hero-cta .btn-ghost:focus-visible {
+  background: rgba(232, 115, 92, 0.08);
+  border-color: rgba(232, 115, 92, 0.55);
+  color: #F1A599;
+  outline: none;
+}
+
+.give-hero-cta .btn-ghost-arrow {
+  font-size: 1.25em;
+  line-height: 1;
+  transform: translateY(-1px);
+  transition: transform 0.22s ease;
+}
+
+.give-hero-cta .btn-ghost:hover .btn-ghost-arrow {
+  transform: translate(3px, -1px);
+}
+
+/* Keyboard focus rings (visible on dark plum) */
+.give-hero-cta a:focus-visible {
+  box-shadow: 0 0 0 2px #141019, 0 0 0 4px #E7B24C;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .give-hero-cta .btn-primary,
+  .give-hero-cta .btn-ghost,
+  .give-hero-cta .btn-ghost-arrow {
+    transition: none;
+  }
+  .give-hero-cta .btn-primary:hover,
+  .give-hero-cta .btn-ghost:hover .btn-ghost-arrow {
+    transform: none;
+  }
+}
+
+</style>
+<style id="tc-give-apply-css">
+/* ========== Teagan's Crown - "flip side" apply entry ========== */
+/* Scoped to .tc-flipside so it will not collide with existing /give.html rules. */
+
+.tc-flipside{
+  --tc-plum: #141019;
+  --tc-plum-2: #1c1522;
+  --tc-gold: #E7B24C;
+  --tc-rose: #E8735C;
+  --tc-rose-soft: rgba(232, 115, 92, 0.16);
+  --tc-rose-line: rgba(232, 115, 92, 0.42);
+  --tc-ink: #F5EEE4;
+  --tc-ink-dim: rgba(245, 238, 228, 0.72);
+
+  max-width: 960px;
+  margin: 2.25rem auto 2.75rem;
+  padding: 0 1.25rem;
+}
+
+.tc-flipside__link{
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.25rem 1.5rem;
+  padding: 1.35rem 1.6rem 1.35rem 1.4rem;
+  border-radius: 18px;
+  text-decoration: none;
+  color: var(--tc-ink);
+  background:
+    radial-gradient(120% 180% at 0% 50%, var(--tc-rose-soft) 0%, rgba(232,115,92,0) 55%),
+    linear-gradient(180deg, var(--tc-plum-2) 0%, var(--tc-plum) 100%);
+  /* Double-hairline rose frame - visually distinct from the picker's gold panels */
+  box-shadow:
+    inset 0 0 0 1px var(--tc-rose-line),
+    inset 0 0 0 4px var(--tc-plum),
+    inset 0 0 0 5px rgba(232, 115, 92, 0.22),
+    0 22px 60px -30px rgba(232, 115, 92, 0.35);
+  transition: transform 220ms ease, box-shadow 220ms ease, background-position 600ms ease;
+  background-size: 200% 100%;
+  background-position: 0% 0%;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+/* Ambient rose wash - a slow drifting glow, disabled for reduced-motion. */
+.tc-flipside__link::before{
+  content: "";
+  position: absolute;
+  inset: -40%;
+  z-index: -1;
+  background:
+    radial-gradient(closest-side, rgba(232,115,92,0.18), rgba(232,115,92,0) 70%);
+  transform: translate3d(-20%, 0, 0);
+  animation: tcFsDrift 14s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes tcFsDrift{
+  0%   { transform: translate3d(-22%, -4%, 0); opacity: 0.75; }
+  100% { transform: translate3d(22%,   4%, 0); opacity: 1;    }
+}
+
+.tc-flipside__mark{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 45%, rgba(232,115,92,0.22), rgba(232,115,92,0) 70%);
+  flex: 0 0 auto;
+}
+
+.tc-flipside__body{
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.tc-flipside__eyebrow{
+  font-family: 'Hanken Grotesk', system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--tc-rose);
+}
+
+.tc-flipside__title{
+  font-family: 'Fraunces', 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.35rem, 2.4vw, 1.7rem);
+  line-height: 1.18;
+  color: var(--tc-ink);
+  letter-spacing: -0.005em;
+}
+
+.tc-flipside__sub{
+  font-family: 'Hanken Grotesk', system-ui, sans-serif;
+  font-size: clamp(0.95rem, 1.4vw, 1.02rem);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--tc-ink-dim);
+  max-width: 52ch;
+}
+
+.tc-flipside__cta{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1.15rem;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--tc-rose);
+  border: 1px solid var(--tc-rose-line);
+  font-family: 'Hanken Grotesk', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 0.98rem;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  transition: background 200ms ease, color 200ms ease, border-color 200ms ease, transform 200ms ease;
+  flex: 0 0 auto;
+}
+
+.tc-flipside__arrow{
+  transition: transform 220ms ease;
+}
+
+/* Hover / focus on the whole band */
+.tc-flipside__link:hover,
+.tc-flipside__link:focus-visible{
+  transform: translateY(-1px);
+  background-position: 25% 0%;
+  box-shadow:
+    inset 0 0 0 1px var(--tc-rose),
+    inset 0 0 0 4px var(--tc-plum),
+    inset 0 0 0 5px rgba(232, 115, 92, 0.32),
+    0 30px 70px -28px rgba(232, 115, 92, 0.55);
+  outline: none;
+}
+
+.tc-flipside__link:focus-visible{
+  box-shadow:
+    inset 0 0 0 1px var(--tc-rose),
+    inset 0 0 0 4px var(--tc-plum),
+    inset 0 0 0 5px rgba(232, 115, 92, 0.32),
+    0 0 0 3px rgba(232, 115, 92, 0.55),
+    0 30px 70px -28px rgba(232, 115, 92, 0.55);
+}
+
+.tc-flipside__link:hover .tc-flipside__cta,
+.tc-flipside__link:focus-visible .tc-flipside__cta{
+  background: var(--tc-rose);
+  color: #1a0f0c;
+  border-color: var(--tc-rose);
+}
+
+.tc-flipside__link:hover .tc-flipside__arrow,
+.tc-flipside__link:focus-visible .tc-flipside__arrow{
+  transform: translateX(4px);
+}
+
+.tc-flipside__link:active{
+  transform: translateY(0);
+}
+
+/* Mobile - stack cleanly */
+@media (max-width: 640px){
+  .tc-flipside__link{
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "mark body"
+      "cta  cta";
+    row-gap: 1.1rem;
+    padding: 1.25rem 1.25rem 1.35rem;
+  }
+  .tc-flipside__mark{ grid-area: mark; width: 48px; height: 48px; }
+  .tc-flipside__body{ grid-area: body; }
+  .tc-flipside__cta{
+    grid-area: cta;
+    justify-content: center;
+    width: 100%;
+    padding: 0.95rem 1.1rem;
+  }
+}
+
+/* Motion preferences */
+@media (prefers-reduced-motion: reduce){
+  .tc-flipside__link,
+  .tc-flipside__link::before,
+  .tc-flipside__cta,
+  .tc-flipside__arrow{
+    animation: none !important;
+    transition: none !important;
+  }
+  .tc-flipside__link:hover{ transform: none; }
+  .tc-flipside__link:hover .tc-flipside__arrow{ transform: none; }
+}
+
+/* High-contrast fallback */
+@media (forced-colors: active){
+  .tc-flipside__link{
+    box-shadow: none;
+    outline: 2px solid CanvasText;
+  }
+  .tc-flipside__cta{ border-color: CanvasText; color: CanvasText; }
+}
+</style>
+<style id="tc-give-why-css">
+/* ============================================================
+   Why families struggle - /give.html
+   Dark plum + royal gold. Native details/summary. No JS.
+   ============================================================ */
+
+.why-struggle {
+  position: relative;
+  padding: clamp(4.5rem, 9vw, 8rem) clamp(1.25rem, 4vw, 3rem);
+  background:
+    radial-gradient(120% 80% at 50% 0%, rgba(231, 178, 76, 0.06) 0%, rgba(231, 178, 76, 0) 60%),
+    #141019;
+  color: #f3ecdd;
+  overflow: hidden;
+}
+
+.why-struggle::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    rgba(231, 178, 76, 0) 0%,
+    rgba(231, 178, 76, 0.35) 50%,
+    rgba(231, 178, 76, 0) 100%);
+  pointer-events: none;
+}
+
+.why-struggle__inner {
+  max-width: 62rem;
+  margin: 0 auto;
+}
+
+.why-struggle__eyebrow {
+  margin: 0 0 1.25rem 0;
+  font-family: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #E7B24C;
+}
+
+.why-struggle__title {
+  margin: 0 0 1.5rem 0;
+  font-family: "Fraunces", "Iowan Old Style", Georgia, serif;
+  font-weight: 300;
+  font-size: clamp(2.25rem, 5.4vw, 4.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: #f6ecd5;
+  text-wrap: balance;
+}
+
+.why-struggle__title em {
+  font-style: italic;
+  color: #E7B24C;
+  font-weight: 400;
+}
+
+.why-struggle__lede {
+  max-width: 42rem;
+  margin: 0 0 3rem 0;
+  font-family: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  line-height: 1.6;
+  color: rgba(243, 236, 221, 0.82);
+}
+
+/* ---------- List of expandable items ---------- */
+
+.why-struggle__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin: 0 0 3rem 0;
+}
+
+.struggle {
+  position: relative;
+  border: 1px solid rgba(231, 178, 76, 0.18);
+  border-radius: 14px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.015) 0%, rgba(255, 255, 255, 0) 100%),
+    rgba(20, 16, 25, 0.6);
+  transition: border-color 220ms ease, box-shadow 260ms ease, background-color 220ms ease;
+}
+
+.struggle:hover,
+.struggle:focus-within {
+  border-color: rgba(231, 178, 76, 0.42);
+  box-shadow:
+    0 0 0 1px rgba(231, 178, 76, 0.08),
+    0 18px 40px -22px rgba(231, 178, 76, 0.35);
+}
+
+.struggle[open] {
+  border-color: rgba(231, 178, 76, 0.5);
+  background:
+    linear-gradient(180deg, rgba(231, 178, 76, 0.04) 0%, rgba(231, 178, 76, 0) 100%),
+    rgba(20, 16, 25, 0.75);
+}
+
+/* ---------- Summary row ---------- */
+
+.struggle__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1.35rem 1.5rem;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  outline: none;
+}
+
+.struggle__summary::-webkit-details-marker { display: none; }
+.struggle__summary::marker { content: ""; }
+
+.struggle__summary:focus-visible {
+  box-shadow: inset 0 0 0 2px #E7B24C;
+  border-radius: 14px;
+}
+
+.struggle__hd {
+  font-family: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(1.05rem, 1.55vw, 1.28rem);
+  font-weight: 500;
+  line-height: 1.35;
+  color: #f6ecd5;
+  letter-spacing: -0.005em;
+}
+
+.struggle__hd em {
+  font-family: "Fraunces", "Iowan Old Style", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #E7B24C;
+}
+
+/* Plus / minus icon built from two spans of the pseudo element */
+.struggle__icon {
+  position: relative;
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(231, 178, 76, 0.55);
+  transition: background-color 220ms ease, border-color 220ms ease, transform 300ms cubic-bezier(.4, 0, .2, 1);
+}
+
+.struggle__icon::before,
+.struggle__icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 1.5px;
+  background: #E7B24C;
+  transform: translate(-50%, -50%);
+  transition: transform 300ms cubic-bezier(.4, 0, .2, 1), opacity 220ms ease;
+}
+
+.struggle__icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.struggle[open] .struggle__icon {
+  background: rgba(231, 178, 76, 0.12);
+  border-color: #E7B24C;
+  transform: rotate(180deg);
+}
+
+.struggle[open] .struggle__icon::after {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+/* ---------- Body ---------- */
+
+.struggle__body {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  max-width: 52rem;
+}
+
+.struggle__body p {
+  margin: 0;
+  font-family: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.68;
+  color: rgba(243, 236, 221, 0.78);
+}
+
+/* Elegant expand animation (progressive enhancement via details-content).
+   Browsers without support just snap open, which is fine. */
+@supports (interpolate-size: allow-keywords) {
+  .struggle::details-content {
+    block-size: 0;
+    overflow: clip;
+    opacity: 0;
+    transition:
+      content-visibility 320ms allow-discrete,
+      block-size 320ms cubic-bezier(.4, 0, .2, 1),
+      opacity 260ms ease 40ms;
+    interpolate-size: allow-keywords;
+  }
+  .struggle[open]::details-content {
+    block-size: auto;
+    opacity: 1;
+  }
+}
+
+/* ---------- Bridge + CTAs ---------- */
+
+.why-struggle__bridge {
+  max-width: 46rem;
+  margin: 0 0 2rem 0;
+  padding: 1.75rem 0 0 0;
+  border-top: 1px solid rgba(231, 178, 76, 0.18);
+  font-family: "Fraunces", "Iowan Old Style", Georgia, serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.2rem, 1.9vw, 1.55rem);
+  line-height: 1.4;
+  color: #f6ecd5;
+  text-wrap: balance;
+}
+
+.why-struggle__cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  margin: 0 0 2.5rem 0;
+  align-items: center;
+}
+
+.why-struggle__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 1.5rem;
+  border-radius: 999px;
+  font-family: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: #141019;
+  background: #E7B24C;
+  border: 1px solid #E7B24C;
+  transition: transform 200ms ease, box-shadow 240ms ease, background-color 200ms ease, color 200ms ease;
+}
+
+.why-struggle__cta:hover,
+.why-struggle__cta:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px -14px rgba(231, 178, 76, 0.6);
+  outline: none;
+}
+
+.why-struggle__cta--ghost {
+  background: transparent;
+  color: #E7B24C;
+  border: 1px solid rgba(231, 178, 76, 0.55);
+}
+
+.why-struggle__cta--ghost:hover,
+.why-struggle__cta--ghost:focus-visible {
+  background: rgba(231, 178, 76, 0.08);
+  color: #f6ecd5;
+  border-color: #E7B24C;
+}
+
+/* ---------- Sources microcopy ---------- */
+
+.why-struggle__sources {
+  max-width: 52rem;
+  margin: 0;
+  padding: 1.25rem 0 0 0;
+  border-top: 1px solid rgba(231, 178, 76, 0.12);
+  font-family: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: rgba(243, 236, 221, 0.55);
+  letter-spacing: 0.005em;
+}
+
+.why-struggle__sources-label {
+  color: rgba(231, 178, 76, 0.75);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  margin-right: 0.5rem;
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .struggle,
+  .struggle__icon,
+  .struggle__icon::before,
+  .struggle__icon::after,
+  .why-struggle__cta {
+    transition: none !important;
+  }
+  @supports (interpolate-size: allow-keywords) {
+    .struggle::details-content,
+    .struggle[open]::details-content {
+      transition: none !important;
+    }
+  }
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 640px) {
+  .struggle__summary { padding: 1.1rem 1.15rem; gap: 0.9rem; }
+  .struggle__body { padding: 0 1.15rem 1.25rem 1.15rem; }
+  .why-struggle__cta { width: 100%; }
+}
+</style>
+<style id="tc-give-show-css">
+/* ---------- Chamber showpiece ---------- */
+/* Assumes Fraunces + Hanken Grotesk are already loaded in <head>. */
+
+.tc-chamber-section{
+  --plum:#141019;
+  --plum-2:#1e1724;
+  --gold:#E7B24C;
+  --gold-soft:#f0c874;
+  --rose:#E8735C;
+  --ivory:#F5EDDD;
+  --ivory-dim:rgba(245,237,221,.72);
+  --ivory-mute:rgba(245,237,221,.5);
+  --line:rgba(231,178,76,.22);
+  position:relative;
+  padding:clamp(72px,10vw,140px) clamp(20px,5vw,64px);
+  background:
+    radial-gradient(1200px 600px at 50% -10%, rgba(231,178,76,.10), transparent 60%),
+    radial-gradient(900px 500px at 90% 110%, rgba(232,115,92,.08), transparent 65%),
+    var(--plum);
+  color:var(--ivory);
+  font-family:'Hanken Grotesk','Inter',system-ui,sans-serif;
+  overflow:hidden;
+  isolation:isolate;
+}
+
+.tc-chamber-inner{
+  max-width:1180px;
+  margin:0 auto;
+}
+
+.tc-eyebrow{
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:clamp(12px,1.05vw,15px);
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin:0 0 18px;
+  font-weight:500;
+}
+
+.tc-chamber-title{
+  font-family:'Fraunces','Cormorant Garamond',Georgia,serif;
+  font-weight:400;
+  font-style:normal;
+  font-size:clamp(2.6rem,6.2vw,5.4rem);
+  line-height:1.02;
+  letter-spacing:-.01em;
+  color:var(--ivory);
+  margin:0 0 20px;
+}
+.tc-chamber-title em{
+  font-style:italic;
+  color:var(--gold-soft);
+  font-variation-settings:"opsz" 96;
+}
+
+.tc-chamber-lede{
+  font-size:clamp(1.05rem,1.55vw,1.35rem);
+  line-height:1.55;
+  color:var(--ivory-dim);
+  max-width:640px;
+  margin:0 0 40px;
+}
+
+/* ---------- Amount strip (own tablist) ---------- */
+.tc-amount-strip{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:0 0 clamp(40px,5vw,64px);
+}
+.tc-amount-strip button{
+  appearance:none;
+  border:1px solid var(--line);
+  background:transparent;
+  color:var(--ivory-dim);
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:clamp(1rem,1.25vw,1.15rem);
+  font-weight:500;
+  letter-spacing:.02em;
+  padding:14px 22px;
+  border-radius:999px;
+  cursor:pointer;
+  transition:color .3s ease,border-color .3s ease,background .3s ease,transform .3s ease;
+}
+.tc-amount-strip button:hover{
+  color:var(--ivory);
+  border-color:rgba(231,178,76,.55);
+}
+.tc-amount-strip button[aria-selected="true"]{
+  color:var(--plum);
+  background:var(--gold);
+  border-color:var(--gold);
+  transform:translateY(-1px);
+  box-shadow:0 10px 30px -12px rgba(231,178,76,.55);
+}
+.tc-amount-strip button:focus-visible{
+  outline:2px solid var(--gold);
+  outline-offset:3px;
+}
+
+/* ---------- The Chamber (central number + motes) ---------- */
+.tc-chamber{
+  position:relative;
+  height:clamp(320px,42vw,460px);
+  margin:0 auto clamp(48px,6vw,80px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.tc-chamber-halo{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(closest-side, rgba(231,178,76,.34), rgba(231,178,76,.08) 55%, transparent 72%);
+  filter:blur(6px);
+  animation:tcHalo 9s ease-in-out infinite alternate;
+}
+@keyframes tcHalo{
+  0%{transform:scale(.96);opacity:.85}
+  100%{transform:scale(1.06);opacity:1}
+}
+
+.tc-chamber-ring{
+  position:absolute;
+  width:min(78%,520px);
+  aspect-ratio:1/1;
+  border:1px solid rgba(231,178,76,.28);
+  border-radius:50%;
+  box-shadow:
+    inset 0 0 40px rgba(231,178,76,.10),
+    0 0 60px rgba(231,178,76,.10);
+  animation:tcRing 24s linear infinite;
+}
+.tc-chamber-ring::before,
+.tc-chamber-ring::after{
+  content:"";
+  position:absolute;
+  inset:8%;
+  border:1px dashed rgba(231,178,76,.18);
+  border-radius:50%;
+}
+.tc-chamber-ring::after{ inset:18%; border-style:solid; border-color:rgba(232,115,92,.18); }
+@keyframes tcRing{ to{ transform:rotate(360deg); } }
+
+.tc-chamber-motes{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+}
+.tc-chamber-motes span{
+  position:absolute;
+  left:50%; top:50%;
+  width:6px; height:6px;
+  border-radius:50%;
+  background:radial-gradient(circle, var(--gold-soft) 0%, rgba(231,178,76,.4) 55%, transparent 75%);
+  box-shadow:0 0 12px rgba(231,178,76,.55);
+  transform:translate(-50%,-50%);
+  animation:tcMote 8s linear infinite;
+  opacity:0;
+}
+.tc-chamber-motes span:nth-child(1){ animation-delay:0s;   --dx:220px;  --dy:-40px; }
+.tc-chamber-motes span:nth-child(2){ animation-delay:.6s;  --dx:-180px; --dy:60px;  }
+.tc-chamber-motes span:nth-child(3){ animation-delay:1.2s; --dx:60px;   --dy:-180px;}
+.tc-chamber-motes span:nth-child(4){ animation-delay:1.8s; --dx:-90px;  --dy:170px; width:5px;height:5px;}
+.tc-chamber-motes span:nth-child(5){ animation-delay:2.4s; --dx:260px;  --dy:120px; }
+.tc-chamber-motes span:nth-child(6){ animation-delay:3.0s; --dx:-240px; --dy:-100px;}
+.tc-chamber-motes span:nth-child(7){ animation-delay:3.6s; --dx:40px;   --dy:220px; }
+.tc-chamber-motes span:nth-child(8){ animation-delay:4.2s; --dx:-50px;  --dy:-220px;}
+.tc-chamber-motes span:nth-child(9){ animation-delay:4.8s; --dx:180px;  --dy:180px; background:radial-gradient(circle, var(--rose) 0%, rgba(232,115,92,.35) 55%, transparent 75%); box-shadow:0 0 12px rgba(232,115,92,.5);}
+.tc-chamber-motes span:nth-child(10){animation-delay:5.4s; --dx:-200px; --dy:180px; }
+.tc-chamber-motes span:nth-child(11){animation-delay:6.0s; --dx:120px;  --dy:-120px;}
+.tc-chamber-motes span:nth-child(12){animation-delay:6.6s; --dx:-140px; --dy:-160px;}
+.tc-chamber-motes span:nth-child(13){animation-delay:7.2s; --dx:250px;  --dy:-40px; }
+.tc-chamber-motes span:nth-child(14){animation-delay:7.8s; --dx:-260px; --dy:20px;  background:radial-gradient(circle, var(--rose) 0%, rgba(232,115,92,.35) 55%, transparent 75%); box-shadow:0 0 12px rgba(232,115,92,.5);}
+
+@keyframes tcMote{
+  0%   { transform:translate(-50%,-50%) scale(.4); opacity:0; }
+  15%  { opacity:1; }
+  100% { transform:translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(1.1); opacity:0; }
+}
+
+.tc-chamber-center{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  padding:24px 32px;
+}
+.tc-chamber-kicker,
+.tc-chamber-sub{
+  display:block;
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:clamp(13px,1.1vw,15px);
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--ivory-mute);
+}
+.tc-chamber-sub{ margin-top:10px; color:var(--ivory-dim); }
+.tc-chamber-amount{
+  display:block;
+  font-family:'Fraunces',Georgia,serif;
+  font-style:italic;
+  font-weight:400;
+  font-variation-settings:"opsz" 144;
+  font-size:clamp(4.2rem,12vw,8.5rem);
+  line-height:1;
+  letter-spacing:-.02em;
+  color:var(--ivory);
+  margin:14px 0 4px;
+  text-shadow:0 0 40px rgba(231,178,76,.35);
+  transition:transform .5s cubic-bezier(.2,.7,.2,1);
+}
+.tc-chamber-amount.is-pulsing{
+  animation:tcPulse .7s cubic-bezier(.2,.7,.2,1);
+}
+@keyframes tcPulse{
+  0%   { transform:scale(1);   text-shadow:0 0 40px rgba(231,178,76,.35);}
+  40%  { transform:scale(1.05);text-shadow:0 0 70px rgba(231,178,76,.65);}
+  100% { transform:scale(1);   text-shadow:0 0 40px rgba(231,178,76,.35);}
+}
+
+/* ---------- Allocations grid ---------- */
+.tc-allocations{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(16px,2vw,24px);
+}
+@media (max-width:720px){
+  .tc-allocations{ grid-template-columns:1fr; }
+}
+
+.tc-alloc{
+  position:relative;
+  padding:clamp(22px,2.4vw,32px);
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:linear-gradient(180deg, rgba(231,178,76,.04), rgba(231,178,76,0) 60%), var(--plum-2);
+  overflow:hidden;
+  transition:border-color .4s ease, transform .4s ease;
+}
+.tc-alloc::before{
+  content:"";
+  position:absolute; inset:0;
+  background:radial-gradient(600px 200px at var(--mx,50%) var(--my,0%), rgba(231,178,76,.10), transparent 60%);
+  opacity:0;
+  transition:opacity .5s ease;
+  pointer-events:none;
+}
+.tc-alloc:hover::before{ opacity:1; }
+.tc-alloc:hover{ border-color:rgba(231,178,76,.45); }
+
+.tc-alloc[data-key="relief"]{ --accent:var(--rose); }
+.tc-alloc{ --accent:var(--gold); }
+
+.tc-alloc-head{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:16px;
+  margin-bottom:16px;
+}
+.tc-alloc-icon{
+  color:var(--accent);
+  width:44px; height:44px;
+  display:inline-flex; align-items:center; justify-content:center;
+  border-radius:12px;
+  background:rgba(231,178,76,.08);
+  border:1px solid rgba(231,178,76,.22);
+}
+.tc-alloc[data-key="relief"] .tc-alloc-icon{
+  background:rgba(232,115,92,.08);
+  border-color:rgba(232,115,92,.28);
+}
+
+.tc-alloc-title h3{
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:clamp(1.1rem,1.45vw,1.35rem);
+  font-weight:500;
+  letter-spacing:.01em;
+  color:var(--ivory);
+  margin:0 0 2px;
+}
+.tc-alloc-pct{
+  font-family:'Hanken Grotesk',sans-serif;
+  font-size:12px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--ivory-mute);
+  margin:0;
+}
+.tc-alloc-amt{
+  font-family:'Fraunces',Georgia,serif;
+  font-style:italic;
+  font-variation-settings:"opsz" 96;
+  font-size:clamp(1.9rem,3vw,2.6rem);
+  line-height:1;
+  color:var(--accent);
+  margin:0;
+  white-space:nowrap;
+}
+
+.tc-alloc-bar{
+  position:relative;
+  height:6px;
+  border-radius:999px;
+  background:rgba(245,237,221,.07);
+  overflow:hidden;
+  margin-bottom:16px;
+}
+.tc-alloc-bar span{
+  position:absolute; inset:0 auto 0 0;
+  width:var(--fill,0%);
+  background:linear-gradient(90deg, var(--accent), color-mix(in oklab, var(--accent) 60%, white));
+  border-radius:999px;
+  transform-origin:left center;
+  animation:tcBar 1.4s cubic-bezier(.2,.7,.2,1) both;
+  box-shadow:0 0 20px color-mix(in oklab, var(--accent) 40%, transparent);
+}
+@keyframes tcBar{
+  from{ transform:scaleX(0); }
+  to  { transform:scaleX(1); }
+}
+
+.tc-alloc-copy{
+  font-family:'Fraunces',Georgia,serif;
+  font-style:italic;
+  font-variation-settings:"opsz" 24;
+  font-size:clamp(1.05rem,1.5vw,1.25rem);
+  line-height:1.5;
+  color:var(--ivory);
+  margin:0;
+  min-height:2.4em;
+  transition:opacity .35s ease, transform .35s ease;
+}
+.tc-alloc-copy.is-swapping{
+  opacity:0;
+  transform:translateY(6px);
+}
+
+/* ---------- Note ---------- */
+.tc-chamber-note{
+  margin:clamp(32px,4vw,56px) 0 0;
+  max-width:720px;
+  font-size:clamp(.95rem,1.1vw,1.05rem);
+  line-height:1.6;
+  color:var(--ivory-mute);
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce){
+  .tc-chamber-halo,
+  .tc-chamber-ring,
+  .tc-chamber-motes span,
+  .tc-chamber-amount,
+  .tc-alloc-bar span,
+  .tc-alloc-copy{
+    animation:none !important;
+    transition:none !important;
+  }
+  .tc-alloc-bar span{ transform:scaleX(1); }
+  .tc-chamber-motes{ display:none; }
+}
+
+</style>
+<script id="tc-give-show-js" defer>
+/* Chamber showpiece controller.
+   Public API:
+     window.CrownGift.setAmount(100)
+     document.dispatchEvent(new CustomEvent('crown:amount', {detail:100}))
+   The chamber ALSO emits 'crown:amount' when its own strip is clicked, so the
+   donation picker can listen and sync in the other direction. */
+(function () {
+  'use strict';
+
+  var ALLOCATIONS = {
+    equipment: 0.45,
+    therapy:   0.30,
+    relief:    0.20,
+    ops:       0.05
+  };
+
+  // Amount -> per-category concrete impact copy. No em dashes, ASCII only.
+  var COPY = {
+    25: {
+      equipment: "a set of adaptive grip utensils that let a child feed themselves.",
+      therapy:   "part of a warm-water therapy session for a child with low tone.",
+      relief:    "a week of gas to and from the specialist clinic.",
+      ops:       "the software and stamps it takes to actually deliver help."
+    },
+    50: {
+      equipment: "sensory tools that help a child self-regulate at school.",
+      therapy:   "a private speech session for a nonverbal child.",
+      relief:    "groceries during a hospital week when a parent cannot work.",
+      ops:       "the software and stamps it takes to actually deliver help."
+    },
+    100: {
+      equipment: "a padded feeding-chair insert for a child who cannot sit alone.",
+      therapy:   "two occupational-therapy sessions for a child on a long waitlist.",
+      relief:    "one night of respite care so tired parents can sleep.",
+      ops:       "the software and stamps it takes to actually deliver help."
+    },
+    250: {
+      equipment: "a week-long trial of a pediatric standing frame.",
+      therapy:   "a month of weekly physical-therapy sessions.",
+      relief:    "half a month of therapy copays for a working family.",
+      ops:       "the software and stamps it takes to actually deliver help."
+    },
+    500: {
+      equipment: "a communication tablet toward a full AAC device.",
+      therapy:   "an intensive therapy week that families cannot afford alone.",
+      relief:    "rent relief on a hospital month for a family in crisis.",
+      ops:       "the software and stamps it takes to actually deliver help."
+    },
+    1000: {
+      equipment: "a contribution toward a specialized gait trainer.",
+      therapy:   "eight weeks of combined OT and PT for a child.",
+      relief:    "a full month of breathing room for a family in survival mode.",
+      ops:       "the software and stamps it takes to actually deliver help."
+    }
+  };
+
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var section = document.querySelector('.tc-chamber-section');
+  if (!section) return;
+
+  var strip     = section.querySelector('.tc-amount-strip');
+  var stripBtns = strip ? Array.prototype.slice.call(strip.querySelectorAll('button')) : [];
+  var centerEl  = section.querySelector('#tc-center-amount');
+  var cards     = Array.prototype.slice.call(section.querySelectorAll('.tc-alloc'));
+
+  var currentAmount = 100;
+  var isProgrammatic = false;
+
+  function formatDollars(n) {
+    if (n < 1000) return '<body class="give"><header class="site"><div class="wrap hin"><a class="brand" href="/"><svg class="lmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#E7B24C" fill-rule="evenodd" d="M256 82C244 118 226 145 202 170C182 190 168 211 166 235C146 223 127 206 110 185L82 150L105 291C153 274 203 265 256 265C309 265 359 274 407 291L430 150L402 185C385 206 366 223 346 235C344 211 330 190 310 170C286 145 268 118 256 82ZM256 160C271 138 291 136 305 147C323 161 320 186 304 204L256 254L208 204C192 186 189 161 207 147C221 136 241 138 256 160Z"/><path fill="#141019" d="M111 292C156 278 205 271 256 271C307 271 356 278 401 292L396 318C352 306 305 300 256 300C207 300 160 306 116 318Z"/><path fill="#141019" d="M115 345C160 333 207 327 256 327C305 327 352 333 397 345L390 396C346 386 301 381 256 381C211 381 166 386 122 396Z"/><path fill="#E7B24C" d="M74 116C74 101 86 89 101 89C116 89 128 101 128 116C128 131 116 143 101 143C86 143 74 131 74 116Z"/><path fill="#E7B24C" d="M229 57C229 42 241 30 256 30C271 30 283 42 283 57C283 72 271 84 256 84C241 84 229 72 229 57Z"/><path fill="#E7B24C" d="M384 116C384 101 396 89 411 89C426 89 438 101 438 116C438 131 426 143 411 143C396 143 384 131 384 116Z"/></svg> Teagan's Crown</a><nav class="nav"><a class="n" href="/#story">Teagan</a><a class="n" href="/give.html">Ways to give</a><a class="n" href="/partner.html">Partner</a><a class="btn btn-gold" href="/give.html">Donate</a></nav></div></header><!-- =========================================================
+     GIVE.HTML HERO - replaces the current "Every path leads to a child" block.
+     Winner headline in place. Backups documented in comments below.
+     ========================================================= -->
+<section class="give-hero" aria-labelledby="give-hero-headline">
+  <p class="give-eyebrow">Teagan's Crown</p>
+
+  <h1 id="give-hero-headline" class="give-headline">
+    Some crowns are earned<br>
+    <em>in physical therapy.</em>
+  </h1>
+
+  <p class="give-sub">
+    Your gift buys the walkers, the words, the wheels, and the quiet daily wins that let a child with special needs grow into the kid they were always meant to be.
+  </p>
+
+  <div class="give-hero-cta">
+    <a href="#donate-picker" class="btn-primary">Give now</a>
+    <a href="/apply.html" class="btn-ghost">
+      <span>Family needs help</span>
+      <span class="btn-ghost-arrow" aria-hidden="true">&#x203A;</span>
+    </a>
+  </div>
+</section>
+
+<!-- PLACE: directly after the hero <section>, BEFORE the donation-picker section -->
+<aside id="apply-for-help" class="tc-flipside" aria-labelledby="tc-flipside-title">
+  <a class="tc-flipside__link" href="/apply.html" aria-describedby="tc-flipside-sub">
+    <span class="tc-flipside__mark" aria-hidden="true">
+      <svg viewBox="0 0 44 44" width="44" height="44" role="img" focusable="false">
+        <defs>
+          <radialGradient id="tcFsGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#E8735C" stop-opacity="0.55"/>
+            <stop offset="100%" stop-color="#E8735C" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="22" cy="22" r="21" fill="url(#tcFsGlow)"/>
+        <!-- small crown resting in an open palm -->
+        <path d="M13 27 C13 24, 15 22, 18 22 L26 22 C29 22, 31 24, 31 27 L31 30 C31 31.5, 29.8 32.7, 28.3 32.7 L15.7 32.7 C14.2 32.7, 13 31.5, 13 30 Z"
+              fill="none" stroke="#E8735C" stroke-width="1.4" stroke-linejoin="round"/>
+        <path d="M15.5 19.5 L18.5 15 L22 19 L25.5 15 L28.5 19.5 L27.5 21.5 L16.5 21.5 Z"
+              fill="none" stroke="#E7B24C" stroke-width="1.4" stroke-linejoin="round"/>
+        <circle cx="18.5" cy="14.2" r="0.9" fill="#E7B24C"/>
+        <circle cx="22" cy="13.5" r="0.9" fill="#E7B24C"/>
+        <circle cx="25.5" cy="14.2" r="0.9" fill="#E7B24C"/>
+      </svg>
+    </span>
+
+    <span class="tc-flipside__body">
+      <span class="tc-flipside__eyebrow">For families</span>
+      <span id="tc-flipside-title" class="tc-flipside__title">
+        Raising a child with special needs and stretched thin?
+      </span>
+      <span id="tc-flipside-sub" class="tc-flipside__sub">
+        This page is the giving side. If your family needs help, walk through the other door.
+      </span>
+    </span>
+
+    <span class="tc-flipside__cta" role="presentation">
+      <span class="tc-flipside__cta-label">Apply for support</span>
+      <svg class="tc-flipside__arrow" viewBox="0 0 24 12" width="26" height="13" aria-hidden="true" focusable="false">
+        <path d="M1 6 H21 M16 1 L22 6 L16 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+  </a>
+</aside>
+
+<!-- Why families struggle - front-and-center system-failure section -->
+<section class="why-struggle" id="why-families-struggle" aria-labelledby="why-struggle-title">
+  <div class="why-struggle__inner">
+
+    <p class="why-struggle__eyebrow">Why this exists</p>
+
+    <h2 class="why-struggle__title" id="why-struggle-title">
+      Insurance is <em>not</em> a safety net for a medically complex child.
+    </h2>
+
+    <p class="why-struggle__lede">
+      It is a maze with a countdown, and the family is the one running it. Below is what actually happens between a doctor's order and a child getting the care, therapy, or equipment they need. This is why families like ours built Teagan's Crown.
+    </p>
+
+    <div class="why-struggle__list">
+
+      <details class="struggle">
+        <summary class="struggle__summary">
+          <span class="struggle__hd">The first answer is <em>very often</em> no.</span>
+          <span class="struggle__icon" aria-hidden="true"></span>
+        </summary>
+        <div class="struggle__body">
+          <p>Insurers on the federal marketplace deny roughly 1 in 5 in-network claims on average, and fewer than 1 percent are ever appealed (KFF analyses of HealthCare.gov transparency data). When families do formally appeal, a large share of denials get overturned. The first "no" is often wrong. Most denials stand because a parent who is already running an IEP, a therapy schedule, and a medication plan cannot add a second unpaid job.</p>
+        </div>
+      </details>
+
+      <details class="struggle">
+        <summary class="struggle__summary">
+          <span class="struggle__hd">Prior authorization is the delay. Denial is the strategy.</span>
+          <span class="struggle__icon" aria-hidden="true"></span>
+        </summary>
+        <div class="struggle__body">
+          <p>A federal watchdog (HHS Office of Inspector General, 2022) found that Medicare Advantage plans denied prior-authorization requests for care that met the plan's own coverage rules. The denial was the problem, not the care. The same playbook shows up in commercial and Medicaid managed-care plans. In the American Medical Association's annual Prior Authorization Physician Survey, roughly one in four physicians report that prior-authorization delays have led to a serious adverse event for a patient in their care, including hospitalization.</p>
+        </div>
+      </details>
+
+      <details class="struggle">
+        <summary class="struggle__summary">
+          <span class="struggle__hd">"Covered" does not mean "affordable."</span>
+          <span class="struggle__icon" aria-hidden="true"></span>
+        </summary>
+        <div class="struggle__body">
+          <p>The average family health insurance premium in employer coverage now runs past $25,000 a year, with workers paying more than $6,000 of that before the deductible even starts (KFF Employer Health Benefits Survey, 2024). Family deductibles in high-deductible plans routinely run several thousand dollars, and reset every January 1. For a family already paying for therapies, formula, diapers past infancy, and equipment, the fight starts over the first week of the year.</p>
+        </div>
+      </details>
+
+      <details class="struggle">
+        <summary class="struggle__summary">
+          <span class="struggle__hd">The Medicaid waiting list is measured in years, not months.</span>
+          <span class="struggle__icon" aria-hidden="true"></span>
+        </summary>
+        <div class="struggle__body">
+          <p>Home and Community-Based Services (HCBS) waivers are the main Medicaid pathway to in-home nursing, therapy, respite, and equipment for a disabled child. Hundreds of thousands of people sit on state HCBS waitlists nationally, with average waits commonly reported in years and some states well past seven (KFF Medicaid HCBS tracking). A child can outgrow a developmental window, or childhood itself, waiting for a slot to open.</p>
+        </div>
+      </details>
+
+      <details class="struggle">
+        <summary class="struggle__summary">
+          <span class="struggle__hd">Therapy has a cap. A child's growth does not.</span>
+          <span class="struggle__icon" aria-hidden="true"></span>
+        </summary>
+        <div class="struggle__body">
+          <p>Most private plans cap outpatient PT, OT, and speech therapy at a limited number of visits per year, and often deny pediatric therapy as "developmental, not restorative" because the child is learning a skill for the first time rather than recovering one. Private-pay pediatric therapy commonly runs $100 to $250 per session (ASHA, AOTA, and APTA workforce and access reporting). A child in intensive early therapy can burn through a year's cap in a single quarter, and the developmental window does not pause while families appeal.</p>
+        </div>
+      </details>
+
+      <details class="struggle">
+        <summary class="struggle__summary">
+          <span class="struggle__hd">The equipment a child needs is often called "not medically necessary."</span>
+          <span class="struggle__icon" aria-hidden="true"></span>
+        </summary>
+        <div class="struggle__body">
+          <p>Adaptive strollers, safety beds, gait trainers, standers, communication devices, custom bracing: routinely prescribed by a pediatric specialist, routinely denied by a reviewer who has never met the child, routinely approved months later on appeal (documented across NCART, Family Voices, and NORD reporting). Insurance replacement cycles are built around adult equipment, so families are often told the chair, brace, or device their child has physically outgrown is "not yet due." The child grows anyway.</p>
+        </div>
+      </details>
+
+      <details class="struggle">
+        <summary class="struggle__summary">
+          <span class="struggle__hd">One parent <em>often</em> leaves work. That is not a lifestyle choice.</span>
+          <span class="struggle__icon" aria-hidden="true"></span>
+        </summary>
+        <div class="struggle__body">
+          <p>National Survey of Children's Health data consistently finds that a large share of families raising a child with special healthcare needs report the child's condition has caused financial problems for the family, and a similar share had a parent cut work hours or leave a job to provide care (HRSA / CDC, NSCH). That lost income lands on top of every out-of-pocket cost insurance already pushed onto the family, and can knock the child off Medicaid eligibility the moment the remaining parent gets a raise.</p>
+        </div>
+      </details>
+
+    </div>
+
+    <p class="why-struggle__bridge">
+      This is the gap Teagan's Crown was built to close. Not paperwork. Not a promise to fight the insurer for you. A direct check written into the exact place insurance stopped, so a child does not have to wait for a system to say yes.
+    </p>
+
+    <p class="why-struggle__cta-row">
+      <a class="why-struggle__cta" href="#give-picker">Choose an amount to give</a>
+      <a class="why-struggle__cta why-struggle__cta--ghost" href="#apply-for-help">Or apply for help</a>
+    </p>
+
+    <p class="why-struggle__sources">
+      <span class="why-struggle__sources-label">Sources:</span>
+      Kaiser Family Foundation (KFF); HHS Office of Inspector General; American Medical Association; Health Resources and Services Administration and CDC, National Survey of Children's Health; American Speech-Language-Hearing Association; American Occupational Therapy Association; American Physical Therapy Association; National Coalition for Assistive and Rehab Technology; Family Voices; National Organization for Rare Disorders.
+    </p>
+
+  </div>
+</section>
+
+<!--
+  BACKUP 1 (poetic, softer, universally readable):
+  <h1 id="give-hero-headline" class="give-headline">
+    The smallest crowns<br>
+    <em>are the heaviest to carry.</em>
+  </h1>
+
+  BACKUP 2 (punchy, specific age, tenacity):
+  <h1 id="give-hero-headline" class="give-headline">
+    Every crown here was earned<br>
+    <em>before kindergarten.</em>
+  </h1>
+-->
+
+
+
+
+
+
+
+<span id="donate-picker" style="display:block;position:relative;top:-40px;visibility:hidden"></span>
+<span id="give-picker" style="display:block;position:relative;top:-40px;visibility:hidden"></span>
+<section id="donate-now" style="padding:64px 0 40px;position:relative;z-index:2">
+  <div class="wrap" style="max-width:960px">
+    <div style="text-align:center;margin-bottom:36px">
+      <div class="eyebrow rv" style="justify-content:center;display:inline-flex">Give now</div>
+      <h2 class="sec rv" style="margin:.35em 0 .3em">Choose your gift.</h2>
+      <p class="rv" style="color:var(--soft);max-width:44ch;margin:0 auto;font-size:1.1rem">Card, ACH, Apple Pay, Google Pay. One-time or monthly. Every dollar goes to work.</p>
+    </div>
+    <div class="dn-shell rv" style="display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start">
+      <div>
+        <div class="dn-freq" role="tablist" aria-label="Gift frequency" style="display:inline-flex;background:rgba(246,240,230,.06);border:1px solid var(--line-d);border-radius:100px;padding:4px;margin-bottom:20px">
+          <button type="button" role="tab" aria-selected="true" data-freq="one_time" class="dn-freq-btn is-on" style="border:0;background:linear-gradient(100deg,var(--gold2),var(--gold));color:#25190A;font-weight:700;padding:.7em 1.2em;border-radius:100px;cursor:pointer;font-size:.95rem">One-time</button>
+          <button type="button" role="tab" aria-selected="false" data-freq="monthly" class="dn-freq-btn" style="border:0;background:transparent;color:var(--ivory);font-weight:600;padding:.7em 1.2em;border-radius:100px;cursor:pointer;font-size:.95rem">Monthly</button>
+        </div>
+        <div class="dn-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px">
+          <button type="button" class="dn-amt" data-amt="25" style="padding:22px 8px;border:1px solid var(--line-d);background:rgba(246,240,230,.03);color:var(--ivory);border-radius:16px;cursor:pointer;font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:1.7rem;transition:all .2s ease">$25</button>
+          <button type="button" class="dn-amt" data-amt="50" style="padding:22px 8px;border:1px solid var(--line-d);background:rgba(246,240,230,.03);color:var(--ivory);border-radius:16px;cursor:pointer;font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:1.7rem;transition:all .2s ease">$50</button>
+          <button type="button" class="dn-amt" data-amt="100" style="padding:22px 8px;border:1px solid var(--line-d);background:rgba(246,240,230,.03);color:var(--ivory);border-radius:16px;cursor:pointer;font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:1.7rem;transition:all .2s ease">$100</button>
+          <button type="button" class="dn-amt" data-amt="250" style="padding:22px 8px;border:1px solid var(--line-d);background:rgba(246,240,230,.03);color:var(--ivory);border-radius:16px;cursor:pointer;font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:1.7rem;transition:all .2s ease">$250</button>
+          <button type="button" class="dn-amt" data-amt="500" style="padding:22px 8px;border:1px solid var(--line-d);background:rgba(246,240,230,.03);color:var(--ivory);border-radius:16px;cursor:pointer;font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:1.7rem;transition:all .2s ease">$500</button>
+          <button type="button" class="dn-amt is-hero" data-amt="1000" style="padding:22px 8px;border:1px solid var(--gold);background:linear-gradient(160deg,rgba(231,178,76,.16),rgba(231,178,76,.04));color:var(--ivory);border-radius:16px;cursor:pointer;font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:1.7rem;transition:all .2s ease">$1,000</button>
+        </div>
+        <label style="display:block;position:relative;margin-bottom:20px">
+          <span style="position:absolute;left:18px;top:50%;transform:translateY(-50%);color:var(--gold);font-family:'Fraunces',serif;font-weight:700;font-size:1.25rem">$</span>
+          <input type="number" min="1" step="1" placeholder="Other amount" class="dn-other" style="width:100%;padding:16px 16px 16px 40px;border:1px solid var(--line-d);border-radius:14px;background:rgba(246,240,230,.03);color:var(--ivory);font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:1.15rem;outline:none"/>
+        </label>
+        <a href="https://givebutter.com/teaganscrown" class="btn btn-gold dn-go" style="display:flex;width:100%;justify-content:center;align-items:center;gap:.5em;font-size:1.15rem;padding:1.1em 1.6em;border-radius:100px;background:linear-gradient(100deg,var(--gold2),var(--gold));color:#25190A;font-weight:800;text-decoration:none;box-shadow:0 14px 40px -14px rgba(231,178,76,.6);transition:transform .25s ease">
+          <span class="dn-go-text">Continue on Givebutter &middot; $100 one-time</span>
+        </a>
+        <div style="margin-top:14px;padding:14px 16px;background:rgba(246,240,230,.05);border:1px solid var(--line-d);border-radius:12px;text-align:center">
+<div style="font-size:.92rem;color:var(--ivory);margin-bottom:4px"><span style="color:var(--gold)">&#128274;</span> We use <b>Givebutter</b> for secure checkout &middot; givebutter.com/teaganscrown</div>
+<div style="font-size:.82rem;color:var(--faint);line-height:1.45">Card, ACH, Apple Pay, Google Pay, PayPal or Venmo.<br><b style="color:var(--ivory)">Paying with Venmo?</b> Venmo will send you back to Givebutter in your browser to finish. That is the right place.</div>
+</div>
+      </div>
+      <aside class="dn-impact" style="background:linear-gradient(160deg,rgba(246,240,230,.06),rgba(246,240,230,.015));border:1px solid var(--line-d);border-radius:20px;padding:28px">
+        <div style="font-family:'Fraunces',Georgia,serif;font-style:italic;color:var(--gold);font-size:1.1rem;margin-bottom:.6em">What your gift does</div>
+        <div class="dn-impact-amt" style="font-family:'Fraunces',Georgia,serif;font-weight:800;font-size:2.6rem;color:var(--gold);line-height:1;margin-bottom:.35em">$100</div>
+        <p class="dn-impact-copy" style="color:var(--ivory);font-size:1.05rem;line-height:1.5;margin-bottom:16px">A real step toward a communication device that gives a nonverbal child a voice.</p>
+        <hr style="border:0;border-top:1px solid var(--line-d);margin:18px 0"/>
+        <div style="color:var(--soft);font-size:.95rem;line-height:1.55">
+          <div style="margin-bottom:8px"><b style="color:var(--gold)">$50</b> &middot; adaptive tools + therapy supplies</div>
+          <div style="margin-bottom:8px"><b style="color:var(--gold)">$250</b> &middot; a month of PT, OT or speech</div>
+          <div style="margin-bottom:8px"><b style="color:var(--gold)">$1,000</b> &middot; a communication device deposit</div>
+          <div><b style="color:var(--gold)">$5,000</b> &middot; a whole family carried through a hard season</div>
+        </div>
+        <p style="color:var(--faint);font-size:.8rem;margin-top:16px;line-height:1.45">Illustrative examples of the kind of support gifts fund. Tax-deductibility is pending 501(c)(3).</p>
+      </aside>
+    </div>
+    <p style="text-align:center;color:var(--soft);margin-top:34px;font-size:.98rem">Prefer to go straight there? Give at <a href="https://givebutter.com/teaganscrown" style="color:var(--gold);font-weight:700;text-decoration:none">givebutter.com/teaganscrown</a></p>
+  </div>
+</section>
+<style>
+.dn-amt:hover{background:rgba(231,178,76,.1)!important;border-color:var(--gold)!important;transform:translateY(-2px)}
+.dn-amt.is-selected{background:linear-gradient(160deg,rgba(231,178,76,.28),rgba(231,178,76,.08))!important;border-color:var(--gold)!important;box-shadow:0 0 0 2px rgba(231,178,76,.4)}
+.dn-freq-btn.is-on{background:linear-gradient(100deg,var(--gold2),var(--gold))!important;color:#25190A!important}
+.dn-other:focus{border-color:var(--gold)!important;box-shadow:0 0 0 3px rgba(231,178,76,.2)}
+.dn-go:hover{transform:translateY(-2px)}
+@media (max-width:820px){.dn-shell{grid-template-columns:1fr!important}}
+@media (max-width:520px){.dn-grid{grid-template-columns:repeat(2,1fr)!important}}
+</style>
+<script>
+(function(){
+  var CAMP='https://givebutter.com/teaganscrown';
+  var IMPACT={
+    25:'Real, tangible help for a family raising a child with special needs.',
+    50:'Adaptive tools and therapy supplies that help a child do something they were told they could not.',
+    100:'A real step toward a communication device that gives a nonverbal child a voice.',
+    250:'Real relief toward a month of physical, occupational, or speech therapy.',
+    500:'A serious lift for a family in the middle of the hardest season of their life.',
+    1000:'A meaningful step toward a communication device that gives a nonverbal child a voice.',
+    5000:'A whole family carried through a hard season - equipment, therapy, and breathing room.'
+  };
+  function pickCopy(a){
+    if(!a||a<25) return 'Every dollar goes to work for a real family.';
+    if(a>=5000) return IMPACT[5000];
+    if(a>=1000) return IMPACT[1000];
+    if(a>=500) return IMPACT[500];
+    if(a>=250) return IMPACT[250];
+    if(a>=100) return IMPACT[100];
+    if(a>=50) return IMPACT[50];
+    return IMPACT[25];
+  }
+  var state={amt:100,freq:'one_time'};
+  var btns=document.querySelectorAll('.dn-amt');
+  var other=document.querySelector('.dn-other');
+  var freqBtns=document.querySelectorAll('.dn-freq-btn');
+  var goBtn=document.querySelector('.dn-go');
+  var goTxt=document.querySelector('.dn-go-text');
+  var impAmt=document.querySelector('.dn-impact-amt');
+  var impCopy=document.querySelector('.dn-impact-copy');
+  function fmt(n){return '$'+Number(n).toLocaleString();}
+  function label(){var f=state.freq==='monthly'?'monthly':'one-time';return 'Continue on Givebutter \u00b7 '+fmt(state.amt)+' '+f;}
+  function updateLink(){
+    var u=CAMP+'?amount='+state.amt;
+    if(state.freq==='monthly') u+='&frequency=monthly';
+    goBtn.setAttribute('href',u);
+    goTxt.textContent=label();
+    impAmt.textContent=fmt(state.amt);
+    impCopy.textContent=pickCopy(state.amt);
+  }
+  function selectAmt(a,src){
+    state.amt=Math.max(1,Math.round(Number(a)||0));
+    btns.forEach(function(b){b.classList.toggle('is-selected',Number(b.dataset.amt)===state.amt);});
+    if(src!=='other') other.value='';
+    updateLink();
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){selectAmt(b.dataset.amt);});});
+  other.addEventListener('input',function(){if(other.value){selectAmt(other.value,'other');btns.forEach(function(b){b.classList.remove('is-selected');});}});
+  freqBtns.forEach(function(b){b.addEventListener('click',function(){
+    freqBtns.forEach(function(x){x.classList.remove('is-on');x.setAttribute('aria-selected','false');});
+    b.classList.add('is-on');b.setAttribute('aria-selected','true');
+    state.freq=b.dataset.freq;updateLink();
+  });});
+  selectAmt(100);
+})();
+</script>
+<section><div class="wrap"><h2 class="sec rv">Give the way that fits you</h2><div class="vehicles">
+<div class="veh hot rv"><span class="tag">Biggest impact</span><h3>Donor-advised fund</h3><p>Already have a DAF at Fidelity Charitable, Schwab, or a community foundation? Recommend a grant to Teagan's Crown - often the simplest way to make a large gift.</p><span class="go" data-give>Give through your DAF &rarr;</span></div>
+<div class="veh rv"><span class="tag">Tax-smart</span><h3>Appreciated stock</h3><p>Donating stock you've held over a year lets you deduct the full value and skip the capital-gains tax. We'll share transfer instructions.</p><span class="go" data-give>Give stock &rarr;</span></div>
+<div class="veh rv"><span class="tag">Modern</span><h3>Crypto</h3><p>Donate Bitcoin, Ethereum, and more. Tax-efficient, and it converts to support for families right away.</p><span class="go" data-give>Give crypto &rarr;</span></div>
+<div class="veh rv"><span class="tag">Age 70&frac12;+</span><h3>IRA / QCD</h3><p>A qualified charitable distribution from your IRA can satisfy your RMD and support kids - without counting as taxable income.</p><span class="go" data-give>Give from your IRA &rarr;</span></div>
+<div class="veh rv"><span class="tag">Free money</span><h3>Employer match</h3><p>Thousands of companies match employee gifts, doubling your impact. Check if yours does when you give.</p><span class="go" data-give>Double your gift &rarr;</span></div>
+<div class="veh rv"><span class="tag">Classic</span><h3>Check by mail</h3><p>Prefer to mail a check? We'll publish our mailing details the moment our nonprofit structure is finalized.</p><span class="go">Coming soon</span></div>
+</div>
+<div class="callout rv" style="margin-top:24px"><b>Straight with you about your gift</b><p>Teagan's Crown is finalizing its nonprofit structure. Tax-deductible giving - including DAF, stock, and IRA gifts - activates the moment our fiscal sponsor or 501(c)(3) is in place. We will never represent a gift as tax-deductible before it truly is. <a href="/transparency.html" style="color:var(--gold)">See our transparency page &rarr;</a></p></div></div></section>
+<section><div class="wrap narrow"><div class="capture rv"><h3>Get Teagan's story - and be first to give</h3><p>Join the people following Teagan's journey. We'll tell you the moment giving opens, and share the milestones your support makes possible.</p><form class="cform"><input type="email" placeholder="Your email" required aria-label="Email"><button class="btn btn-gold" type="submit">Keep me posted</button></form></div></div></section>
+<div class="wrap"><div class="bigcta rv"><h2>Are you giving at a <span class="it">bigger</span> level?</h2><p>Major gifts, foundations, and family offices build the fund that catches every family. Let's talk about what your partnership makes possible.</p><a class="btn btn-gold" href="/partner.html">Partner with us &rarr;</a></div></div><footer class="site"><div class="wrap fin"><span>&copy; Teagan's Crown - Every child wears a crown 👑</span><span><a href="/">Home</a> &middot; <a href="/give.html">Give</a> &middot; <a href="/partner.html">Partner</a> &middot; <a href="/transparency.html">Transparency</a></span></div></footer><script>(function(){var rv=[].slice.call(document.querySelectorAll('.rv'));var rm=matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;if(rm||!('IntersectionObserver'in window)){rv.forEach(function(e){e.classList.add('in')})}else{var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});rv.forEach(function(e){io.observe(e)})}var f=document.querySelector('.cform');if(f)f.addEventListener('submit',function(e){e.preventDefault();alert('Email capture is ready - connect it to your email tool (Mailchimp, Beehiiv, ConvertKit) and this list starts building your donor pipeline.')});[].slice.call(document.querySelectorAll('[data-give]')).forEach(function(b){b.style.cursor='pointer';b.addEventListener('click',function(e){e.preventDefault();var t=(b.textContent||'').toLowerCase();var mail=function(subj,body){return 'mailto:hello@teaganscrown.org?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);};if(/daf|donor.?advised/.test(t)){window.open('https://givebutter.com/teaganscrown','_blank','noopener');return;}if(/stock|securit/.test(t)){window.location.href=mail('Stock gift to Teagan\u2019s Crown','Hi Nate, I would like to make a gift of appreciated stock. Please send transfer instructions.');return;}if(/crypto|bitcoin|eth/.test(t)){window.location.href=mail('Crypto gift to Teagan\u2019s Crown','Hi Nate, I would like to make a crypto gift. Please send our wallet details.');return;}if(/ira|qcd/.test(t)){window.location.href=mail('IRA QCD gift to Teagan\u2019s Crown','Hi Nate, I would like to make a Qualified Charitable Distribution from my IRA. Please send our nonprofit details (name, EIN, address).');return;}if(/employ|match/.test(t)){window.open('https://givebutter.com/teaganscrown','_blank','noopener');return;}var url='https://givebutter.com/teaganscrown';if(/monthly|crown circle/.test(t)){url+='?frequency=monthly';}window.location.href=url;})});})();</script><script>(function(){function ready(fn){if(document.readyState!='loading')fn();else document.addEventListener('DOMContentLoaded',fn);}ready(function(){function mail(subj,body){return 'mailto:hello@teaganscrown.org?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);}var CAMPAIGN='https://givebutter.com/teaganscrown';function bind(el){if(el.__gbBound)return;el.__gbBound=true;el.style.cursor='pointer';el.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();var t=(el.textContent||'').toLowerCase();var amt=el.getAttribute('data-amount')||el.closest('[data-amount]')&&el.closest('[data-amount]').getAttribute('data-amount');if(/daf|donor.?advised/.test(t)){window.open(CAMPAIGN,'_blank','noopener');return;}if(/stock|securit/.test(t)){window.location.href=mail("Stock gift to Teagan\u2019s Crown","Hi Nate, I would like to make a gift of appreciated stock. Please send transfer instructions.");return;}if(/crypto|bitcoin|eth/.test(t)){window.location.href=mail("Crypto gift to Teagan\u2019s Crown","Hi Nate, I would like to make a crypto gift. Please send our wallet details.");return;}if(/ira|qcd/.test(t)){window.location.href=mail("IRA QCD gift to Teagan\u2019s Crown","Hi Nate, I would like to make a Qualified Charitable Distribution from my IRA. Please send our nonprofit details (name, EIN, address).");return;}if(/partner|major|call|book/.test(t)){window.location.href=mail("Major gift conversation - Teagan\u2019s Crown","Hi Nate, I would like to talk about a leadership gift. Please share a time.");return;}var url=CAMPAIGN;if(/monthly|crown circle/.test(t))url+=(url.indexOf('?')>-1?'&':'?')+'frequency=monthly';if(amt&&/^\d+$/.test(amt))url+=(url.indexOf('?')>-1?'&':'?')+'amount='+amt;window.location.href=url;});}var q=document.querySelectorAll('[data-give],.tier[data-amount]');[].slice.call(q).forEach(bind);var mo=new MutationObserver(function(m){m.forEach(function(x){[].slice.call(x.addedNodes||[]).forEach(function(n){if(n.nodeType!==1)return;if(n.matches&&(n.matches('[data-give]')||n.matches('.tier[data-amount]')))bind(n);n.querySelectorAll&&n.querySelectorAll('[data-give],.tier[data-amount]').forEach(bind);});});});mo.observe(document.body,{childList:true,subtree:true});});})();</script></body></html> + n;
+    return '<body><header class="site"><div class="wrap hin"><a class="brand" href="/"><svg class="lmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#E7B24C" fill-rule="evenodd" d="M256 82C244 118 226 145 202 170C182 190 168 211 166 235C146 223 127 206 110 185L82 150L105 291C153 274 203 265 256 265C309 265 359 274 407 291L430 150L402 185C385 206 366 223 346 235C344 211 330 190 310 170C286 145 268 118 256 82ZM256 160C271 138 291 136 305 147C323 161 320 186 304 204L256 254L208 204C192 186 189 161 207 147C221 136 241 138 256 160Z"/><path fill="#141019" d="M111 292C156 278 205 271 256 271C307 271 356 278 401 292L396 318C352 306 305 300 256 300C207 300 160 306 116 318Z"/><path fill="#141019" d="M115 345C160 333 207 327 256 327C305 327 352 333 397 345L390 396C346 386 301 381 256 381C211 381 166 386 122 396Z"/><path fill="#E7B24C" d="M74 116C74 101 86 89 101 89C116 89 128 101 128 116C128 131 116 143 101 143C86 143 74 131 74 116Z"/><path fill="#E7B24C" d="M229 57C229 42 241 30 256 30C271 30 283 42 283 57C283 72 271 84 256 84C241 84 229 72 229 57Z"/><path fill="#E7B24C" d="M384 116C384 101 396 89 411 89C426 89 438 101 438 116C438 131 426 143 411 143C396 143 384 131 384 116Z"/></svg> Teagan's Crown</a><nav class="nav"><a class="n" href="/#story">Teagan</a><a class="n" href="/give.html">Ways to give</a><a class="n" href="/partner.html">Partner</a><a class="btn btn-gold" href="/give.html">Donate</a></nav></div></header><section class="hero"><div class="wrap"><span class="eyebrow rv">Ways to give</span><h1 class="disp rv">Every path leads to a <span class="it" style="color:var(--gold)">child.</span></h1><p class="lead rv">Give once, give monthly, or give through the vehicle your advisor recommends. However you give, it turns into equipment, therapy, and hope for a family that never gets a day off.</p></div></section>
+
+
+
+
+
+
+<section id="donate-now" style="padding:64px 0 40px;position:relative;z-index:2">
+  <div class="wrap" style="max-width:960px">
+    <div style="text-align:center;margin-bottom:36px">
+      <div class="eyebrow rv" style="justify-content:center;display:inline-flex">Give now</div>
+      <h2 class="sec rv" style="margin:.35em 0 .3em">Choose your gift.</h2>
+      <p class="rv" style="color:var(--soft);max-width:44ch;margin:0 auto;font-size:1.1rem">Card, ACH, Apple Pay, Google Pay. One-time or monthly. Every dollar goes to work.</p>
+    </div>
+    <div class="dn-shell rv" style="display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start">
+      <div>
+        <div class="dn-freq" role="tablist" aria-label="Gift frequency" style="display:inline-flex;background:rgba(246,240,230,.06);border:1px solid var(--line-d);border-radius:100px;padding:4px;margin-bottom:20px">
+          <button type="button" role="tab" aria-selected="true" data-freq="one_time" class="dn-freq-btn is-on" style="border:0;background:linear-gradient(100deg,var(--gold2),var(--gold));color:#25190A;font-weight:700;padding:.7em 1.2em;border-radius:100px;cursor:pointer;font-size:.95rem">One-time</button>
+          <button type="button" role="tab" aria-selected="false" data-freq="monthly" class="dn-freq-btn" style="border:0;background:transparent;color:var(--ivory);font-weight:600;padding:.7em 1.2em;border-radius:100px;cursor:pointer;font-size:.95rem">Monthly</button>
+        </div>
+        <div class="dn-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px">
+          <button type="button" class="dn-amt" data-amt="25" style="padding:22px 8px;border:1px solid var(--line-d);background:rgba(246,240,230,.03);color:var(--ivory);border-radius:16px;cursor:pointer;font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:1.7rem;transition:all .2s ease">$25</button>
+          <button type="button" class="dn-amt" data-amt="50" style="padding:22px 8px;border:1px solid var(--line-d);background:rgba(246,240,230,.03);color:var(--ivory);border-radius:16px;cursor:pointer;font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:1.7rem;transition:all .2s ease">$50</button>
+          <button type="button" class="dn-amt" data-amt="100" style="padding:22px 8px;border:1px solid var(--line-d);background:rgba(246,240,230,.03);color:var(--ivory);border-radius:16px;cursor:pointer;font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:1.7rem;transition:all .2s ease">$100</button>
+          <button type="button" class="dn-amt" data-amt="250" style="padding:22px 8px;border:1px solid var(--line-d);background:rgba(246,240,230,.03);color:var(--ivory);border-radius:16px;cursor:pointer;font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:1.7rem;transition:all .2s ease">$250</button>
+          <button type="button" class="dn-amt" data-amt="500" style="padding:22px 8px;border:1px solid var(--line-d);background:rgba(246,240,230,.03);color:var(--ivory);border-radius:16px;cursor:pointer;font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:1.7rem;transition:all .2s ease">$500</button>
+          <button type="button" class="dn-amt is-hero" data-amt="1000" style="padding:22px 8px;border:1px solid var(--gold);background:linear-gradient(160deg,rgba(231,178,76,.16),rgba(231,178,76,.04));color:var(--ivory);border-radius:16px;cursor:pointer;font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:1.7rem;transition:all .2s ease">$1,000</button>
+        </div>
+        <label style="display:block;position:relative;margin-bottom:20px">
+          <span style="position:absolute;left:18px;top:50%;transform:translateY(-50%);color:var(--gold);font-family:'Fraunces',serif;font-weight:700;font-size:1.25rem">$</span>
+          <input type="number" min="1" step="1" placeholder="Other amount" class="dn-other" style="width:100%;padding:16px 16px 16px 40px;border:1px solid var(--line-d);border-radius:14px;background:rgba(246,240,230,.03);color:var(--ivory);font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:1.15rem;outline:none"/>
+        </label>
+        <a href="https://givebutter.com/teaganscrown" class="btn btn-gold dn-go" style="display:flex;width:100%;justify-content:center;align-items:center;gap:.5em;font-size:1.15rem;padding:1.1em 1.6em;border-radius:100px;background:linear-gradient(100deg,var(--gold2),var(--gold));color:#25190A;font-weight:800;text-decoration:none;box-shadow:0 14px 40px -14px rgba(231,178,76,.6);transition:transform .25s ease">
+          <span class="dn-go-text">Continue on Givebutter &middot; $100 one-time</span>
+        </a>
+        <div style="margin-top:14px;padding:14px 16px;background:rgba(246,240,230,.05);border:1px solid var(--line-d);border-radius:12px;text-align:center">
+<div style="font-size:.92rem;color:var(--ivory);margin-bottom:4px"><span style="color:var(--gold)">&#128274;</span> We use <b>Givebutter</b> for secure checkout &middot; givebutter.com/teaganscrown</div>
+<div style="font-size:.82rem;color:var(--faint);line-height:1.45">Card, ACH, Apple Pay, Google Pay, PayPal or Venmo.<br><b style="color:var(--ivory)">Paying with Venmo?</b> Venmo will send you back to Givebutter in your browser to finish. That is the right place.</div>
+</div>
+      </div>
+      <aside class="dn-impact" style="background:linear-gradient(160deg,rgba(246,240,230,.06),rgba(246,240,230,.015));border:1px solid var(--line-d);border-radius:20px;padding:28px">
+        <div style="font-family:'Fraunces',Georgia,serif;font-style:italic;color:var(--gold);font-size:1.1rem;margin-bottom:.6em">What your gift does</div>
+        <div class="dn-impact-amt" style="font-family:'Fraunces',Georgia,serif;font-weight:800;font-size:2.6rem;color:var(--gold);line-height:1;margin-bottom:.35em">$100</div>
+        <p class="dn-impact-copy" style="color:var(--ivory);font-size:1.05rem;line-height:1.5;margin-bottom:16px">A real step toward a communication device that gives a nonverbal child a voice.</p>
+        <hr style="border:0;border-top:1px solid var(--line-d);margin:18px 0"/>
+        <div style="color:var(--soft);font-size:.95rem;line-height:1.55">
+          <div style="margin-bottom:8px"><b style="color:var(--gold)">$50</b> &middot; adaptive tools + therapy supplies</div>
+          <div style="margin-bottom:8px"><b style="color:var(--gold)">$250</b> &middot; a month of PT, OT or speech</div>
+          <div style="margin-bottom:8px"><b style="color:var(--gold)">$1,000</b> &middot; a communication device deposit</div>
+          <div><b style="color:var(--gold)">$5,000</b> &middot; a whole family carried through a hard season</div>
+        </div>
+        <p style="color:var(--faint);font-size:.8rem;margin-top:16px;line-height:1.45">Illustrative examples of the kind of support gifts fund. Tax-deductibility is pending 501(c)(3).</p>
+      </aside>
+    </div>
+    <p style="text-align:center;color:var(--soft);margin-top:34px;font-size:.98rem">Prefer to go straight there? Give at <a href="https://givebutter.com/teaganscrown" style="color:var(--gold);font-weight:700;text-decoration:none">givebutter.com/teaganscrown</a></p>
+  </div>
+</section>
+<style>
+.dn-amt:hover{background:rgba(231,178,76,.1)!important;border-color:var(--gold)!important;transform:translateY(-2px)}
+.dn-amt.is-selected{background:linear-gradient(160deg,rgba(231,178,76,.28),rgba(231,178,76,.08))!important;border-color:var(--gold)!important;box-shadow:0 0 0 2px rgba(231,178,76,.4)}
+.dn-freq-btn.is-on{background:linear-gradient(100deg,var(--gold2),var(--gold))!important;color:#25190A!important}
+.dn-other:focus{border-color:var(--gold)!important;box-shadow:0 0 0 3px rgba(231,178,76,.2)}
+.dn-go:hover{transform:translateY(-2px)}
+@media (max-width:820px){.dn-shell{grid-template-columns:1fr!important}}
+@media (max-width:520px){.dn-grid{grid-template-columns:repeat(2,1fr)!important}}
+</style>
+<script>
+(function(){
+  var CAMP='https://givebutter.com/teaganscrown';
+  var IMPACT={
+    25:'Real, tangible help for a family raising a child with special needs.',
+    50:'Adaptive tools and therapy supplies that help a child do something they were told they could not.',
+    100:'A real step toward a communication device that gives a nonverbal child a voice.',
+    250:'Real relief toward a month of physical, occupational, or speech therapy.',
+    500:'A serious lift for a family in the middle of the hardest season of their life.',
+    1000:'A meaningful step toward a communication device that gives a nonverbal child a voice.',
+    5000:'A whole family carried through a hard season - equipment, therapy, and breathing room.'
+  };
+  function pickCopy(a){
+    if(!a||a<25) return 'Every dollar goes to work for a real family.';
+    if(a>=5000) return IMPACT[5000];
+    if(a>=1000) return IMPACT[1000];
+    if(a>=500) return IMPACT[500];
+    if(a>=250) return IMPACT[250];
+    if(a>=100) return IMPACT[100];
+    if(a>=50) return IMPACT[50];
+    return IMPACT[25];
+  }
+  var state={amt:100,freq:'one_time'};
+  var btns=document.querySelectorAll('.dn-amt');
+  var other=document.querySelector('.dn-other');
+  var freqBtns=document.querySelectorAll('.dn-freq-btn');
+  var goBtn=document.querySelector('.dn-go');
+  var goTxt=document.querySelector('.dn-go-text');
+  var impAmt=document.querySelector('.dn-impact-amt');
+  var impCopy=document.querySelector('.dn-impact-copy');
+  function fmt(n){return '$'+Number(n).toLocaleString();}
+  function label(){var f=state.freq==='monthly'?'monthly':'one-time';return 'Continue on Givebutter \u00b7 '+fmt(state.amt)+' '+f;}
+  function updateLink(){
+    var u=CAMP+'?amount='+state.amt;
+    if(state.freq==='monthly') u+='&frequency=monthly';
+    goBtn.setAttribute('href',u);
+    goTxt.textContent=label();
+    impAmt.textContent=fmt(state.amt);
+    impCopy.textContent=pickCopy(state.amt);
+  }
+  function selectAmt(a,src){
+    state.amt=Math.max(1,Math.round(Number(a)||0));
+    btns.forEach(function(b){b.classList.toggle('is-selected',Number(b.dataset.amt)===state.amt);});
+    if(src!=='other') other.value='';
+    updateLink();
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){selectAmt(b.dataset.amt);});});
+  other.addEventListener('input',function(){if(other.value){selectAmt(other.value,'other');btns.forEach(function(b){b.classList.remove('is-selected');});}});
+  freqBtns.forEach(function(b){b.addEventListener('click',function(){
+    freqBtns.forEach(function(x){x.classList.remove('is-on');x.setAttribute('aria-selected','false');});
+    b.classList.add('is-on');b.setAttribute('aria-selected','true');
+    state.freq=b.dataset.freq;updateLink();
+  });});
+  selectAmt(100);
+})();
+</script>
+<section><div class="wrap"><h2 class="sec rv">Give the way that fits you</h2><div class="vehicles">
+<div class="veh hot rv"><span class="tag">Biggest impact</span><h3>Donor-advised fund</h3><p>Already have a DAF at Fidelity Charitable, Schwab, or a community foundation? Recommend a grant to Teagan's Crown - often the simplest way to make a large gift.</p><span class="go" data-give>Give through your DAF &rarr;</span></div>
+<div class="veh rv"><span class="tag">Tax-smart</span><h3>Appreciated stock</h3><p>Donating stock you've held over a year lets you deduct the full value and skip the capital-gains tax. We'll share transfer instructions.</p><span class="go" data-give>Give stock &rarr;</span></div>
+<div class="veh rv"><span class="tag">Modern</span><h3>Crypto</h3><p>Donate Bitcoin, Ethereum, and more. Tax-efficient, and it converts to support for families right away.</p><span class="go" data-give>Give crypto &rarr;</span></div>
+<div class="veh rv"><span class="tag">Age 70&frac12;+</span><h3>IRA / QCD</h3><p>A qualified charitable distribution from your IRA can satisfy your RMD and support kids - without counting as taxable income.</p><span class="go" data-give>Give from your IRA &rarr;</span></div>
+<div class="veh rv"><span class="tag">Free money</span><h3>Employer match</h3><p>Thousands of companies match employee gifts, doubling your impact. Check if yours does when you give.</p><span class="go" data-give>Double your gift &rarr;</span></div>
+<div class="veh rv"><span class="tag">Classic</span><h3>Check by mail</h3><p>Prefer to mail a check? We'll publish our mailing details the moment our nonprofit structure is finalized.</p><span class="go">Coming soon</span></div>
+</div>
+<div class="callout rv" style="margin-top:24px"><b>Straight with you about your gift</b><p>Teagan's Crown is finalizing its nonprofit structure. Tax-deductible giving - including DAF, stock, and IRA gifts - activates the moment our fiscal sponsor or 501(c)(3) is in place. We will never represent a gift as tax-deductible before it truly is. <a href="/transparency.html" style="color:var(--gold)">See our transparency page &rarr;</a></p></div></div></section>
+<section><div class="wrap narrow"><div class="capture rv"><h3>Get Teagan's story - and be first to give</h3><p>Join the people following Teagan's journey. We'll tell you the moment giving opens, and share the milestones your support makes possible.</p><form class="cform"><input type="email" placeholder="Your email" required aria-label="Email"><button class="btn btn-gold" type="submit">Keep me posted</button></form></div></div></section>
+<div class="wrap"><div class="bigcta rv"><h2>Are you giving at a <span class="it">bigger</span> level?</h2><p>Major gifts, foundations, and family offices build the fund that catches every family. Let's talk about what your partnership makes possible.</p><a class="btn btn-gold" href="/partner.html">Partner with us &rarr;</a></div></div><footer class="site"><div class="wrap fin"><span>&copy; Teagan's Crown - Every child wears a crown 👑</span><span><a href="/">Home</a> &middot; <a href="/give.html">Give</a> &middot; <a href="/partner.html">Partner</a> &middot; <a href="/transparency.html">Transparency</a></span></div></footer><script>(function(){var rv=[].slice.call(document.querySelectorAll('.rv'));var rm=matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;if(rm||!('IntersectionObserver'in window)){rv.forEach(function(e){e.classList.add('in')})}else{var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});rv.forEach(function(e){io.observe(e)})}var f=document.querySelector('.cform');if(f)f.addEventListener('submit',function(e){e.preventDefault();alert('Email capture is ready - connect it to your email tool (Mailchimp, Beehiiv, ConvertKit) and this list starts building your donor pipeline.')});[].slice.call(document.querySelectorAll('[data-give]')).forEach(function(b){b.style.cursor='pointer';b.addEventListener('click',function(e){e.preventDefault();var t=(b.textContent||'').toLowerCase();var mail=function(subj,body){return 'mailto:hello@teaganscrown.org?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);};if(/daf|donor.?advised/.test(t)){window.open('https://givebutter.com/teaganscrown','_blank','noopener');return;}if(/stock|securit/.test(t)){window.location.href=mail('Stock gift to Teagan\u2019s Crown','Hi Nate, I would like to make a gift of appreciated stock. Please send transfer instructions.');return;}if(/crypto|bitcoin|eth/.test(t)){window.location.href=mail('Crypto gift to Teagan\u2019s Crown','Hi Nate, I would like to make a crypto gift. Please send our wallet details.');return;}if(/ira|qcd/.test(t)){window.location.href=mail('IRA QCD gift to Teagan\u2019s Crown','Hi Nate, I would like to make a Qualified Charitable Distribution from my IRA. Please send our nonprofit details (name, EIN, address).');return;}if(/employ|match/.test(t)){window.open('https://givebutter.com/teaganscrown','_blank','noopener');return;}var url='https://givebutter.com/teaganscrown';if(/monthly|crown circle/.test(t)){url+='?frequency=monthly';}window.location.href=url;})});})();</script><script>(function(){function ready(fn){if(document.readyState!='loading')fn();else document.addEventListener('DOMContentLoaded',fn);}ready(function(){function mail(subj,body){return 'mailto:hello@teaganscrown.org?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);}var CAMPAIGN='https://givebutter.com/teaganscrown';function bind(el){if(el.__gbBound)return;el.__gbBound=true;el.style.cursor='pointer';el.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();var t=(el.textContent||'').toLowerCase();var amt=el.getAttribute('data-amount')||el.closest('[data-amount]')&&el.closest('[data-amount]').getAttribute('data-amount');if(/daf|donor.?advised/.test(t)){window.open(CAMPAIGN,'_blank','noopener');return;}if(/stock|securit/.test(t)){window.location.href=mail("Stock gift to Teagan\u2019s Crown","Hi Nate, I would like to make a gift of appreciated stock. Please send transfer instructions.");return;}if(/crypto|bitcoin|eth/.test(t)){window.location.href=mail("Crypto gift to Teagan\u2019s Crown","Hi Nate, I would like to make a crypto gift. Please send our wallet details.");return;}if(/ira|qcd/.test(t)){window.location.href=mail("IRA QCD gift to Teagan\u2019s Crown","Hi Nate, I would like to make a Qualified Charitable Distribution from my IRA. Please send our nonprofit details (name, EIN, address).");return;}if(/partner|major|call|book/.test(t)){window.location.href=mail("Major gift conversation - Teagan\u2019s Crown","Hi Nate, I would like to talk about a leadership gift. Please share a time.");return;}var url=CAMPAIGN;if(/monthly|crown circle/.test(t))url+=(url.indexOf('?')>-1?'&':'?')+'frequency=monthly';if(amt&&/^\d+$/.test(amt))url+=(url.indexOf('?')>-1?'&':'?')+'amount='+amt;window.location.href=url;});}var q=document.querySelectorAll('[data-give],.tier[data-amount]');[].slice.call(q).forEach(bind);var mo=new MutationObserver(function(m){m.forEach(function(x){[].slice.call(x.addedNodes||[]).forEach(function(n){if(n.nodeType!==1)return;if(n.matches&&(n.matches('[data-give]')||n.matches('.tier[data-amount]')))bind(n);n.querySelectorAll&&n.querySelectorAll('[data-give],.tier[data-amount]').forEach(bind);});});});mo.observe(document.body,{childList:true,subtree:true});});})();</script></body></html> + n.toLocaleString('en-US');
+  }
+
+  // Smart-round the splits so each category shows a whole-dollar amount.
+  function splitAmount(total) {
+    var raw = {};
+    var out = {};
+    var keys = Object.keys(ALLOCATIONS);
+    var runningRoundedSum = 0;
+    keys.forEach(function (k, i) {
+      raw[k] = total * ALLOCATIONS[k];
+      if (i < keys.length - 1) {
+        out[k] = Math.round(raw[k]);
+        runningRoundedSum += out[k];
+      }
+    });
+    var last = keys[keys.length - 1];
+    out[last] = Math.max(0, total - runningRoundedSum);
+    return out;
+  }
+
+  function animateNumber(el, from, to, duration) {
+    if (reduceMotion || from === to) {
+      el.textContent = formatDollars(to);
+      return;
+    }
+    var start = performance.now();
+    function frame(now) {
+      var t = Math.min(1, (now - start) / duration);
+      var eased = 1 - Math.pow(1 - t, 3);
+      var v = Math.round(from + (to - from) * eased);
+      el.textContent = formatDollars(v);
+      if (t < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  function setAmount(amount, opts) {
+    opts = opts || {};
+    amount = parseInt(amount, 10);
+    if (!COPY[amount]) return; // silently ignore custom "Other" values
+
+    var prev = currentAmount;
+    currentAmount = amount;
+
+    // Update strip tab state.
+    stripBtns.forEach(function (btn) {
+      var selected = parseInt(btn.getAttribute('data-amt'), 10) === amount;
+      btn.setAttribute('aria-selected', selected ? 'true' : 'false');
+    });
+
+    // Center number pulse + rollup.
+    animateNumber(centerEl, prev, amount, 650);
+    if (!reduceMotion) {
+      centerEl.classList.remove('is-pulsing');
+      // force reflow so the animation restarts
+      void centerEl.offsetWidth;
+      centerEl.classList.add('is-pulsing');
+    }
+
+    // Update each allocation card.
+    var split = splitAmount(amount);
+    cards.forEach(function (card) {
+      var key = card.getAttribute('data-key');
+      var amtEl = card.querySelector('[data-slot="amount"]');
+      var copyEl = card.querySelector('[data-slot="copy"]');
+      if (amtEl) {
+        var fromVal = parseInt((amtEl.textContent || '0').replace(/[^0-9]/g, ''), 10) || 0;
+        animateNumber(amtEl, fromVal, split[key], 650);
+      }
+      if (copyEl) {
+        var next = COPY[amount][key];
+        if (reduceMotion) {
+          copyEl.textContent = next;
+        } else {
+          copyEl.classList.add('is-swapping');
+          setTimeout(function () {
+            copyEl.textContent = next;
+            copyEl.classList.remove('is-swapping');
+          }, 180);
+        }
+      }
+      // Retrigger the bar sweep.
+      var bar = card.querySelector('.tc-alloc-bar span');
+      if (bar && !reduceMotion) {
+        bar.style.animation = 'none';
+        void bar.offsetWidth;
+        bar.style.animation = '';
+      }
+    });
+
+    // Broadcast so the donation picker can sync.
+    if (!opts.silent && !isProgrammatic) {
+      document.dispatchEvent(new CustomEvent('crown:amount', { detail: amount }));
+    }
+  }
+
+  // Strip click + keyboard nav.
+  stripBtns.forEach(function (btn, idx) {
+    btn.addEventListener('click', function () {
+      setAmount(btn.getAttribute('data-amt'));
+    });
+    btn.addEventListener('keydown', function (e) {
+      var next;
+      if (e.key === 'ArrowRight') next = stripBtns[(idx + 1) % stripBtns.length];
+      else if (e.key === 'ArrowLeft') next = stripBtns[(idx - 1 + stripBtns.length) % stripBtns.length];
+      else if (e.key === 'Home') next = stripBtns[0];
+      else if (e.key === 'End')  next = stripBtns[stripBtns.length - 1];
+      if (next) {
+        e.preventDefault();
+        next.focus();
+        setAmount(next.getAttribute('data-amt'));
+      }
+    });
+  });
+
+  // Radial hover glow.
+  cards.forEach(function (card) {
+    card.addEventListener('pointermove', function (e) {
+      var r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
+      card.style.setProperty('--my', ((e.clientY - r.top)  / r.height * 100) + '%');
+    });
+  });
+
+  // Listen for the picker.
+  document.addEventListener('crown:amount', function (e) {
+    if (!e || typeof e.detail === 'undefined') return;
+    isProgrammatic = true;
+    setAmount(e.detail, { silent: true });
+    isProgrammatic = false;
+  });
+
+  // Auto-wire picker buttons that opt in with data-crown-amount="25" etc.
+  document.querySelectorAll('[data-crown-amount]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      setAmount(btn.getAttribute('data-crown-amount'));
+    });
+  });
+
+  // Public API.
+  window.CrownGift = window.CrownGift || {};
+  window.CrownGift.setAmount = function (n) {
+    isProgrammatic = true;
+    setAmount(n, { silent: true });
+    isProgrammatic = false;
+  };
+
+  // Initialize.
+  setAmount(100, { silent: true });
+})();
+
+</script>
+<script id="tc-give-why-js" defer>
+/* No JS required. Native <details><summary> handles open/close, keyboard
+   focus, and screen-reader semantics. Kept as an intentional empty file
+   so the integration slot exists if the parent page wants to attach
+   analytics later (e.g. a 'toggle' listener on .struggle elements to
+   record which system-failure items donors actually read). */
+</script>
+</head><body><header class="site"><div class="wrap hin"><a class="brand" href="/"><svg class="lmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#E7B24C" fill-rule="evenodd" d="M256 82C244 118 226 145 202 170C182 190 168 211 166 235C146 223 127 206 110 185L82 150L105 291C153 274 203 265 256 265C309 265 359 274 407 291L430 150L402 185C385 206 366 223 346 235C344 211 330 190 310 170C286 145 268 118 256 82ZM256 160C271 138 291 136 305 147C323 161 320 186 304 204L256 254L208 204C192 186 189 161 207 147C221 136 241 138 256 160Z"/><path fill="#141019" d="M111 292C156 278 205 271 256 271C307 271 356 278 401 292L396 318C352 306 305 300 256 300C207 300 160 306 116 318Z"/><path fill="#141019" d="M115 345C160 333 207 327 256 327C305 327 352 333 397 345L390 396C346 386 301 381 256 381C211 381 166 386 122 396Z"/><path fill="#E7B24C" d="M74 116C74 101 86 89 101 89C116 89 128 101 128 116C128 131 116 143 101 143C86 143 74 131 74 116Z"/><path fill="#E7B24C" d="M229 57C229 42 241 30 256 30C271 30 283 42 283 57C283 72 271 84 256 84C241 84 229 72 229 57Z"/><path fill="#E7B24C" d="M384 116C384 101 396 89 411 89C426 89 438 101 438 116C438 131 426 143 411 143C396 143 384 131 384 116Z"/></svg> Teagan's Crown</a><nav class="nav"><a class="n" href="/#story">Teagan</a><a class="n" href="/give.html">Ways to give</a><a class="n" href="/partner.html">Partner</a><a class="btn btn-gold" href="/give.html">Donate</a></nav></div></header><section class="hero"><div class="wrap"><span class="eyebrow rv">Ways to give</span><h1 class="disp rv">Every path leads to a <span class="it" style="color:var(--gold)">child.</span></h1><p class="lead rv">Give once, give monthly, or give through the vehicle your advisor recommends. However you give, it turns into equipment, therapy, and hope for a family that never gets a day off.</p></div></section>
 
 
 
