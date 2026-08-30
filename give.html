@@ -2147,6 +2147,13 @@ nav#nav, nav.nav, header nav {
 }
 /* Trim the gap between why-struggle top and apply-for-help bottom */
 #apply-for-help { margin-top: 24px !important; margin-bottom: 24px !important; }
+</style><style id="tc-fix-reveal-picker">
+/* Primary CTA must never be hidden by a scroll animation */
+#donate-now .rv,
+.give-hero .rv {
+  opacity: 1 !important;
+  transform: none !important;
+}
 </style></head>
 <body class="give">
 <nav class="nav" id="nav">
@@ -2804,5 +2811,27 @@ nav#nav, nav.nav, header nav {
    so the integration slot exists if the parent page wants to attach
    analytics later (e.g. a 'toggle' listener on .struggle elements to
    record which system-failure items donors actually read). */</script>
-</body>
+<script id="tc-reveal-safety">
+// Safety net: reveal any .rv element already inside the viewport at load time,
+// so above-the-fold content never stays stuck at opacity:0 if the observer misses it.
+(function(){
+  function revealInView(){
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    document.querySelectorAll('.rv').forEach(function(el){
+      var r = el.getBoundingClientRect();
+      if (r.top < vh && r.bottom > 0) {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+        el.classList.add('in','vis','is-visible','reveal-in');
+      }
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', revealInView);
+  } else {
+    revealInView();
+  }
+  window.addEventListener('load', revealInView);
+})();
+</script></body>
 </html>
