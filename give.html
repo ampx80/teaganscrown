@@ -2091,7 +2091,10 @@ body.give ::selection {
 #donate-now { padding-top: 24px !important; scroll-margin-top: 80px !important; }
 /* Extra anchor aliases inside the section - make them invisible with zero height */
 </style>
-<style id="tc-scroll-fix">#donate-now{scroll-margin-top:96px}#apply-for-help{scroll-margin-top:96px}#why-families-struggle{scroll-margin-top:96px}</style></head>
+<style id="tc-scroll-fix">#donate-now{scroll-margin-top:96px}#apply-for-help{scroll-margin-top:96px}#why-families-struggle{scroll-margin-top:96px}</style><style id="tc-anchor-fix-v2">
+#donate-now, #donate-picker, #give-picker, #apply-for-help, #why-families-struggle { scroll-margin-top: 96px; }
+html { scroll-behavior: smooth; }
+</style></head>
 <body class="give">
 <nav class="nav" id="nav">
   <div class="wrap nav-in">
@@ -2298,7 +2301,7 @@ body.give ::selection {
 </section>
 
 
-<section id="donate-now" style="padding:24px 0 40px;scroll-margin-top:80px;position:relative;z-index:2"><div class="wrap" style="max-width:960px">
+<section id="donate-now" style="padding:24px 0 40px;scroll-margin-top:80px;position:relative;z-index:2"><div id="donate-picker" style="height:1px;scroll-margin-top:96px" aria-hidden="true"></div><div id="give-picker" style="height:1px;scroll-margin-top:96px" aria-hidden="true"></div><div class="wrap" style="max-width:960px">
     <div style="text-align:center;margin-bottom:36px">
       <div class="eyebrow rv" style="justify-content:center;display:inline-flex">Give now</div>
       <h2 class="sec rv" style="margin:.35em 0 .3em">Choose your gift.</h2>
