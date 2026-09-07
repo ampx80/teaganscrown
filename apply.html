@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <!--
   INTEGRATION: set action to your form backend (Web3Forms/Formspree/Tally/Basin).
-  These submissions contain SENSITIVE personal + medical info about children —
-  use a privacy-appropriate service, restrict who can read responses, and don't
+  These submissions contain SENSITIVE personal + medical info about children - use a privacy-appropriate service, restrict who can read responses, and don't
   collect more than needed.
 -->
 <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Apply for Help — Teagan's Crown</title>
+<title>Apply for Help - Teagan's Crown</title>
 <meta name="description" content="Families raising a child with special needs can ask Teagan's Crown for help. Every request is read personally. Your information is kept private." />
 <meta name="robots" content="noindex" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -601,15 +600,15 @@ header .btn-gold::before, header a.don::before, .nav .btn-gold::before, nav .btn
       <section class="card" aria-labelledby="who-h">
       <h2 id="who-h">Who this is for &amp; what we can help with</h2>
       <ul class="help-list">
-        <li>Adaptive and mobility equipment — wheelchairs, walkers, standers, adaptive seating</li>
+        <li>Adaptive and mobility equipment - wheelchairs, walkers, standers, adaptive seating</li>
         <li>Respiratory and medical devices, supplies, and therapy equipment</li>
-        <li>Vehicle and home accessibility — ramps, lifts, repairs, modifications</li>
+        <li>Vehicle and home accessibility - ramps, lifts, repairs, modifications</li>
         <li>Medical bills, therapy costs, and prescriptions insurance won't cover</li>
-        <li>Family relief — the small, urgent things that help you keep going</li>
+        <li>Family relief - the small, urgent things that help you keep going</li>
       </ul>
       <p class="fineprint">
         We're a young organization with limited funds, so we can't say yes to everything, and we can't promise
-        a grant. What we can promise is that a real person will read what you send with care — and if we can't
+        a grant. What we can promise is that a real person will read what you send with care - and if we can't
         help directly, we'll try to point you somewhere that can.
       </p>
     </section>
@@ -619,11 +618,11 @@ header .btn-gold::before, header a.don::before, .nav .btn-gold::before, nav .btn
     <!--
       No-JS friendly: the form POSTs normally to __FORM_ENDPOINT__.
       With JS on, if the endpoint is still the placeholder we intercept and show a PREVIEW of the success state
-      (see script) and log a warning — we NEVER pretend a real submission happened.
+      (see script) and log a warning - we NEVER pretend a real submission happened.
     -->
     <form id="apply-form" action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data" novalidate>
       <input type="hidden" name="access_key" value="282b3a9d-6066-4d0c-8978-1f5896ac3dd3">
-      <input type="hidden" name="subject" value="New Family Assistance Application — Teagan's Crown">
+      <input type="hidden" name="subject" value="New Family Assistance Application - Teagan's Crown">
       <input type="hidden" name="from_name" value="Teagan's Crown Website">
       <input type="hidden" name="redirect" value="https://teaganscrown.org/apply.html?submitted=1">
       <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none !important;" aria-hidden="true">
@@ -686,7 +685,7 @@ header .btn-gold::before, header a.don::before, .nav .btn-gold::before, nav .btn
         <div class="field full">
           <label for="c-diag">Diagnosis or needs <span class="opt">(optional)</span></label>
           <span class="hint">A diagnosis is not required to apply. If you would like to share, a few words helps us understand the situation.</span>
-          <textarea id="c-diag" name="child_diagnosis" rows="2" placeholder="e.g. Cerebral palsy — uses a wheelchair full-time"></textarea>
+          <textarea id="c-diag" name="child_diagnosis" rows="2" placeholder="e.g. Cerebral palsy - uses a wheelchair full-time"></textarea>
         </div>
       </fieldset>
 
@@ -702,7 +701,7 @@ header .btn-gold::before, header a.don::before, .nav .btn-gold::before, nav .btn
         </div>
 
         <div class="field full">
-          <label for="s-request">What would help — what are you requesting? <span class="req" aria-hidden="true">*</span></label>
+          <label for="s-request">What would help - what are you requesting? <span class="req" aria-hidden="true">*</span></label>
           <textarea id="s-request" name="request" rows="4" required aria-required="true" placeholder="The specific item, service, or support that would make a difference."></textarea>
           <p class="err" id="err-s-request">Please tell us what would help.</p>
         </div>
@@ -710,15 +709,15 @@ header .btn-gold::before, header a.don::before, .nav .btn-gold::before, nav .btn
         <div class="grid">
           <div class="field">
             <label for="s-cost">Estimated cost <span class="opt">(optional)</span></label>
-            <input id="s-cost" name="estimated_cost" type="text" inputmode="decimal" placeholder="$ — a rough number is fine" />
+            <input id="s-cost" name="estimated_cost" type="text" inputmode="decimal" placeholder="$ - a rough number is fine" />
           </div>
           <div class="field">
             <label for="s-timeline">Timeline <span class="req" aria-hidden="true">*</span></label>
             <select id="s-timeline" name="timeline" required aria-required="true">
               <option value="" selected disabled>How urgent is this?</option>
-              <option value="emergency">Emergency — we need help right away</option>
-              <option value="weeks">Soon — within the next few weeks</option>
-              <option value="flexible">Flexible — no immediate deadline</option>
+              <option value="emergency">Emergency - we need help right away</option>
+              <option value="weeks">Soon - within the next few weeks</option>
+              <option value="flexible">Flexible - no immediate deadline</option>
             </select>
             <p class="err" id="err-s-timeline">Please choose a timeline.</p>
           </div>
@@ -728,7 +727,7 @@ header .btn-gold::before, header a.don::before, .nav .btn-gold::before, nav .btn
       <!-- ===== Supporting files ===== -->
       <fieldset>
         <legend>Supporting files</legend>
-        <p class="legend-note">Quotes, bills, photos, or letters are welcome — but never required. Send only what you have.</p>
+        <p class="legend-note">Quotes, bills, photos, or letters are welcome - but never required. Send only what you have.</p>
 
         <div class="field full">
           <label for="files" class="drop" id="drop">
@@ -738,7 +737,7 @@ header .btn-gold::before, header a.don::before, .nav .btn-gold::before, nav .btn
               <line x1="12" y1="3" x2="12" y2="15"/>
             </svg>
             <span class="drop-title">Add files</span>
-            <span class="drop-sub">Tap to choose, or drag them here — PDF, JPG, PNG, DOC · up to ~10 MB each</span>
+            <span class="drop-sub">Tap to choose, or drag them here - PDF, JPG, PNG, DOC · up to ~10 MB each</span>
           </label>
           <input id="files" name="attachments" type="file" multiple
                  accept=".pdf,.jpg,.jpeg,.png,.heic,.doc,.docx,.txt"
@@ -794,7 +793,7 @@ header .btn-gold::before, header a.don::before, .nav .btn-gold::before, nav .btn
           <path d="M20 6L9 17l-5-5"/>
         </svg>
       </div>
-      <h2>Thank you — your request is with us.</h2>
+      <h2>Thank you - your request is with us.</h2>
       <p>We read every request personally, and we'll be in touch. Please give us a little time; a real person is reading yours.</p>
       <p class="warm">You are not alone.</p>
     </section>
@@ -967,7 +966,7 @@ header .btn-gold::before, header a.don::before, .nav .btn-gold::before, nav .btn
     </div>
     <a class="tcx-gv-go" id="tcxGiveGo" target="_blank" rel="noopener">Continue to secure checkout &rarr;</a>
     <p class="tcx-gv-fine">Secure checkout via Givebutter &middot; Card, ACH, Apple Pay, Google Pay</p>
-    <a class="tcx-gv-apply" href="/apply.html">Need help for your own family? Apply for support &rarr;</a>
+    <a class="tcx-gv-apply" href="/apply.html">Need help for your own family? Apply for support &rarr;</a><p class="tcx-gv-fine" style="margin-top:6px">For children 21 and under. We help the greatest need first.</p>
   </div>
 </div>
 <script id="tcx-give-js">
