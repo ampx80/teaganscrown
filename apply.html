@@ -595,7 +595,10 @@ header .btn-gold::before, header a.don::before, .nav .btn-gold::before, nav .btn
       happening. We're a small, new nonprofit, and we read every request personally.
     </p>
 
-    <section class="card" aria-labelledby="who-h">
+    <div class="elig-note" style="margin:0 0 1.4rem;padding:1rem 1.15rem;border:1px solid rgba(231,178,76,.32);border-radius:14px;background:rgba(231,178,76,.07);font-size:1rem;line-height:1.55;color:#F6F0E6">
+        <strong style="color:#E7B24C">Who we help:</strong> children <strong>21 and under</strong> with special needs and complex medical needs. We read every request and prioritize the families facing the <strong>greatest need first</strong>.
+      </div>
+      <section class="card" aria-labelledby="who-h">
       <h2 id="who-h">Who this is for &amp; what we can help with</h2>
       <ul class="help-list">
         <li>Adaptive and mobility equipment — wheelchairs, walkers, standers, adaptive seating</li>
@@ -674,14 +677,15 @@ header .btn-gold::before, header a.don::before, .nav .btn-gold::before, nav .btn
             <p class="err" id="err-c-name">Please add a first name or initials.</p>
           </div>
           <div class="field">
-            <label for="c-age">Child's age <span class="opt">(optional)</span></label>
-            <input id="c-age" name="child_age" type="number" min="0" max="30" inputmode="numeric" />
+            <label for="c-age">Child's age <span class="req" aria-hidden="true">*</span></label>
+            <span class="hint">Teagan's Crown serves children 21 and under.</span>
+            <input id="c-age" name="child_age" type="number" min="0" max="21" inputmode="numeric" required aria-required="true" />
           </div>
         </div>
 
         <div class="field full">
           <label for="c-diag">Diagnosis or needs <span class="opt">(optional)</span></label>
-          <span class="hint">Only if you'd like to. A few words is plenty — it helps us understand the situation.</span>
+          <span class="hint">A diagnosis is not required to apply. If you would like to share, a few words helps us understand the situation.</span>
           <textarea id="c-diag" name="child_diagnosis" rows="2" placeholder="e.g. Cerebral palsy — uses a wheelchair full-time"></textarea>
         </div>
       </fieldset>
@@ -989,5 +993,5 @@ header .btn-gold::before, header a.don::before, .nav .btn-gold::before, nav .btn
   modal.addEventListener('click',function(e){if(e.target===modal||e.target.closest('[data-gv-close]'))close();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)close();});
 })();
-</script></body>
+</script><script>(function(){var a=document.getElementById("c-age");if(!a)return;a.addEventListener("input",function(){var n=parseInt(a.value,10);var w=document.getElementById("age-warn");if(n>21){if(!w){w=document.createElement("p");w.id="age-warn";w.style.cssText="color:#E8735C;font-size:.85rem;margin:.45rem 0 0;line-height:1.4";w.textContent="Teagan\u2019s Crown currently serves children 21 and under. You are welcome to submit, and we will try to point you toward other resources if we cannot help directly.";a.insertAdjacentElement("afterend",w);}}else if(w){w.remove();}});})();</script></body>
 </html>
