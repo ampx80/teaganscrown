@@ -335,6 +335,54 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:3
   .tcx-amb i{animation:none;} .tcx-prog{transition:none;}
   .tcx-ready .tcx-rise{opacity:1 !important;transform:none !important;}
 }
+</style><style id="tcx-give">
+.tcx-gv-bd{position:fixed;inset:0;z-index:10000;background:rgba(10,8,14,.72);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .25s;}
+.tcx-gv-bd.show{opacity:1;}
+.tcx-gv{width:100%;max-width:560px;max-height:92vh;overflow:auto;background:#1b1622;border:1px solid rgba(231,178,76,.28);border-radius:22px;padding:clamp(20px,4vw,34px);box-shadow:0 40px 120px -30px rgba(0,0,0,.8);transform:translateY(14px) scale(.98);transition:transform .28s cubic-bezier(.22,.61,.36,1);color:#F6F0E6;font-family:'Hanken Grotesk',system-ui,sans-serif;}
+.tcx-gv-bd.show .tcx-gv{transform:none;}
+.tcx-gv-x{position:sticky;float:right;top:0;margin:-6px -6px 0 0;width:38px;height:38px;border-radius:50%;border:1px solid rgba(246,240,230,.16);background:rgba(246,240,230,.05);color:#F6F0E6;font-size:20px;line-height:1;cursor:pointer;}
+.tcx-gv-x:hover{border-color:#E7B24C;color:#F4CE7B;}
+.tcx-gv-eye{font:600 12px/1 'Hanken Grotesk',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#E7B24C;margin:0 0 6px;}
+.tcx-gv h2{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(1.5rem,3vw,2rem);margin:0 0 18px;line-height:1.1;}
+.tcx-gv-lab{font:600 13px/1 'Hanken Grotesk',sans-serif;letter-spacing:.02em;color:rgba(246,240,230,.6);text-transform:uppercase;margin:20px 0 10px;}
+.tcx-freq{display:flex;background:rgba(246,240,230,.06);border-radius:999px;padding:4px;gap:4px;}
+.tcx-freq button{flex:1;padding:11px;border:0;border-radius:999px;background:transparent;color:#F6F0E6;font:600 15px/1 'Hanken Grotesk',sans-serif;cursor:pointer;transition:.18s;}
+.tcx-freq button.on{background:linear-gradient(100deg,#F4CE7B,#E7B24C);color:#251908;}
+.tcx-desig{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.tcx-desig button{text-align:left;padding:13px 14px;border:1px solid rgba(246,240,230,.14);border-radius:14px;background:rgba(246,240,230,.03);color:#F6F0E6;cursor:pointer;transition:.18s;}
+.tcx-desig button b{display:block;font:600 14.5px/1.2 'Hanken Grotesk',sans-serif;margin-bottom:3px;}
+.tcx-desig button span{font:400 12px/1.35 'Hanken Grotesk',sans-serif;color:rgba(246,240,230,.6);}
+.tcx-desig button.on{border-color:#E7B24C;background:linear-gradient(160deg,rgba(231,178,76,.2),rgba(231,178,76,.05));}
+.tcx-amts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.tcx-amts button{padding:16px 6px;border:1px solid rgba(246,240,230,.14);border-radius:14px;background:rgba(246,240,230,.03);color:#F6F0E6;font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:1.5rem;cursor:pointer;transition:.18s;}
+.tcx-amts button:hover{border-color:#E7B24C;}
+.tcx-amts button.on{border-color:#E7B24C;background:linear-gradient(160deg,rgba(231,178,76,.28),rgba(231,178,76,.08));box-shadow:0 0 0 2px rgba(231,178,76,.4);}
+.tcx-custom{grid-column:1 / -1;display:flex;align-items:center;gap:8px;border:1px solid rgba(246,240,230,.14);border-radius:14px;padding:0 14px;background:rgba(246,240,230,.03);}
+.tcx-custom span{font-family:'Fraunces',serif;font-size:1.3rem;color:#E7B24C;}
+.tcx-custom input{flex:1;background:transparent;border:0;outline:none;color:#F6F0E6;font-family:'Fraunces',serif;font-weight:600;font-size:1.3rem;padding:14px 0;}
+.tcx-gv-go{display:flex;width:100%;justify-content:center;align-items:center;gap:.5em;margin-top:22px;padding:1.15em 1.6em;border-radius:100px;background:linear-gradient(100deg,#F4CE7B,#E7B24C);color:#251908;font:700 1.12rem/1 'Hanken Grotesk',sans-serif;text-decoration:none;box-shadow:0 14px 34px -12px rgba(231,178,76,.6);transition:transform .18s;}
+.tcx-gv-go:hover{transform:translateY(-2px);}
+.tcx-gv-fine{text-align:center;font:400 12.5px/1.5 'Hanken Grotesk',sans-serif;color:rgba(246,240,230,.5);margin:12px 0 0;}
+.tcx-gv-apply{display:block;text-align:center;margin:14px 0 0;color:#E7B24C;font:600 14px/1 'Hanken Grotesk',sans-serif;text-decoration:none;}
+.tcx-gv-apply:hover{color:#F4CE7B;text-decoration:underline;}
+/* per-page WHERE YOUR GIFT GOES block */
+.tcx-blk{position:relative;padding:clamp(3rem,7vw,5.5rem) 0;border-top:1px solid rgba(231,178,76,.14);margin-top:clamp(3rem,7vw,5rem);}
+.tcx-blk .tcx-blk-in{max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,40px);}
+.tcx-blk-eye{font:600 12px/1 'Hanken Grotesk',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#E7B24C;margin:0 0 10px;}
+.tcx-blk h2{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(1.8rem,4vw,2.8rem);margin:0 0 10px;line-height:1.05;}
+.tcx-blk p.tcx-blk-sub{color:rgba(246,240,230,.72);max-width:56ch;font-size:1.05rem;margin:0 0 26px;}
+.tcx-blk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-bottom:22px;}
+.tcx-blk-card{text-align:left;padding:22px;border:1px solid rgba(246,240,230,.14);border-radius:16px;background:rgba(246,240,230,.03);color:#F6F0E6;cursor:pointer;transition:.2s;}
+.tcx-blk-card:hover{transform:translateY(-3px);border-color:#E7B24C;background:linear-gradient(160deg,rgba(231,178,76,.14),rgba(231,178,76,.03));}
+.tcx-blk-card b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:1.25rem;margin-bottom:6px;}
+.tcx-blk-card span{font-size:.92rem;line-height:1.45;color:rgba(246,240,230,.66);}
+.tcx-blk-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;}
+.tcx-blk-give{padding:1.05em 2em;border:0;border-radius:100px;background:linear-gradient(100deg,#F4CE7B,#E7B24C);color:#251908;font:700 1.05rem/1 'Hanken Grotesk',sans-serif;cursor:pointer;box-shadow:0 14px 34px -14px rgba(231,178,76,.6);transition:transform .18s;}
+.tcx-blk-give:hover{transform:translateY(-2px);}
+.tcx-blk-apply{color:#E7B24C;font:600 15px/1 'Hanken Grotesk',sans-serif;text-decoration:none;}
+.tcx-blk-apply:hover{text-decoration:underline;color:#F4CE7B;}
+@media(max-width:520px){.tcx-desig,.tcx-amts{grid-template-columns:1fr 1fr;}}
+@media(prefers-reduced-motion:reduce){.tcx-gv-bd,.tcx-gv{transition:none;}}
 </style></head>
 <body id="top">
 <a class="skip" href="#main">Skip to content</a>
@@ -658,6 +706,20 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:3
 
 </main>
 
+<section class="tcx-blk" aria-label="Ways to give">
+  <div class="tcx-blk-in">
+    <p class="tcx-blk-eye">Where your gift goes</p>
+    <h2>You choose. A child grows.</h2>
+    <p class="tcx-blk-sub">Pick exactly what your gift supports. Every dollar goes to work for children with special needs and the families who fight for them.</p>
+    <div class="tcx-blk-grid">
+      <button class="tcx-blk-card" type="button" data-give data-desig="where-needed"><b>Where needed most</b><span>Direct it to the greatest need right now</span></button><button class="tcx-blk-card" type="button" data-give data-desig="equipment"><b>Adaptive equipment</b><span>Gait trainers, wheelchairs, AAC devices</span></button><button class="tcx-blk-card" type="button" data-give data-desig="therapy"><b>Therapy</b><span>Physical, occupational, and speech sessions</span></button><button class="tcx-blk-card" type="button" data-give data-desig="family-relief"><b>Family relief</b><span>Direct help for a family in the fight</span></button>
+    </div>
+    <div class="tcx-blk-cta">
+      <button class="tcx-blk-give" type="button" data-give>Give now</button>
+      <a class="tcx-blk-apply" href="/apply.html">Family in the fight? Apply for help &rarr;</a>
+    </div>
+  </div>
+</section>
 <footer class="foot">
   <div class="wrap">
     <div class="foot-grid">
@@ -746,5 +808,51 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:3
     // safety net 2: no matter what, reveal EVERYTHING after 2.5s so nothing can ever be stuck
     setTimeout(function(){els.forEach(function(e){e.classList.add('tcx-in');});},2500);
   }
+})();
+</script><div class="tcx-gv-bd" id="tcxGive" hidden>
+  <div class="tcx-gv" role="dialog" aria-modal="true" aria-labelledby="tcxGiveTitle">
+    <button class="tcx-gv-x" type="button" aria-label="Close" data-gv-close>&times;</button>
+    <p class="tcx-gv-eye">Every child wears a crown</p>
+    <h2 id="tcxGiveTitle">Choose your gift</h2>
+    <div class="tcx-freq" role="group" aria-label="Frequency">
+      <button type="button" data-freq="once" class="on">One-time</button>
+      <button type="button" data-freq="monthly">Monthly</button>
+    </div>
+    <p class="tcx-gv-lab">Where should your gift go?</p>
+    <div class="tcx-desig">
+      <button type="button" data-desig="where-needed" class="on"><b>Where needed most</b><span>Direct it to the greatest need right now</span></button><button type="button" data-desig="equipment"><b>Adaptive equipment</b><span>Gait trainers, wheelchairs, AAC devices</span></button><button type="button" data-desig="therapy"><b>Therapy</b><span>Physical, occupational, and speech sessions</span></button><button type="button" data-desig="family-relief"><b>Family relief</b><span>Direct help for a family in the fight</span></button>
+    </div>
+    <p class="tcx-gv-lab">Amount</p>
+    <div class="tcx-amts">
+      <button type="button" data-amt="25">$25</button><button type="button" data-amt="50">$50</button><button type="button" data-amt="100" class="on">$100</button><button type="button" data-amt="250">$250</button><button type="button" data-amt="500">$500</button><button type="button" data-amt="1000">$1,000</button>
+      <label class="tcx-custom"><span>$</span><input type="number" min="1" inputmode="numeric" placeholder="Other amount" id="tcxAmtCustom" aria-label="Custom amount"></label>
+    </div>
+    <a class="tcx-gv-go" id="tcxGiveGo" target="_blank" rel="noopener">Continue to secure checkout &rarr;</a>
+    <p class="tcx-gv-fine">Secure checkout via Givebutter &middot; Card, ACH, Apple Pay, Google Pay</p>
+    <a class="tcx-gv-apply" href="/apply.html">Need help for your own family? Apply for support &rarr;</a>
+  </div>
+</div>
+<script id="tcx-give-js">
+(function(){
+  var CAMP='https://givebutter.com/teaganscrown';
+  var modal=document.getElementById('tcxGive'); if(!modal) return;
+  var state={freq:'once',desig:'where-needed',amt:100};
+  var go=document.getElementById('tcxGiveGo'), custom=document.getElementById('tcxAmtCustom');
+  function build(){var u=CAMP+'?amount='+(state.amt||0);if(state.freq==='monthly')u+='&frequency=monthly';u+='&designation='+state.desig;go.setAttribute('href',u);}
+  function setOn(sel,attr,val){modal.querySelectorAll(sel).forEach(function(b){b.classList.toggle('on',b.getAttribute(attr)===String(val));});}
+  modal.querySelectorAll('[data-freq]').forEach(function(b){b.addEventListener('click',function(){state.freq=b.getAttribute('data-freq');setOn('[data-freq]','data-freq',state.freq);build();});});
+  modal.querySelectorAll('[data-desig]').forEach(function(b){b.addEventListener('click',function(){state.desig=b.getAttribute('data-desig');setOn('[data-desig]','data-desig',state.desig);build();});});
+  modal.querySelectorAll('[data-amt]').forEach(function(b){b.addEventListener('click',function(){state.amt=+b.getAttribute('data-amt');if(custom)custom.value='';setOn('[data-amt]','data-amt',state.amt);build();});});
+  if(custom)custom.addEventListener('input',function(){var v=parseInt(custom.value,10);if(v>0){state.amt=v;modal.querySelectorAll('[data-amt]').forEach(function(b){b.classList.remove('on');});build();}});
+  var lastFocus=null;
+  function open(desig){if(desig){state.desig=desig;setOn('[data-desig]','data-desig',desig);}build();lastFocus=document.activeElement;modal.hidden=false;requestAnimationFrame(function(){modal.classList.add('show');});document.body.style.overflow='hidden';go.focus();}
+  function close(){modal.classList.remove('show');document.body.style.overflow='';setTimeout(function(){modal.hidden=true;},260);if(lastFocus)lastFocus.focus();}
+  // any Donate link (to /give.html) or [data-give] opens the popup
+  document.addEventListener('click',function(e){
+    var t=e.target.closest('[data-give], a[href$="/give.html"], a[href="/give.html"]');
+    if(!t)return; e.preventDefault(); open(t.getAttribute('data-desig'));
+  });
+  modal.addEventListener('click',function(e){if(e.target===modal||e.target.closest('[data-gv-close]'))close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)close();});
 })();
 </script></body></html>
