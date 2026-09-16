@@ -1,0 +1,146 @@
+/* ==========================================================================
+   Teagan's Crown - shared "Crown" layer for every inner page.
+   1) homepage-grade atmosphere behind the top of the page
+   2) signature gilded accent on the page headline
+   3) dark cinematic skin for article pages (body.crown-article)
+   ASCII hyphens only. Reduced-motion aware. GPU-only animation.
+   ========================================================================== */
+body{position:relative}
+main{position:relative;z-index:1}
+
+/* ---- 1. atmosphere ---- */
+.crown-atmos{position:absolute;left:0;right:0;top:0;height:min(120vh,1100px);z-index:-1;pointer-events:none;overflow:hidden;
+  -webkit-mask-image:linear-gradient(#000 38%,transparent 100%);mask-image:linear-gradient(#000 38%,transparent 100%)}
+.crown-atmos i,.crown-atmos span{position:absolute;display:block}
+.crown-atmos .ca-b1{width:70vw;height:70vw;max-width:980px;max-height:980px;left:-18vw;top:-30vw;border-radius:50%;
+  background:radial-gradient(circle,rgba(231,178,76,.30),rgba(231,178,76,.08) 45%,transparent 68%);filter:blur(30px);animation:caDrift 22s ease-in-out infinite alternate}
+.crown-atmos .ca-b2{width:52vw;height:52vw;max-width:760px;max-height:760px;right:-16vw;top:-8vw;border-radius:50%;
+  background:radial-gradient(circle,rgba(232,115,92,.20),transparent 64%);filter:blur(34px);animation:caDrift 28s ease-in-out infinite alternate-reverse}
+.crown-atmos .ca-b3{width:60vw;height:40vw;left:20vw;top:26vh;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(92,64,122,.35),transparent 70%);filter:blur(40px);animation:caBreathe 16s ease-in-out infinite}
+.crown-atmos .ca-rays{inset:-20% -10% auto -10%;height:120%;
+  background:repeating-conic-gradient(from 200deg at 12% -8%,rgba(246,213,143,.055) 0deg 5deg,transparent 5deg 14deg);
+  -webkit-mask-image:radial-gradient(70% 60% at 12% 0,#000,transparent 72%);mask-image:radial-gradient(70% 60% at 12% 0,#000,transparent 72%);
+  animation:caRays 40s linear infinite;transform-origin:12% 0}
+.crown-atmos .ca-stars{inset:0;opacity:.7;
+  background-image:radial-gradient(1.4px 1.4px at 12% 22%,rgba(255,240,205,.8),transparent 60%),radial-gradient(1px 1px at 34% 12%,rgba(241,200,118,.7),transparent 60%),
+  radial-gradient(1.6px 1.6px at 58% 30%,rgba(255,240,205,.6),transparent 60%),radial-gradient(1px 1px at 78% 18%,rgba(231,178,76,.7),transparent 60%),
+  radial-gradient(1.2px 1.2px at 88% 44%,rgba(255,240,205,.5),transparent 60%),radial-gradient(1px 1px at 22% 52%,rgba(241,200,118,.5),transparent 60%),
+  radial-gradient(1.3px 1.3px at 46% 60%,rgba(255,240,205,.45),transparent 60%),radial-gradient(1px 1px at 68% 70%,rgba(231,178,76,.4),transparent 60%);
+  animation:caTwinkle 6s ease-in-out infinite alternate}
+.crown-atmos .ca-mote{bottom:-10px;border-radius:50%;opacity:0;
+  background:radial-gradient(circle at 35% 35%,#FCE7B0,rgba(231,178,76,.55) 45%,rgba(231,178,76,0) 72%);
+  box-shadow:0 0 10px rgba(231,178,76,.55);will-change:transform,opacity;animation:caRise linear infinite}
+@keyframes caDrift{to{transform:translate3d(6vw,4vh,0) scale(1.12)}}
+@keyframes caBreathe{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:1;transform:scale(1.08)}}
+@keyframes caRays{to{transform:rotate(8deg)}}
+@keyframes caTwinkle{to{opacity:.35}}
+@keyframes caRise{0%{transform:translate3d(0,0,0);opacity:0}12%{opacity:.9}70%{opacity:.6}100%{transform:translate3d(18px,-110vh,0);opacity:0}}
+
+/* keep the give page eyebrow clear of the fixed nav */
+.give-hero{padding-top:clamp(118px,13vw,150px)!important}
+/* floating share rail: dock to the bottom whenever it could overlap page text */
+@media (max-width:1180px){
+  .tcx-share{left:0!important;right:0!important;top:auto!important;bottom:0!important;transform:none!important;flex-direction:row!important;
+    justify-content:center;gap:14px;padding:10px;background:rgba(20,16,25,.86);border-top:1px solid rgba(231,178,76,.2);backdrop-filter:blur(10px)}
+  .tcx-toast{left:50%!important;top:auto!important;bottom:70px!important;transform:translateX(-50%)!important}
+  body{padding-bottom:62px}
+}
+
+/* ---- 2. gilded headline accent ---- */
+.crown-em{font-style:italic;font-weight:500;padding-right:.04em;
+  background:linear-gradient(100deg,#F8DFA0 0%,#E7B24C 45%,#E8735C 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+
+/* ---- 3. article skin ---- */
+body.crown-article main{padding:clamp(112px,13vw,156px) 0 24px}
+body.crown-article main .wrap{max-width:820px}
+body.crown-article main p{margin:0 0 1.05em;color:rgba(246,240,230,.86);font-size:clamp(1.02rem,1.15vw,1.1rem);line-height:1.78}
+body.crown-article main a{color:var(--gold-2,#F1C876);text-underline-offset:3px;text-decoration-color:rgba(241,200,118,.45)}
+body.crown-article main a:hover{color:var(--gold,#E7B24C)}
+body.crown-article main strong,body.crown-article main b{color:var(--ivory,#F6F0E6)}
+body.crown-article main ul,body.crown-article main ol{padding-left:1.3em;margin:0 0 1.2em;color:rgba(246,240,230,.86)}
+body.crown-article main li{margin-bottom:.5em}
+body.crown-article .crumb{font-size:.8rem;letter-spacing:.04em;color:var(--ink-faint,rgba(246,240,230,.46));margin-bottom:26px}
+body.crown-article .crumb a{color:var(--ink-soft,rgba(246,240,230,.72));text-decoration:none}
+body.crown-article main h1{font-family:var(--display);font-weight:600;font-size:clamp(2.4rem,5.8vw,4.4rem);line-height:1.02;letter-spacing:-.022em;margin:.05em 0 .42em;color:var(--ivory);text-wrap:balance}
+body.crown-article .dek{font-size:clamp(1.14rem,1.6vw,1.34rem);color:var(--ink-soft);line-height:1.55;margin:0 0 2em;max-width:60ch}
+body.crown-article main h2{font-family:var(--display);font-weight:600;font-size:clamp(1.6rem,2.9vw,2.2rem);line-height:1.12;letter-spacing:-.012em;margin:2.1em 0 .6em;color:var(--ivory);scroll-margin-top:100px;text-wrap:balance}
+body.crown-article main h3{font-family:var(--display);font-weight:600;color:var(--ivory);line-height:1.2}
+body.crown-article main h2::after{content:"";display:block;width:42px;height:2px;margin-top:.45em;background:linear-gradient(90deg,var(--gold),transparent)}
+
+/* key facts */
+body.crown-article .kf{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin:0 0 2.8em}
+body.crown-article .kf .c{position:relative;overflow:hidden;border-radius:18px;padding:22px 20px;border:1px solid var(--line-d);
+  background:linear-gradient(160deg,rgba(246,240,230,.075),rgba(246,240,230,.015));backdrop-filter:blur(8px);transition:transform .35s var(--ease),border-color .35s}
+body.crown-article .kf .c::before{content:"";position:absolute;inset:0 0 auto 0;height:2px;background:linear-gradient(90deg,var(--gold-2),var(--gold),transparent)}
+body.crown-article .kf .c:hover{transform:translateY(-4px);border-color:rgba(231,178,76,.45)}
+body.crown-article .kf .s{font-family:var(--display);font-weight:600;font-size:1.75rem;line-height:1.05;color:var(--gold-2)}
+body.crown-article .kf .l{margin-top:.45em;font-size:.93rem;color:var(--ink-soft);line-height:1.45}
+
+/* flow / steps */
+body.crown-article .flow{position:relative;overflow:hidden;margin:2.6em 0;padding:clamp(24px,3.2vw,38px);border-radius:24px;border:1px solid var(--line-d);
+  background:linear-gradient(160deg,rgba(42,32,51,.9),rgba(20,16,25,.92))}
+body.crown-article .flow::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(55% 60% at 0 0,rgba(231,178,76,.16),transparent 62%)}
+body.crown-article .flow h3{position:relative;font-size:1.4rem;margin:0 0 1.3em}
+body.crown-article .steps{display:grid;position:relative}
+body.crown-article .step{display:grid;grid-template-columns:auto 1fr;gap:18px;position:relative;padding-bottom:24px}
+body.crown-article .step:not(:last-child)::before{content:"";position:absolute;left:19px;top:44px;bottom:-2px;width:2px;background:linear-gradient(var(--gold),rgba(231,178,76,.1))}
+body.crown-article .step .n{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:1.02rem;color:#25190A;
+  background:linear-gradient(150deg,var(--gold-2),var(--gold));box-shadow:0 0 0 5px rgba(231,178,76,.12),0 10px 22px -8px rgba(231,178,76,.7)}
+body.crown-article .step .b b{display:block;font-size:1.1rem;margin-bottom:.22em;color:var(--ivory)}
+body.crown-article .step .b span{color:var(--ink-soft);font-size:.98rem;line-height:1.55}
+
+/* comparison table */
+body.crown-article .cmp{margin:2.6em 0}
+body.crown-article .cmp h3{font-size:1.4rem;margin:0 0 .85em}
+body.crown-article .cmp .scroll{overflow-x:auto;border:1px solid var(--line-d);border-radius:18px;background:rgba(246,240,230,.02)}
+body.crown-article table{border-collapse:collapse;width:100%;min-width:480px;font-size:.96rem;background:transparent}
+body.crown-article th,body.crown-article td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--line-d);vertical-align:top;color:rgba(246,240,230,.86)}
+body.crown-article thead th{background:linear-gradient(100deg,rgba(231,178,76,.24),rgba(231,178,76,.07));color:var(--gold-2);font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}
+body.crown-article tbody tr:nth-child(even){background:rgba(246,240,230,.035)}
+body.crown-article tbody tr:hover{background:rgba(231,178,76,.06)}
+body.crown-article tbody td:first-child{font-weight:700;color:var(--ivory)}
+body.crown-article tbody tr:last-child td{border-bottom:0}
+
+/* callout */
+body.crown-article .callout{margin:2.3em 0;padding:22px 26px;border-radius:18px;border:1px solid rgba(231,178,76,.32);border-left:3px solid var(--gold);
+  background:linear-gradient(120deg,rgba(231,178,76,.17),rgba(231,178,76,.04))}
+body.crown-article .callout b{display:block;font-family:var(--display);font-size:1.2rem;margin-bottom:.35em;color:var(--gold-2)}
+body.crown-article .callout p{margin:0;color:var(--ink-soft)}
+
+/* faq */
+body.crown-article .faq{max-width:none;margin-top:3em;padding-top:1.2em;border-top:1px solid var(--line-d)}
+body.crown-article .faq details{border-bottom:1px solid var(--line-d);padding:0}
+body.crown-article .faq summary{list-style:none;cursor:pointer;display:flex;gap:.8em;align-items:baseline;padding:1.1em 0;
+  font-family:var(--display);font-weight:600;font-size:clamp(1.05rem,1.7vw,1.25rem);color:var(--ivory);transition:color .25s}
+body.crown-article .faq summary::-webkit-details-marker{display:none}
+body.crown-article .faq summary::after{display:none}
+body.crown-article .faq summary::before{content:"+";flex:none;width:1em;color:var(--gold);font-family:var(--body);font-weight:700}
+body.crown-article .faq details[open] summary::before{content:"\2212"}
+body.crown-article .faq summary:hover{color:var(--gold-2)}
+body.crown-article .faq details .a{margin:0 0 1.2em;padding-left:1.8em;color:var(--ink-soft)}
+
+/* related */
+body.crown-article .related{margin-top:3em;padding:26px 28px;border-radius:20px;border:1px solid var(--line-d);
+  background:linear-gradient(160deg,rgba(246,240,230,.065),rgba(246,240,230,.015))}
+body.crown-article .related h3{margin:0 0 .6em;font-size:1.3rem}
+body.crown-article .related a{display:block;padding:.7em 0;border-bottom:1px solid var(--line-d);text-decoration:none;color:var(--ivory);font-weight:600;transition:color .2s,padding .2s}
+body.crown-article .related a:last-child{border-bottom:0}
+body.crown-article .related a:hover{color:var(--gold-2);padding-left:8px}
+
+/* mission */
+body.crown-article .mission{position:relative;overflow:hidden;margin-top:44px;text-align:center;padding:clamp(30px,4.4vw,52px);border-radius:26px;
+  border:1px solid rgba(231,178,76,.28);background:linear-gradient(155deg,var(--plum),var(--ink))}
+body.crown-article .mission::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 50% 0,rgba(231,178,76,.26),transparent 62%)}
+body.crown-article .mission h3{position:relative;font-size:clamp(1.6rem,2.8vw,2.2rem);margin:0 0 .45em}
+body.crown-article .mission p{position:relative;color:var(--ink-soft);max-width:46ch;margin:0 auto 1.5em}
+body.crown-article .don{position:relative;display:inline-flex;align-items:center;gap:.5em;padding:.95em 1.7em;border-radius:100px;font-weight:700;text-decoration:none;
+  color:#25190A!important;background:linear-gradient(100deg,var(--gold-2),var(--gold));box-shadow:0 14px 34px -12px rgba(231,178,76,.65);transition:transform .25s var(--ease)}
+body.crown-article .don:hover{transform:translateY(-2px)}
+body.crown-article .rv{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  .crown-atmos *{animation:none!important}
+  .crown-atmos .ca-mote{display:none}
+}
