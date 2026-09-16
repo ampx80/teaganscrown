@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/resources/medicaid-waivers-for-special-needs-children-pennsylvania.html",
+      "destination": "/resources/pennsylvania-medicaid-waivers.html",
+      "permanent": true
+    },
+    {
+      "source": "/guides/medicaid-waivers/pennsylvania.html",
+      "destination": "/resources/pennsylvania-medicaid-waivers.html",
+      "permanent": true
+    }
+  ]
+}
