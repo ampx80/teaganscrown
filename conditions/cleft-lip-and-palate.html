@@ -179,9 +179,9 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:3
 .hero-atmos::after{width:46vw;height:46vw;right:-10vw;bottom:-16vw;background:radial-gradient(circle,rgba(232,115,92,.24),transparent 64%);animation:drift 17s var(--ease) infinite alternate-reverse;}
 @keyframes drift{from{transform:translate3d(0,0,0) scale(1);}to{transform:translate3d(3%,4%,0) scale(1.12);}}
 @media(prefers-reduced-motion:reduce){.hero-atmos::before,.hero-atmos::after{animation:none;}}
-.hero-in{position:relative;z-index:1;max-width:60ch;}
+.hero-in{position:relative;z-index:1;}
 .hero .crumbs{margin-bottom:1.6em;}
-.hero h1{font-family:var(--display);font-weight:600;font-size:clamp(2.6rem,7vw,5.4rem);line-height:1.0;letter-spacing:-.02em;margin:.35em 0 .5em;text-wrap:balance;}
+.hero h1{font-family:var(--display);font-weight:600;font-size:clamp(2.6rem,7vw,5.4rem);line-height:1.0;letter-spacing:-.02em;margin:.35em 0 .5em;text-wrap:balance;max-width:19ch;}
 .hero .lead{max-width:52ch;}
 .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:2rem;}
 
@@ -210,14 +210,14 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:3
 .on-ivory .prose blockquote{color:var(--ink);}
 
 /* Callout box inside prose */
-.callout{border:1px solid var(--line-l);border-left:4px solid var(--gold-deep);border-radius:14px;background:#fff;padding:clamp(18px,2.4vw,26px);margin:1.6em 0;}
+.callout{border:1px solid var(--line-l);border-left:4px solid var(--gold-deep);border-radius:14px;background:#fff;color:var(--ink);padding:clamp(18px,2.4vw,26px);margin:1.6em 0;}
 .callout h3{margin-top:0!important;font-size:1.15rem!important;}
 .callout p:last-child{margin-bottom:0;}
 
 /* Key facts grid */
 .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,26px);}
 @media(max-width:820px){.facts{grid-template-columns:1fr;}}
-.fact{border:1px solid var(--line-l);border-radius:20px;padding:clamp(24px,3vw,34px);background:#fff;transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s;}
+.fact{border:1px solid var(--line-l);border-radius:20px;padding:clamp(24px,3vw,34px);background:#fff;color:var(--ink);transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s;}
 .fact:hover{transform:translateY(-4px);box-shadow:0 26px 50px -30px rgba(20,16,25,.4);border-color:rgba(198,146,58,.5);}
 .fact .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(150deg,var(--gold-2),var(--gold));color:#25190A;margin-bottom:18px;}
 .fact .ic svg{width:24px;height:24px;}
@@ -256,7 +256,7 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:3
 /* Related pages */
 .rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.8vw,22px);}
 @media(max-width:820px){.rel-grid{grid-template-columns:1fr;}}
-.rel{display:block;border:1px solid var(--line-l);border-radius:18px;padding:clamp(22px,2.6vw,30px);background:#fff;transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s;}
+.rel{display:block;border:1px solid var(--line-l);border-radius:18px;padding:clamp(22px,2.6vw,30px);background:#fff;color:var(--ink);transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s;}
 .rel:hover{transform:translateY(-4px);box-shadow:0 26px 50px -30px rgba(20,16,25,.4);border-color:rgba(198,146,58,.5);}
 .rel .k{font-family:var(--body);font-weight:600;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);}
 .rel h3{font-family:var(--display);font-weight:600;font-size:1.28rem;line-height:1.08;letter-spacing:-.01em;margin:.6em 0 .35em;}
@@ -838,7 +838,7 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:3
       <label class="tcx-custom"><span>$</span><input type="number" min="1" inputmode="numeric" placeholder="Other amount" id="tcxAmtCustom" aria-label="Custom amount"></label>
     </div>
     <a class="tcx-gv-go" id="tcxGiveGo" target="_blank" rel="noopener">Continue to secure checkout &rarr;</a>
-    <p class="tcx-gv-fine">$1<br>Tax-deductible. 501(c)(3) EIN 42-4788162.</p>
+    <p class="tcx-gv-fine">Secure checkout via Givebutter &middot; Card, ACH, Apple Pay, Google Pay<br>Tax-deductible. 501(c)(3) EIN 42-4788162.</p>
     <a class="tcx-gv-apply" href="/apply.html">Need help for your own family? Apply for support &rarr;</a><p class="tcx-gv-fine" style="margin-top:6px">For children 21 and under. We help the greatest need first.</p>
   </div>
 </div>
@@ -858,9 +858,17 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:3
   function open(desig){if(desig){state.desig=desig;setOn('[data-desig]','data-desig',desig);}build();lastFocus=document.activeElement;modal.hidden=false;requestAnimationFrame(function(){modal.classList.add('show');});document.body.style.overflow='hidden';go.focus();}
   function close(){modal.classList.remove('show');document.body.style.overflow='';setTimeout(function(){modal.hidden=true;},260);if(lastFocus)lastFocus.focus();}
   // any Donate link (to /give.html) or [data-give] opens the popup
+  function preset(el){var a=parseInt(el.getAttribute('data-amount'),10);if(a>0){state.amt=a;if(custom)custom.value='';setOn('[data-amt]','data-amt',a);}open(el.getAttribute('data-desig'));}
   document.addEventListener('click',function(e){
+    var tier=e.target.closest&&e.target.closest('[data-amount]');
+    if(tier&&!modal.contains(tier)){e.preventDefault();preset(tier);return;}
     var t=e.target.closest('[data-give], a[href$="/give.html"], a[href="/give.html"]');
     if(!t)return; e.preventDefault(); open(t.getAttribute('data-desig'));
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='Enter'&&e.key!==' ')return;
+    var tier=e.target&&e.target.closest&&e.target.closest('[data-amount]');
+    if(!tier||modal.contains(tier))return; e.preventDefault(); preset(tier);
   });
   modal.addEventListener('click',function(e){if(e.target===modal||e.target.closest('[data-gv-close]'))close();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)close();});

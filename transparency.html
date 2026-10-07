@@ -193,7 +193,7 @@ header .btn-gold::before, header a.don::before, .nav .btn-gold::before, nav .btn
       <label class="tcx-custom"><span>$</span><input type="number" min="1" inputmode="numeric" placeholder="Other amount" id="tcxAmtCustom" aria-label="Custom amount"></label>
     </div>
     <a class="tcx-gv-go" id="tcxGiveGo" target="_blank" rel="noopener">Continue to secure checkout &rarr;</a>
-    <p class="tcx-gv-fine">$1<br>Tax-deductible. 501(c)(3) EIN 42-4788162.</p>
+    <p class="tcx-gv-fine">Secure checkout via Givebutter &middot; Card, ACH, Apple Pay, Google Pay<br>Tax-deductible. 501(c)(3) EIN 42-4788162.</p>
     <a class="tcx-gv-apply" href="/apply.html">Need help for your own family? Apply for support &rarr;</a><p class="tcx-gv-fine" style="margin-top:6px">For children 21 and under. We help the greatest need first.</p>
   </div>
 </div>
@@ -213,9 +213,17 @@ header .btn-gold::before, header a.don::before, .nav .btn-gold::before, nav .btn
   function open(desig){if(desig){state.desig=desig;setOn('[data-desig]','data-desig',desig);}build();lastFocus=document.activeElement;modal.hidden=false;requestAnimationFrame(function(){modal.classList.add('show');});document.body.style.overflow='hidden';go.focus();}
   function close(){modal.classList.remove('show');document.body.style.overflow='';setTimeout(function(){modal.hidden=true;},260);if(lastFocus)lastFocus.focus();}
   // any Donate link (to /give.html) or [data-give] opens the popup
+  function preset(el){var a=parseInt(el.getAttribute('data-amount'),10);if(a>0){state.amt=a;if(custom)custom.value='';setOn('[data-amt]','data-amt',a);}open(el.getAttribute('data-desig'));}
   document.addEventListener('click',function(e){
+    var tier=e.target.closest&&e.target.closest('[data-amount]');
+    if(tier&&!modal.contains(tier)){e.preventDefault();preset(tier);return;}
     var t=e.target.closest('[data-give], a[href$="/give.html"], a[href="/give.html"]');
     if(!t)return; e.preventDefault(); open(t.getAttribute('data-desig'));
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='Enter'&&e.key!==' ')return;
+    var tier=e.target&&e.target.closest&&e.target.closest('[data-amount]');
+    if(!tier||modal.contains(tier))return; e.preventDefault(); preset(tier);
   });
   modal.addEventListener('click',function(e){if(e.target===modal||e.target.closest('[data-gv-close]'))close();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)close();});
