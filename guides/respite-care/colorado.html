@@ -286,6 +286,27 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:3
 .rv.in{opacity:1;transform:none;}
 .d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none;}}
+
+/* ---- Guide rail: use the desktop room beside the article ---- */
+.gd-wrap{display:block;}
+.gd-rail{display:none;}
+.prose h2{scroll-margin-top:110px;}
+@media(min-width:1120px){
+  .gd-wrap{display:grid;grid-template-columns:minmax(0,70ch) minmax(230px,1fr);gap:clamp(44px,5vw,88px);align-items:start;}
+  .gd-rail{display:block;position:sticky;top:104px;}
+}
+.gd-rail .gd-lab{font-family:var(--body);font-weight:600;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:1.1em;display:block;}
+.gd-toc{list-style:none;margin:0 0 30px;padding:0;border-left:1px solid var(--line-l);}
+.gd-toc li{margin:0;}
+.gd-toc a{display:block;padding:.52em 0 .52em 1.1em;margin-left:-1px;border-left:2px solid transparent;font-size:.93rem;line-height:1.35;color:var(--dark-soft);text-decoration:none;transition:color .25s,border-color .25s;}
+.gd-toc a:hover{color:var(--ink);border-left-color:rgba(198,146,58,.5);}
+.gd-toc a.on{color:var(--ink);font-weight:600;border-left-color:var(--gold-deep);}
+.gd-card{border:1px solid var(--line-l);border-radius:16px;background:#fff;color:var(--ink);padding:22px 22px 24px;}
+.gd-card h4{font-family:var(--display);font-weight:600;font-size:1.12rem;line-height:1.14;margin:0 0 .5em;}
+.gd-card p{color:var(--dark-soft);font-size:.9rem;line-height:1.5;margin:0 0 1.1em;}
+.gd-card .gd-a{display:inline-flex;align-items:center;gap:.4em;font-weight:700;font-size:.9rem;color:var(--gold-deep);text-decoration:none;}
+.gd-card .gd-a+.gd-a{margin-top:.6em;}
+.gd-card .gd-a:hover{text-decoration:underline;}
 </style>
 <style id="tcx-magic">
 :root{--tcx-gold:#E7B24C;--tcx-gold2:#F4CE7B;}
@@ -815,4 +836,39 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:3
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)close();});
 })();
 </script><script src="/assets/crown.js" defer></script>
+<script id="tc-guide-rail">
+(function(){
+  var prose=document.querySelector('.prose'); if(!prose) return;
+  var wrap=prose.parentElement; if(!wrap||!wrap.classList.contains('wrap')) return;
+  var hs=[].slice.call(prose.querySelectorAll('h2')); if(hs.length<3) return;
+  var used={};
+  var items=hs.map(function(h){
+    var id=h.id;
+    if(!id){
+      id=(h.textContent||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,54)||'section';
+      if(used[id]) id=id+'-'+(used[id]+1); used[h.id=id]=(used[id]||0)+1;
+    }
+    return {id:id,text:(h.textContent||'').trim(),el:h};
+  });
+  wrap.classList.add('gd-wrap');
+  var rail=document.createElement('aside');
+  rail.className='gd-rail'; rail.setAttribute('aria-label','On this page');
+  var html='<span class="gd-lab">On this page</span><ul class="gd-toc">';
+  items.forEach(function(it){ html+='<li><a href="#'+it.id+'">'+it.text.replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];})+'</a></li>'; });
+  html+='</ul><div class="gd-card"><h4>Need help for your family?</h4><p>We fund adaptive equipment, therapy, and relief for children with special needs.</p>'+
+        '<a class="gd-a" href="/apply.html">Apply for support &rarr;</a><br><a class="gd-a" href="/give.html">Donate &rarr;</a></div>';
+  rail.innerHTML=html;
+  wrap.appendChild(rail);
+  var links=[].slice.call(rail.querySelectorAll('.gd-toc a'));
+  if(!('IntersectionObserver' in window)) return;
+  var seen={};
+  var io=new IntersectionObserver(function(ents){
+    ents.forEach(function(en){ seen[en.target.id]=en.isIntersecting?en.boundingClientRect.top:null; });
+    var active=null;
+    for(var i=0;i<items.length;i++){ var r=items[i].el.getBoundingClientRect(); if(r.top<=160) active=items[i].id; }
+    links.forEach(function(a){ a.classList.toggle('on', a.getAttribute('href')==='#'+active); });
+  },{rootMargin:'-100px 0px -60% 0px',threshold:0});
+  items.forEach(function(it){ io.observe(it.el); });
+})();
+</script>
 </body></html>
